@@ -1,0 +1,9 @@
+@media (max-width: 640px) {
+  input:focus, textarea:focus, select:focus {
+    font-size: 16px !important;
+  }
+  body, main, nav, header, footer, .main, .TopBar, .Navbar, .BottomNav, .Footer {
+    transform: none !important;
+    zoom: 1 !important;
+  }
+}

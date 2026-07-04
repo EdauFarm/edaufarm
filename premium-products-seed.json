@@ -1,0 +1,2383 @@
+[
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c601",
+    "title": "Samsung 620L French Door Refrigerator with Twin Cooling Plus",
+    "description": "Experience ultimate food preservation with Samsung's premium French Door refrigerator featuring Twin Cooling Plus technology that maintains optimal humidity levels in both compartments. The spacious 620-liter capacity provides ample storage for large families, while the metal cooling system ensures consistent temperatures throughout. Energy-efficient digital inverter compressor with 10-year warranty. Premium stainless steel finish with modern LED display panel and water dispenser.",
+    "price": 185000,
+    "compareAtPrice": 220000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Samsung",
+    "sku": "SAM-RF620-001",
+    "images": [
+      "https://m.media-amazon.com/images/I/71VqK8PqKTL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71xQw5NQGSL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71pN8LqYvWL._AC_SL1500_.jpg"
+    ],
+    "stock": 12,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.7,
+      "count": 89
+    },
+    "tags": ["refrigerator", "samsung", "french door", "twin cooling", "premium"],
+    "specifications": [
+      {"key": "Capacity", "value": "620 Liters", "_id": "697a1b2c8f9e12d3a4b5c602"},
+      {"key": "Type", "value": "French Door", "_id": "697a1b2c8f9e12d3a4b5c603"},
+      {"key": "Energy Rating", "value": "A++", "_id": "697a1b2c8f9e12d3a4b5c604"},
+      {"key": "Warranty", "value": "10 Years Compressor", "_id": "697a1b2c8f9e12d3a4b5c605"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c606",
+    "title": "LG 687L InstaView Door-in-Door Side by Side Refrigerator",
+    "description": "Revolutionary InstaView technology lets you see inside without opening the door - simply knock twice on the sleek glass panel to illuminate the interior. This premium 687-liter side-by-side refrigerator features Door-in-Door design for easy access to frequently used items, reducing cold air loss by up to 47%. Linear Cooling maintains temperature within ±0.5°C for optimal freshness. Smart ThinQ app connectivity allows remote temperature control and monitoring.",
+    "price": 245000,
+    "compareAtPrice": 295000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "LG",
+    "sku": "LG-INST687-002",
+    "images": [
+      "https://m.media-amazon.com/images/I/61HZz9xJR5L._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71qK8PpQnWL._AC_SL1500_.jpg"
+    ],
+    "stock": 8,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.8,
+      "count": 124
+    },
+    "tags": ["refrigerator", "lg", "instaview", "side by side", "smart home"],
+    "specifications": [
+      {"key": "Capacity", "value": "687 Liters", "_id": "697a1b2c8f9e12d3a4b5c607"},
+      {"key": "Type", "value": "Side by Side", "_id": "697a1b2c8f9e12d3a4b5c608"},
+      {"key": "Smart Features", "value": "ThinQ App Control", "_id": "697a1b2c8f9e12d3a4b5c609"},
+      {"key": "Water Dispenser", "value": "Yes", "_id": "697a1b2c8f9e12d3a4b5c610"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c611",
+    "title": "Hisense 565L French Door Refrigerator with Water Dispenser",
+    "description": "Elegant French door design meets exceptional functionality in this Hisense 565-liter refrigerator. Multi-Air Flow system ensures even cooling throughout all compartments, while the Total No Frost technology eliminates manual defrosting forever. Premium tempered glass shelves support up to 25kg each, and the large crisper drawers keep fruits and vegetables fresh longer. External water dispenser provides chilled water on demand without opening the door.",
+    "price": 145000,
+    "compareAtPrice": 175000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Hisense",
+    "sku": "HIS-FD565-003",
+    "images": [
+      "https://m.media-amazon.com/images/I/61V5dQ8ZKQL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxKPqR7LL._AC_SL1500_.jpg"
+    ],
+    "stock": 15,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.5,
+      "count": 67
+    },
+    "tags": ["refrigerator", "hisense", "french door", "water dispenser", "no frost"],
+    "specifications": [
+      {"key": "Capacity", "value": "565 Liters", "_id": "697a1b2c8f9e12d3a4b5c612"},
+      {"key": "Type", "value": "French Door", "_id": "697a1b2c8f9e12d3a4b5c613"},
+      {"key": "Cooling System", "value": "Multi Air Flow", "_id": "697a1b2c8f9e12d3a4b5c614"},
+      {"key": "Defrost", "value": "Total No Frost", "_id": "697a1b2c8f9e12d3a4b5c615"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c616",
+    "title": "Bosch Serie 6 KGN86AI42 NoFrost Fridge Freezer 610L",
+    "description": "German engineering excellence in refrigeration. This Bosch Serie 6 combines 610 liters of storage with VitaFresh Plus technology that maintains near-freezing temperatures for meat and fish, extending freshness up to twice as long. NoFrost system prevents ice buildup permanently. SuperCooling and SuperFreezing functions rapidly chill newly stored items. LED lighting illuminates every corner efficiently. Premium stainless steel finish with anti-fingerprint coating maintains pristine appearance.",
+    "price": 265000,
+    "compareAtPrice": 310000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Bosch",
+    "sku": "BOSCH-KGN86-004",
+    "images": [
+      "https://m.media-amazon.com/images/I/51pQx9HTXBL._AC_SL1024_.jpg",
+      "https://m.media-amazon.com/images/I/61KpL8qVXTL._AC_SL1500_.jpg"
+    ],
+    "stock": 6,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.9,
+      "count": 156
+    },
+    "tags": ["refrigerator", "bosch", "vitafresh", "nofrost", "german engineering"],
+    "specifications": [
+      {"key": "Capacity", "value": "610 Liters", "_id": "697a1b2c8f9e12d3a4b5c617"},
+      {"key": "Type", "value": "Bottom Freezer", "_id": "697a1b2c8f9e12d3a4b5c618"},
+      {"key": "Technology", "value": "VitaFresh Plus", "_id": "697a1b2c8f9e12d3a4b5c619"},
+      {"key": "Energy Efficiency", "value": "A++", "_id": "697a1b2c8f9e12d3a4b5c620"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c621",
+    "title": "Whirlpool 540L Side-by-Side Refrigerator with Ice Maker",
+    "description": "Spacious American-style side-by-side refrigerator offering 540 liters of intelligently designed storage space. Built-in automatic ice maker produces fresh ice cubes on demand, perfect for entertaining. 6th Sense technology actively monitors and controls temperature and humidity levels to keep food fresher longer. Humidity-controlled crisper drawers, spill-proof glass shelves, and LED lighting throughout. External electronic controls with digital display for precise temperature management.",
+    "price": 158000,
+    "compareAtPrice": 189000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Whirlpool",
+    "sku": "WHRL-SBS540-005",
+    "images": [
+      "https://m.media-amazon.com/images/I/71RxPqK8JZL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71YqN8PQRWL._AC_SL1500_.jpg"
+    ],
+    "stock": 10,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.6,
+      "count": 93
+    },
+    "tags": ["refrigerator", "whirlpool", "side by side", "ice maker", "6th sense"],
+    "specifications": [
+      {"key": "Capacity", "value": "540 Liters", "_id": "697a1b2c8f9e12d3a4b5c622"},
+      {"key": "Ice Maker", "value": "Automatic", "_id": "697a1b2c8f9e12d3a4b5c623"},
+      {"key": "Technology", "value": "6th Sense", "_id": "697a1b2c8f9e12d3a4b5c624"},
+      {"key": "Shelving", "value": "Spill-Proof Glass", "_id": "697a1b2c8f9e12d3a4b5c625"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c626",
+    "title": "Haier 450L French Door Refrigerator with Inverter Compressor",
+    "description": "Modern French door refrigerator featuring Haier's advanced inverter technology for 40% energy savings and whisper-quiet operation. The 450-liter capacity is ideal for medium to large families. Humidity Zone drawer maintains optimal moisture levels for delicate produce. Anti-bacterial gasket prevents mold and bacterial growth. LED touch control panel, premium glass shelves, and dedicated zones for different food types ensure optimal storage conditions for all your groceries.",
+    "price": 125000,
+    "compareAtPrice": 155000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Haier",
+    "sku": "HAIER-FD450-006",
+    "images": [
+      "https://m.media-amazon.com/images/I/61xQpK9RLVL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MK8PpRXWL._AC_SL1500_.jpg"
+    ],
+    "stock": 18,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.4,
+      "count": 78
+    },
+    "tags": ["refrigerator", "haier", "french door", "inverter", "energy efficient"],
+    "specifications": [
+      {"key": "Capacity", "value": "450 Liters", "_id": "697a1b2c8f9e12d3a4b5c627"},
+      {"key": "Compressor", "value": "Inverter", "_id": "697a1b2c8f9e12d3a4b5c628"},
+      {"key": "Energy Savings", "value": "40%", "_id": "697a1b2c8f9e12d3a4b5c629"},
+      {"key": "Special Features", "value": "Humidity Zone", "_id": "697a1b2c8f9e12d3a4b5c630"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c631",
+    "title": "Electrolux 480L Top Mount Refrigerator with TwinTech Cooling",
+    "description": "Swedish precision engineering meets modern convenience in this Electrolux top mount refrigerator. TwinTech dual cooling system maintains independent climates in fridge and freezer sections for superior food preservation. UltraFresh+ vegetable drawer keeps produce crisp for up to 7 days. Flexible storage with adjustable glass shelves and door bins. Frost-free operation, bright LED lighting, and reversible door for flexible installation. Premium metallic silver finish.",
+    "price": 135000,
+    "compareAtPrice": 165000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Electrolux",
+    "sku": "ELUX-TM480-007",
+    "images": [
+      "https://m.media-amazon.com/images/I/51KqL9PQVWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RxN8KTXL._AC_SL1500_.jpg"
+    ],
+    "stock": 14,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.5,
+      "count": 102
+    },
+    "tags": ["refrigerator", "electrolux", "top mount", "twintech", "frost free"],
+    "specifications": [
+      {"key": "Capacity", "value": "480 Liters", "_id": "697a1b2c8f9e12d3a4b5c632"},
+      {"key": "Type", "value": "Top Mount", "_id": "697a1b2c8f9e12d3a4b5c633"},
+      {"key": "Cooling System", "value": "TwinTech Dual", "_id": "697a1b2c8f9e12d3a4b5c634"},
+      {"key": "Freshness", "value": "UltraFresh+ 7 Days", "_id": "697a1b2c8f9e12d3a4b5c635"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c636",
+    "title": "Panasonic 550L Multi-Door Refrigerator with Econavi",
+    "description": "Innovative multi-door design provides the ultimate in organization and accessibility. Panasonic's Econavi intelligent sensor technology learns your usage patterns and adjusts cooling accordingly, saving up to 35% on energy costs. Prime Fresh freezing at -3°C keeps meat fresh without full freezing for easier slicing. Ag Clean filter removes 99.9% of bacteria and odors. Hybrid cooling system, LED lighting on all shelves, and premium stainless steel construction.",
+    "price": 195000,
+    "compareAtPrice": 235000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Panasonic",
+    "sku": "PANA-MD550-008",
+    "images": [
+      "https://m.media-amazon.com/images/I/61VqK8PQTWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxN9PRXWL._AC_SL1500_.jpg"
+    ],
+    "stock": 9,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.7,
+      "count": 87
+    },
+    "tags": ["refrigerator", "panasonic", "multi-door", "econavi", "smart cooling"],
+    "specifications": [
+      {"key": "Capacity", "value": "550 Liters", "_id": "697a1b2c8f9e12d3a4b5c637"},
+      {"key": "Type", "value": "Multi-Door", "_id": "697a1b2c8f9e12d3a4b5c638"},
+      {"key": "Smart Technology", "value": "Econavi AI", "_id": "697a1b2c8f9e12d3a4b5c639"},
+      {"key": "Air Filter", "value": "Ag Clean 99.9%", "_id": "697a1b2c8f9e12d3a4b5c640"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c641",
+    "title": "Sharp 600L Side-by-Side Refrigerator with Plasmacluster Ion",
+    "description": "Premium Japanese technology featuring Sharp's exclusive Plasmacluster Ion technology that actively purifies air inside the refrigerator, eliminating 99% of bacteria and preserving food freshness longer. Generous 600-liter capacity with sophisticated four-compartment design. Hybrid cooling system maintains precise temperatures. Touch control panel with vacation mode, express freezing, and child lock. Premium black glass exterior with anti-fingerprint coating and LED display.",
+    "price": 175000,
+    "compareAtPrice": 210000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Sharp",
+    "sku": "SHRP-SBS600-009",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqL8PQKWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RxM9PTXL._AC_SL1500_.jpg"
+    ],
+    "stock": 11,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.6,
+      "count": 94
+    },
+    "tags": ["refrigerator", "sharp", "side by side", "plasmacluster", "air purifier"],
+    "specifications": [
+      {"key": "Capacity", "value": "600 Liters", "_id": "697a1b2c8f9e12d3a4b5c642"},
+      {"key": "Purification", "value": "Plasmacluster Ion", "_id": "697a1b2c8f9e12d3a4b5c643"},
+      {"key": "Bacteria Removal", "value": "99%", "_id": "697a1b2c8f9e12d3a4b5c644"},
+      {"key": "Display", "value": "LED Touch Panel", "_id": "697a1b2c8f9e12d3a4b5c645"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c646",
+    "title": "Midea 520L French Door Refrigerator with Smart Control",
+    "description": "Connect your refrigerator to your smartphone with Midea's Wi-Fi enabled smart refrigerator. Monitor and adjust temperatures remotely, receive alerts when door is left open, and track energy consumption through the SmartHome app. The 520-liter capacity features moisture-controlled crisper drawers, adjustable glass shelves, and bright LED lighting. Total No Frost system eliminates defrosting needs. Sleek stainless steel design with modern digital display complements any contemporary kitchen.",
+    "price": 142000,
+    "compareAtPrice": 172000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Midea",
+    "sku": "MIDEA-FD520-010",
+    "images": [
+      "https://m.media-amazon.com/images/I/61KpL9QRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxK8PTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 16,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.4,
+      "count": 71
+    },
+    "tags": ["refrigerator", "midea", "french door", "wifi", "smart home"],
+    "specifications": [
+      {"key": "Capacity", "value": "520 Liters", "_id": "697a1b2c8f9e12d3a4b5c647"},
+      {"key": "Connectivity", "value": "Wi-Fi SmartHome", "_id": "697a1b2c8f9e12d3a4b5c648"},
+      {"key": "Defrost", "value": "Total No Frost", "_id": "697a1b2c8f9e12d3a4b5c649"},
+      {"key": "App Control", "value": "iOS & Android", "_id": "697a1b2c8f9e12d3a4b5c650"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c651",
+    "title": "TCL 490L Bottom Mount Refrigerator with AAT Technology",
+    "description": "Advanced AAT (Advanced Air Treatment) technology maintains optimal humidity and temperature levels throughout the refrigerator. The 490-liter bottom mount design places the most frequently accessed fresh food section at eye level for convenient access. Multi-air flow system ensures uniform cooling in every corner. Large capacity freezer drawer with flexible storage baskets. Energy-efficient inverter compressor, premium glass shelves, and elegant silver metallic finish complete this outstanding value proposition.",
+    "price": 118000,
+    "compareAtPrice": 145000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "TCL",
+    "sku": "TCL-BM490-011",
+    "images": [
+      "https://m.media-amazon.com/images/I/61VqL9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RxK8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 20,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.3,
+      "count": 85
+    },
+    "tags": ["refrigerator", "tcl", "bottom mount", "aat technology", "inverter"],
+    "specifications": [
+      {"key": "Capacity", "value": "490 Liters", "_id": "697a1b2c8f9e12d3a4b5c652"},
+      {"key": "Type", "value": "Bottom Mount", "_id": "697a1b2c8f9e12d3a4b5c653"},
+      {"key": "Technology", "value": "AAT Advanced Air", "_id": "697a1b2c8f9e12d3a4b5c654"},
+      {"key": "Compressor", "value": "Inverter", "_id": "697a1b2c8f9e12d3a4b5c655"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c656",
+    "title": "Beko 580L American Style Refrigerator with HarvestFresh",
+    "description": "Revolutionary HarvestFresh technology uses natural light simulation to preserve vitamins in fruits and vegetables for up to 5 additional days. This premium 580-liter American-style refrigerator features NeoFrost dual cooling, IonGuard odor filter, and Active Fresh Blue Light in crisper drawers. Water and ice dispenser with twist ice & serve function. Automatic ice maker produces up to 1.5kg daily. ProSmart inverter compressor ensures quiet operation and exceptional energy efficiency.",
+    "price": 168000,
+    "compareAtPrice": 198000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Beko",
+    "sku": "BEKO-AS580-012",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqK9PQTWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxL8PRXWL._AC_SL1500_.jpg"
+    ],
+    "stock": 13,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.6,
+      "count": 98
+    },
+    "tags": ["refrigerator", "beko", "american style", "harvestfresh", "vitamin preservation"],
+    "specifications": [
+      {"key": "Capacity", "value": "580 Liters", "_id": "697a1b2c8f9e12d3a4b5c657"},
+      {"key": "Technology", "value": "HarvestFresh Light", "_id": "697a1b2c8f9e12d3a4b5c658"},
+      {"key": "Ice Production", "value": "1.5kg per day", "_id": "697a1b2c8f9e12d3a4b5c659"},
+      {"key": "Cooling", "value": "NeoFrost Dual", "_id": "697a1b2c8f9e12d3a4b5c660"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c661",
+    "title": "Siemens 505L iQ500 NoFrost Fridge-Freezer Combination",
+    "description": "German precision engineering with iQ500 smart control system. NoFrost technology in both fridge and freezer eliminates ice buildup permanently. hyperFresh Plus drawer maintains near 0°C temperature, ideal for storing fresh meat and fish up to twice as long. superCooling and superFreezing buttons rapidly chill new items to preserve freshness. LED lighting with softStart gradually increases brightness. Electronic temperature control with digital display, door open warning alarm, and child lock.",
+    "price": 225000,
+    "compareAtPrice": 270000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Siemens",
+    "sku": "SIEM-IQ505-013",
+    "images": [
+      "https://m.media-amazon.com/images/I/61KpK8QRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RxL9PTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 7,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.8,
+      "count": 142
+    },
+    "tags": ["refrigerator", "siemens", "iq500", "nofrost", "hyperfresh"],
+    "specifications": [
+      {"key": "Capacity", "value": "505 Liters", "_id": "697a1b2c8f9e12d3a4b5c662"},
+      {"key": "Technology", "value": "iQ500 Smart", "_id": "697a1b2c8f9e12d3a4b5c663"},
+      {"key": "Freshness Zone", "value": "hyperFresh Plus 0°C", "_id": "697a1b2c8f9e12d3a4b5c664"},
+      {"key": "Defrost", "value": "NoFrost Both Sections", "_id": "697a1b2c8f9e12d3a4b5c665"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c666",
+    "title": "Hitachi 560L French Door Refrigerator with Vacuum Compartment",
+    "description": "Innovative Japanese technology featuring exclusive vacuum compartment that removes air to prevent oxidation, keeping food fresh 50% longer than conventional storage. The spacious 560-liter capacity includes dedicated zones for different food types. Deluxe Cooling system with triple fan ensures consistent temperatures throughout. Nano Titanium filter deodorizes and purifies air continuously. Touch panel controls, premium tempered glass shelves, and platinum catalyst vegetable case preserve nutrients and vitamins.",
+    "price": 235000,
+    "compareAtPrice": 285000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Hitachi",
+    "sku": "HITA-FD560-014",
+    "images": [
+      "https://m.media-amazon.com/images/I/61VqM9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71YqK8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 5,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.9,
+      "count": 167
+    },
+    "tags": ["refrigerator", "hitachi", "french door", "vacuum compartment", "nano titanium"],
+    "specifications": [
+      {"key": "Capacity", "value": "560 Liters", "_id": "697a1b2c8f9e12d3a4b5c667"},
+      {"key": "Special Feature", "value": "Vacuum Compartment", "_id": "697a1b2c8f9e12d3a4b5c668"},
+      {"key": "Air Filter", "value": "Nano Titanium", "_id": "697a1b2c8f9e12d3a4b5c669"},
+      {"key": "Freshness", "value": "50% Longer", "_id": "697a1b2c8f9e12d3a4b5c670"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c671",
+    "title": "Daewoo 470L Top Mount Refrigerator with Multi Air Flow",
+    "description": "Practical and efficient top mount design featuring Multi Air Flow technology that circulates cold air evenly to every corner, maintaining consistent temperatures and extending food freshness. The 470-liter capacity offers generous storage with flexible shelving options including height-adjustable glass shelves and deep door bins for tall bottles. Total No Frost operation, LED lighting, and reversible door for flexible kitchen placement. Energy-efficient design with premium white finish.",
+    "price": 108000,
+    "compareAtPrice": 135000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Daewoo",
+    "sku": "DAEW-TM470-015",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxK9PQTWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxM8PRXWL._AC_SL1500_.jpg"
+    ],
+    "stock": 22,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.2,
+      "count": 76
+    },
+    "tags": ["refrigerator", "daewoo", "top mount", "multi air flow", "budget friendly"],
+    "specifications": [
+      {"key": "Capacity", "value": "470 Liters", "_id": "697a1b2c8f9e12d3a4b5c672"},
+      {"key": "Type", "value": "Top Mount", "_id": "697a1b2c8f9e12d3a4b5c673"},
+      {"key": "Cooling", "value": "Multi Air Flow", "_id": "697a1b2c8f9e12d3a4b5c674"},
+      {"key": "Defrost", "value": "Total No Frost", "_id": "697a1b2c8f9e12d3a4b5c675"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c676",
+    "title": "Frigidaire 630L Professional Side-by-Side with PureSource",
+    "description": "Professional-grade refrigeration for discerning home chefs. This premium 630-liter side-by-side refrigerator features PureSource Ultra II water filtration system that reduces 99% of contaminants for crystal-clear drinking water and ice. Smudge-Proof stainless steel resists fingerprints. Store-More gallon door bins, full-width deli drawer, and CrispSeal crispers with humidity control. Advanced cooling system maintains precise temperatures. Custom-Flex door bins adjust to accommodate tall items.",
+    "price": 189000,
+    "compareAtPrice": 225000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Frigidaire",
+    "sku": "FRIG-PRO630-016",
+    "images": [
+      "https://m.media-amazon.com/images/I/61KpL8QRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqM9PTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 8,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.7,
+      "count": 112
+    },
+    "tags": ["refrigerator", "frigidaire", "professional", "puresource", "water filter"],
+    "specifications": [
+      {"key": "Capacity", "value": "630 Liters", "_id": "697a1b2c8f9e12d3a4b5c677"},
+      {"key": "Water Filter", "value": "PureSource Ultra II", "_id": "697a1b2c8f9e12d3a4b5c678"},
+      {"key": "Finish", "value": "Smudge-Proof SS", "_id": "697a1b2c8f9e12d3a4b5c679"},
+      {"key": "Contaminant Removal", "value": "99%", "_id": "697a1b2c8f9e12d3a4b5c680"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c681",
+    "title": "Miele 525L MasterCool Fridge-Freezer with DynaCool",
+    "description": "German luxury and precision in every detail. Miele's MasterCool series represents the pinnacle of refrigeration technology. DynaCool system ensures exceptionally uniform temperature distribution. PerfectFresh Pro zone maintains near-freezing temperatures with precise humidity control, keeping food fresh up to three times longer. TouchControl sensor controls with CleanTouch steel finish resist fingerprints. LED lighting throughout, telescopic FlexiFrame drawers, and premium NoFrost technology. Built to last 20 years.",
+    "price": 385000,
+    "compareAtPrice": 450000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Miele",
+    "sku": "MIELE-MC525-017",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqL9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RxK8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 4,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 5.0,
+      "count": 203
+    },
+    "tags": ["refrigerator", "miele", "luxury", "mastercool", "perfectfresh"],
+    "specifications": [
+      {"key": "Capacity", "value": "525 Liters", "_id": "697a1b2c8f9e12d3a4b5c682"},
+      {"key": "Technology", "value": "DynaCool + PerfectFresh Pro", "_id": "697a1b2c8f9e12d3a4b5c683"},
+      {"key": "Lifespan", "value": "20 Years", "_id": "697a1b2c8f9e12d3a4b5c684"},
+      {"key": "Freshness", "value": "3x Longer", "_id": "697a1b2c8f9e12d3a4b5c685"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c686",
+    "title": "Fisher & Paykel 540L French Door with ActiveSmart Technology",
+    "description": "New Zealand engineering excellence featuring ActiveSmart technology that constantly monitors and adapts to daily use patterns, learning when the refrigerator is used most to maintain optimal temperatures while minimizing energy consumption. The 540-liter French door design includes EZKleen anti-fingerprint coating, adaptive humidity control in produce bins, and spill-safe glass shelves. Bottom freezer with independent temperature control, LED lighting, and premium metallic graphite finish.",
+    "price": 215000,
+    "compareAtPrice": 255000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Fisher & Paykel",
+    "sku": "FP-AS540-018",
+    "images": [
+      "https://m.media-amazon.com/images/I/61VqK8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxL9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 6,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.7,
+      "count": 95
+    },
+    "tags": ["refrigerator", "fisher paykel", "activesmart", "french door", "adaptive"],
+    "specifications": [
+      {"key": "Capacity", "value": "540 Liters", "_id": "697a1b2c8f9e12d3a4b5c687"},
+      {"key": "Technology", "value": "ActiveSmart Adaptive", "_id": "697a1b2c8f9e12d3a4b5c688"},
+      {"key": "Coating", "value": "EZKleen Anti-Fingerprint", "_id": "697a1b2c8f9e12d3a4b5c689"},
+      {"key": "Humidity Control", "value": "Adaptive", "_id": "697a1b2c8f9e12d3a4b5c690"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c691",
+    "title": "Grundig 495L Vision+ Refrigerator with VitaminCare Technology",
+    "description": "Turkish innovation meets European design standards in this sophisticated refrigerator featuring VitaminCare technology that uses blue LED light to simulate natural daylight cycles, preserving vitamins in fruits and vegetables throughout storage. The 495-liter capacity includes IonFresh filter system, HygieneFresh+ antibacterial protection, and dual cooling system. Neo Frost technology prevents freezer burn. Premium glass touch panel controls, soft-close doors, and elegant black glass finish.",
+    "price": 155000,
+    "compareAtPrice": 185000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Grundig",
+    "sku": "GRUN-VP495-019",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxL8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71KpM9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 10,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.5,
+      "count": 83
+    },
+    "tags": ["refrigerator", "grundig", "vitamincare", "blue led", "hygiene fresh"],
+    "specifications": [
+      {"key": "Capacity", "value": "495 Liters", "_id": "697a1b2c8f9e12d3a4b5c692"},
+      {"key": "Technology", "value": "VitaminCare Blue LED", "_id": "697a1b2c8f9e12d3a4b5c693"},
+      {"key": "Protection", "value": "HygieneFresh+ Antibacterial", "_id": "697a1b2c8f9e12d3a4b5c694"},
+      {"key": "Freezer Tech", "value": "Neo Frost", "_id": "697a1b2c8f9e12d3a4b5c695"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c696",
+    "title": "Vestfrost 610L American Refrigerator with TotalNoFrost Plus",
+    "description": "Danish quality engineering in this spacious American-style refrigerator. TotalNoFrost Plus technology in all compartments eliminates ice buildup completely while maintaining optimal humidity levels. Super cooling and freezing functions with automatic return to normal settings. Large capacity ice maker produces crescent-shaped ice. Multi-flow cooling system, premium LED lighting, electronic temperature display with child lock, and sophisticated stainless steel finish with minimal exterior branding for clean aesthetics.",
+    "price": 172000,
+    "compareAtPrice": 205000,
+    "category": "Home & Kitchen",
+    "subcategory": "Refrigerators",
+    "brand": "Vestfrost",
+    "sku": "VEST-AS610-020",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqK8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqL9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 9,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.6,
+      "count": 88
+    },
+    "tags": ["refrigerator", "vestfrost", "american style", "totalnofrost", "danish quality"],
+    "specifications": [
+      {"key": "Capacity", "value": "610 Liters", "_id": "697a1b2c8f9e12d3a4b5c697"},
+      {"key": "Type", "value": "American Style", "_id": "697a1b2c8f9e12d3a4b5c698"},
+      {"key": "Defrost", "value": "TotalNoFrost Plus", "_id": "697a1b2c8f9e12d3a4b5c699"},
+      {"key": "Ice Type", "value": "Crescent Shaped", "_id": "697a1b2c8f9e12d3a4b5c700"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c701",
+    "title": "Samsung 60cm Gas Cooker 4 Burner with Convection Oven",
+    "description": "Professional-grade cooking performance in a sleek 60cm design. This Samsung gas cooker features four high-efficiency brass burners with auto-ignition for instant flame control. Large 68-liter convection oven with dual fan system ensures even heat distribution for perfect baking and roasting results. Premium glass enamel oven interior for easy cleaning, telescopic shelves for safe handling, and interior oven light. Flame failure safety device on all burners. Elegant black glass top with stainless steel trim.",
+    "price": 58000,
+    "compareAtPrice": 72000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Samsung",
+    "sku": "SAM-GC60-021",
+    "images": [
+      "https://m.media-amazon.com/images/I/71RxK9PQTWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/61MxL8PRXWL._AC_SL1500_.jpg"
+    ],
+    "stock": 18,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.6,
+      "count": 142
+    },
+    "tags": ["cooker", "gas", "samsung", "convection", "4 burner"],
+    "specifications": [
+      {"key": "Burners", "value": "4 Brass Burners", "_id": "697a1b2c8f9e12d3a4b5c702"},
+      {"key": "Oven Capacity", "value": "68 Liters", "_id": "697a1b2c8f9e12d3a4b5c703"},
+      {"key": "Oven Type", "value": "Convection Dual Fan", "_id": "697a1b2c8f9e12d3a4b5c704"},
+      {"key": "Safety", "value": "Flame Failure Device", "_id": "697a1b2c8f9e12d3a4b5c705"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c706",
+    "title": "Bosch Serie 6 90cm Range Cooker with Induction Hob",
+    "description": "Professional kitchen performance with this premium 90cm range cooker combining induction hob technology with dual cavity ovens. Five-zone induction hob with PowerBoost function brings water to boil 50% faster than conventional gas. Main oven features 4D HotAir for perfect multi-level cooking, while second oven provides additional flexibility. Pyrolytic self-cleaning function, meat probe thermometer, and soft-close doors. Premium stainless steel construction with retro-style controls and brass accents.",
+    "price": 285000,
+    "compareAtPrice": 340000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Bosch",
+    "sku": "BOSCH-RC90-022",
+    "images": [
+      "https://m.media-amazon.com/images/I/61KpL9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqM8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 5,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.9,
+      "count": 178
+    },
+    "tags": ["cooker", "range", "bosch", "induction", "dual oven"],
+    "specifications": [
+      {"key": "Hob Type", "value": "5-Zone Induction", "_id": "697a1b2c8f9e12d3a4b5c707"},
+      {"key": "Main Oven", "value": "4D HotAir 71L", "_id": "697a1b2c8f9e12d3a4b5c708"},
+      {"key": "Cleaning", "value": "Pyrolytic Self-Clean", "_id": "697a1b2c8f9e12d3a4b5c709"},
+      {"key": "Width", "value": "90cm", "_id": "697a1b2c8f9e12d3a4b5c710"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c711",
+    "title": "LG 6 Burner Gas Cooker with Double Electric Oven",
+    "description": "Maximize your cooking capability with this professional 6-burner gas cooker. Heavy-duty cast iron pan supports accommodate large pots and cookware. Two independent electric ovens offer incredible versatility - main 65L oven with fan convection and top 35L oven for simultaneous cooking at different temperatures. Ceramic enamel interior resists staining and simplifies cleaning. Digital timer display, interior lighting in both ovens, and storage drawer below. Premium stainless steel construction.",
+    "price": 98000,
+    "compareAtPrice": 125000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "LG",
+    "sku": "LG-GC6B-023",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqL8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RxM9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 12,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.5,
+      "count": 96
+    },
+    "tags": ["cooker", "gas", "lg", "6 burner", "double oven"],
+    "specifications": [
+      {"key": "Burners", "value": "6 Gas Burners", "_id": "697a1b2c8f9e12d3a4b5c712"},
+      {"key": "Main Oven", "value": "65L Electric Convection", "_id": "697a1b2c8f9e12d3a4b5c713"},
+      {"key": "Second Oven", "value": "35L Electric", "_id": "697a1b2c8f9e12d3a4b5c714"},
+      {"key": "Pan Supports", "value": "Cast Iron", "_id": "697a1b2c8f9e12d3a4b5c715"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c716",
+    "title": "Smeg Victoria 90cm Dual Fuel Range Cooker",
+    "description": "Italian luxury meets professional performance in Smeg's iconic Victoria series. This 90cm dual fuel range cooker combines precision gas cooking with electric oven perfection. Five gas burners including powerful 3.5kW ultra-rapid burner for wok cooking. Multifunction main oven with Ever-Clean enamel interior, separate electric grill, and warming drawer. Vapor Clean steam cleaning system, rotisserie function, and electronic programmer. Available in cream with brass trim for timeless elegance.",
+    "price": 385000,
+    "compareAtPrice": 455000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Smeg",
+    "sku": "SMEG-VIC90-024",
+    "images": [
+      "https://m.media-amazon.com/images/I/61VqK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 3,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.8,
+      "count": 214
+    },
+    "tags": ["cooker", "range", "smeg", "dual fuel", "luxury"],
+    "specifications": [
+      {"key": "Fuel Type", "value": "Dual Fuel", "_id": "697a1b2c8f9e12d3a4b5c717"},
+      {"key": "Gas Burners", "value": "5 including 3.5kW", "_id": "697a1b2c8f9e12d3a4b5c718"},
+      {"key": "Oven Type", "value": "Multifunction Electric", "_id": "697a1b2c8f9e12d3a4b5c719"},
+      {"key": "Cleaning", "value": "Vapor Clean System", "_id": "697a1b2c8f9e12d3a4b5c720"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c721",
+    "title": "Beko 60cm Ceramic Electric Cooker with Fan Oven",
+    "description": "Modern electric cooking solution featuring smooth ceramic hob with four rapid-heat zones and residual heat indicators for safety. Spacious 60-liter fan oven ensures even cooking on multiple levels simultaneously. AeroPerfect technology circulates hot air for consistent results every time. Telescopic shelf runners allow safe handling of heavy dishes. Easy-clean enamel interior, full-width grill, and electronic timer with auto shut-off. Energy-efficient A-rated performance in sleek white finish.",
+    "price": 45000,
+    "compareAtPrice": 58000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Beko",
+    "sku": "BEKO-EC60-025",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxK8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71KpL9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 25,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.3,
+      "count": 118
+    },
+    "tags": ["cooker", "electric", "beko", "ceramic hob", "fan oven"],
+    "specifications": [
+      {"key": "Hob Type", "value": "4-Zone Ceramic", "_id": "697a1b2c8f9e12d3a4b5c722"},
+      {"key": "Oven Capacity", "value": "60 Liters", "_id": "697a1b2c8f9e12d3a4b5c723"},
+      {"key": "Technology", "value": "AeroPerfect Fan", "_id": "697a1b2c8f9e12d3a4b5c724"},
+      {"key": "Energy Rating", "value": "A", "_id": "697a1b2c8f9e12d3a4b5c725"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c726",
+    "title": "Electrolux 5 Burner Gas Cooker with Maxi Oven",
+    "description": "Swedish engineering excellence in this versatile 5-burner gas cooker. Features one powerful wok burner, three standard burners, and one simmer burner for delicate sauces. Extra-large 74-liter Maxi Oven accommodates oversized roasting trays and multiple dishes simultaneously. Catalytic self-cleaning liners reduce manual cleaning effort. Flame failure safety device on all burners, electronic ignition, and removable door for easy cleaning. Premium stainless steel finish with enamel pan supports.",
+    "price": 72000,
+    "compareAtPrice": 89000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Electrolux",
+    "sku": "ELUX-GC5B-026",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqM8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqK9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 15,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.6,
+      "count": 87
+    },
+    "tags": ["cooker", "gas", "electrolux", "maxi oven", "5 burner"],
+    "specifications": [
+      {"key": "Burners", "value": "5 Gas (Wok + Simmer)", "_id": "697a1b2c8f9e12d3a4b5c727"},
+      {"key": "Oven Capacity", "value": "74L Maxi Oven", "_id": "697a1b2c8f9e12d3a4b5c728"},
+      {"key": "Cleaning", "value": "Catalytic Liners", "_id": "697a1b2c8f9e12d3a4b5c729"},
+      {"key": "Ignition", "value": "Electronic", "_id": "697a1b2c8f9e12d3a4b5c730"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c731",
+    "title": "Whirlpool 60cm Built-in Cooker with 6th Sense Technology",
+    "description": "Intelligent cooking with Whirlpool's 6th Sense technology that automatically adjusts time and temperature for perfect results. This built-in cooker features four responsive ceramic zones on the hob and a multifunctional 65-liter oven with 8 cooking programs including bread proving and pizza function. Cook3 technology lets you cook three dishes simultaneously without flavor transfer. SoftClose door, touch controls with child lock, and AquaClean steam cleaning for effortless maintenance.",
+    "price": 89000,
+    "compareAtPrice": 112000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Whirlpool",
+    "sku": "WHRL-BC60-027",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxL9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxK8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 11,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.7,
+      "count": 134
+    },
+    "tags": ["cooker", "built-in", "whirlpool", "6th sense", "smart cooking"],
+    "specifications": [
+      {"key": "Technology", "value": "6th Sense Auto-Adjust", "_id": "697a1b2c8f9e12d3a4b5c732"},
+      {"key": "Oven Programs", "value": "8 Functions", "_id": "697a1b2c8f9e12d3a4b5c733"},
+      {"key": "Multi-Cooking", "value": "Cook3 Technology", "_id": "697a1b2c8f9e12d3a4b5c734"},
+      {"key": "Cleaning", "value": "AquaClean Steam", "_id": "697a1b2c8f9e12d3a4b5c735"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c736",
+    "title": "Siemens iQ700 60cm Slide-in Cooker with induction Hob",
+    "description": "Premium German engineering featuring advanced induction technology with powerBoost function for 50% faster heating. Four flexible induction zones with pan detection and automatic heat-up. Pyrolytic self-cleaning oven with cookControl Plus recommends ideal settings for 30+ dishes. activeClean function heats oven to 480°C, turning residue to ash. Soft-closing door, meat probe, and LED display. TFT touchscreen controls and premium stainless steel construction with black glass hob.",
+    "price": 245000,
+    "compareAtPrice": 295000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Siemens",
+    "sku": "SIEM-IQ700-028",
+    "images": [
+      "https://m.media-amazon.com/images/I/61KpK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 6,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.9,
+      "count": 189
+    },
+    "tags": ["cooker", "induction", "siemens", "pyrolytic", "smart"],
+    "specifications": [
+      {"key": "Hob Type", "value": "4-Zone Induction", "_id": "697a1b2c8f9e12d3a4b5c737"},
+      {"key": "Cleaning", "value": "Pyrolytic activeClean", "_id": "697a1b2c8f9e12d3a4b5c738"},
+      {"key": "Smart Feature", "value": "cookControl Plus", "_id": "697a1b2c8f9e12d3a4b5c739"},
+      {"key": "Display", "value": "TFT Touchscreen", "_id": "697a1b2c8f9e12d3a4b5c740"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c741",
+    "title": "Ramtons 4 Burner Gas Cooker with Rotisserie Function",
+    "description": "Kenyan-market optimized gas cooker featuring robust construction and practical functionality. Four brass burners with enamel pan supports provide reliable cooking performance. Spacious 60-liter oven includes rotisserie function perfect for preparing nyama choma and roasted chicken. Auto-ignition on all burners, flame failure safety device, and oven interior light. Tempered glass oven door, removable inner glass for easy cleaning, and storage compartment below. Durable black finish resistant to kitchen conditions.",
+    "price": 42000,
+    "compareAtPrice": 55000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Ramtons",
+    "sku": "RAM-GC4B-029",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RxL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 32,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.4,
+      "count": 156
+    },
+    "tags": ["cooker", "gas", "ramtons", "rotisserie", "kenyan brand"],
+    "specifications": [
+      {"key": "Burners", "value": "4 Brass Burners", "_id": "697a1b2c8f9e12d3a4b5c742"},
+      {"key": "Oven Capacity", "value": "60 Liters", "_id": "697a1b2c8f9e12d3a4b5c743"},
+      {"key": "Special Feature", "value": "Rotisserie", "_id": "697a1b2c8f9e12d3a4b5c744"},
+      {"key": "Ignition", "value": "Auto-Ignition", "_id": "697a1b2c8f9e12d3a4b5c745"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c746",
+    "title": "Miele M Touch 60cm Cooker with TwinPower Burners",
+    "description": "German luxury engineering with Miele's TwinPower dual-flame burners delivering precise temperature control from gentle simmer to intense heat. Four gas burners plus electric multifunction oven with PerfectClean finish that prevents food residue from adhering to surfaces. Moisture Plus function adds steam for crusty bread and tender roasts. Exclusive M Touch controls, FlexiClip telescopic runners, and wireless temperature probe. Premium CleanSteel exterior resists fingerprints. Built for 20-year lifespan.",
+    "price": 425000,
+    "compareAtPrice": 495000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Miele",
+    "sku": "MIELE-MT60-030",
+    "images": [
+      "https://m.media-amazon.com/images/I/61VqK8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxL9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 4,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 5.0,
+      "count": 267
+    },
+    "tags": ["cooker", "luxury", "miele", "twinpower", "german engineering"],
+    "specifications": [
+      {"key": "Burners", "value": "TwinPower Dual-Flame", "_id": "697a1b2c8f9e12d3a4b5c747"},
+      {"key": "Oven Finish", "value": "PerfectClean", "_id": "697a1b2c8f9e12d3a4b5c748"},
+      {"key": "Steam Function", "value": "Moisture Plus", "_id": "697a1b2c8f9e12d3a4b5c749"},
+      {"key": "Lifespan", "value": "20 Years", "_id": "697a1b2c8f9e12d3a4b5c750"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c751",
+    "title": "Hisense 60cm Gas Cooker 4 Burner with Safety Valve",
+    "description": "Reliable and affordable gas cooking solution featuring four burners of varying sizes to accommodate different pot sizes and cooking needs. Flame failure safety valve automatically cuts gas supply if flame extinguishes, ensuring household safety. Spacious 56-liter oven with grill function, interior lighting, and easy-clean enamel coating. Auto-ignition for convenient one-hand lighting, tempered glass lid, and heat-resistant handle. Storage drawer provides space for cookware and utensils.",
+    "price": 38000,
+    "compareAtPrice": 48000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Hisense",
+    "sku": "HIS-GC60-031",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71KpL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 28,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.2,
+      "count": 143
+    },
+    "tags": ["cooker", "gas", "hisense", "safety valve", "budget"],
+    "specifications": [
+      {"key": "Burners", "value": "4 Gas Burners", "_id": "697a1b2c8f9e12d3a4b5c752"},
+      {"key": "Safety", "value": "Flame Failure Valve", "_id": "697a1b2c8f9e12d3a4b5c753"},
+      {"key": "Oven Capacity", "value": "56 Liters", "_id": "697a1b2c8f9e12d3a4b5c754"},
+      {"key": "Storage", "value": "Bottom Drawer", "_id": "697a1b2c8f9e12d3a4b5c755"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c756",
+    "title": "Hotpoint 50cm Twin Cavity Gas Cooker",
+    "description": "Space-saving 50cm design perfect for smaller kitchens without compromising functionality. Twin cavity design offers main 42-liter fan oven and separate 33-liter top oven for ultimate cooking flexibility. Four gas burners including rapid burner for quick boiling. Catalytic cleaning liners in both ovens reduce maintenance effort. Easy-clean enamel exterior, glass lid, and electronic ignition. Timer with audible alarm, interior lights, and storage compartment. Energy-efficient A-rated performance.",
+    "price": 52000,
+    "compareAtPrice": 65000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Hotpoint",
+    "sku": "HOTP-TC50-032",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqL8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqK9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 16,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.4,
+      "count": 92
+    },
+    "tags": ["cooker", "gas", "hotpoint", "twin cavity", "compact"],
+    "specifications": [
+      {"key": "Width", "value": "50cm Compact", "_id": "697a1b2c8f9e12d3a4b5c757"},
+      {"key": "Main Oven", "value": "42L Fan Oven", "_id": "697a1b2c8f9e12d3a4b5c758"},
+      {"key": "Top Oven", "value": "33L Conventional", "_id": "697a1b2c8f9e12d3a4b5c759"},
+      {"key": "Cleaning", "value": "Catalytic Liners", "_id": "697a1b2c8f9e12d3a4b5c760"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c761",
+    "title": "Nasco 4 Burner Gas Cooker with Electric Grill",
+    "description": "Practical African-market designed gas cooker combining traditional gas cooking with modern electric grill functionality. Four efficient gas burners with auto-ignition provide reliable performance. Large 60-liter oven suitable for family-sized meals, complemented by powerful electric grill perfect for toasting and quick grilling. Heat-resistant tempered glass door, enamel-coated interior for easy cleaning, and detachable oven door. Storage drawer and flame failure protection on all burners.",
+    "price": 35000,
+    "compareAtPrice": 45000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Nasco",
+    "sku": "NASCO-GC4E-033",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxL9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxK8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 35,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.1,
+      "count": 167
+    },
+    "tags": ["cooker", "gas", "nasco", "electric grill", "affordable"],
+    "specifications": [
+      {"key": "Burners", "value": "4 Gas with Auto-Ignition", "_id": "697a1b2c8f9e12d3a4b5c762"},
+      {"key": "Grill", "value": "Electric Grill", "_id": "697a1b2c8f9e12d3a4b5c763"},
+      {"key": "Oven Capacity", "value": "60 Liters", "_id": "697a1b2c8f9e12d3a4b5c764"},
+      {"key": "Door", "value": "Detachable Tempered Glass", "_id": "697a1b2c8f9e12d3a4b5c765"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c766",
+    "title": "Zanussi 60cm Double Oven Electric Cooker with Ceramic Hob",
+    "description": "Versatile double oven electric cooker maximizes cooking efficiency with two independent ovens. Main 58-liter fan oven with multiple cooking functions and second 33-liter top oven ideal for grilling and smaller dishes. Four ceramic hob zones with residual heat indicators enhance safety. Even Cooking Plus technology uses fan and circular heating element for perfectly even results. Easy-clean enamel interior, programmable timer, and stay-clean door. Energy A-rated in classic white finish.",
+    "price": 65000,
+    "compareAtPrice": 82000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Zanussi",
+    "sku": "ZAN-DE60-034",
+    "images": [
+      "https://m.media-amazon.com/images/I/61KpK8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqL9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 14,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.5,
+      "count": 108
+    },
+    "tags": ["cooker", "electric", "zanussi", "double oven", "ceramic"],
+    "specifications": [
+      {"key": "Hob Type", "value": "4-Zone Ceramic", "_id": "697a1b2c8f9e12d3a4b5c767"},
+      {"key": "Main Oven", "value": "58L Multifunction Fan", "_id": "697a1b2c8f9e12d3a4b5c768"},
+      {"key": "Top Oven", "value": "33L Conventional", "_id": "697a1b2c8f9e12d3a4b5c769"},
+      {"key": "Technology", "value": "Even Cooking Plus", "_id": "697a1b2c8f9e12d3a4b5c770"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c771",
+    "title": "AEG 60cm Induction Cooker with SteamBake Function",
+    "description": "Premium electric cooker featuring advanced induction hob with Bridge function that connects two zones for large cookware. SteamBake technology introduces steam at the start of baking for professional bakery-quality crusty bread and pastries. Pyrolytic self-cleaning oven reaches 500°C to carbonize residue. Multifunction oven with 10 programs including pizza setting and low-temperature cooking. Meat probe monitors internal temperature automatically. Premium stainless steel with ProSight touchscreen controls.",
+    "price": 195000,
+    "compareAtPrice": 235000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "AEG",
+    "sku": "AEG-IC60-035",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RxL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 7,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.8,
+      "count": 154
+    },
+    "tags": ["cooker", "induction", "aeg", "steambake", "pyrolytic"],
+    "specifications": [
+      {"key": "Hob", "value": "Induction with Bridge", "_id": "697a1b2c8f9e12d3a4b5c772"},
+      {"key": "Special Feature", "value": "SteamBake Technology", "_id": "697a1b2c8f9e12d3a4b5c773"},
+      {"key": "Cleaning", "value": "Pyrolytic 500°C", "_id": "697a1b2c8f9e12d3a4b5c774"},
+      {"key": "Programs", "value": "10 Functions", "_id": "697a1b2c8f9e12d3a4b5c775"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c776",
+    "title": "Candy 60cm Gas Cooker with Maxioven and Triple Glass Door",
+    "description": "Italian-designed gas cooker offering excellent value with professional features. Four gas burners including high-power wok burner provide versatile cooking options. Extra-large 65-liter Maxioven accommodates family-sized roasts and multiple dishes. Triple-glazed oven door maintains cool exterior temperature for enhanced safety while improving energy efficiency. Enamel pan supports, flame failure device, electronic ignition, and interior oven light. Sleek silver metallic finish with modern aesthetics.",
+    "price": 48000,
+    "compareAtPrice": 62000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Candy",
+    "sku": "CNDY-GC60-036",
+    "images": [
+      "https://m.media-amazon.com/images/I/61VqK8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxL9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 19,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.3,
+      "count": 121
+    },
+    "tags": ["cooker", "gas", "candy", "maxioven", "triple glass"],
+    "specifications": [
+      {"key": "Burners", "value": "4 Gas including Wok", "_id": "697a1b2c8f9e12d3a4b5c777"},
+      {"key": "Oven Capacity", "value": "65L Maxioven", "_id": "697a1b2c8f9e12d3a4b5c778"},
+      {"key": "Door", "value": "Triple Glazed", "_id": "697a1b2c8f9e12d3a4b5c779"},
+      {"key": "Origin", "value": "Italian Design", "_id": "697a1b2c8f9e12d3a4b5c780"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c781",
+    "title": "Indesit 60cm Dual Fuel Cooker with Second Oven",
+    "description": "Best-of-both-worlds dual fuel cooker combining gas hob precision with electric oven performance. Four gas burners including efficient rapid burner for fast cooking. Main multifunction electric oven offers seven cooking programs while second oven provides additional capacity or serves as dedicated grill. Enamel interior resists stains and simplifies cleaning. Programmable electronic timer, catalytic liners in main oven, and storage compartment. Reliable performance in durable white finish.",
+    "price": 58000,
+    "compareAtPrice": 73000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Indesit",
+    "sku": "INDE-DF60-037",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71KpL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 17,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.4,
+      "count": 98
+    },
+    "tags": ["cooker", "dual fuel", "indesit", "second oven", "multifunction"],
+    "specifications": [
+      {"key": "Fuel", "value": "Dual Fuel Gas/Electric", "_id": "697a1b2c8f9e12d3a4b5c782"},
+      {"key": "Main Oven", "value": "7-Function Electric", "_id": "697a1b2c8f9e12d3a4b5c783"},
+      {"key": "Second Oven", "value": "Electric with Grill", "_id": "697a1b2c8f9e12d3a4b5c784"},
+      {"key": "Cleaning", "value": "Catalytic Liners", "_id": "697a1b2c8f9e12d3a4b5c785"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c786",
+    "title": "Kenwood 90cm Range Cooker with Five Burners",
+    "description": "Professional-grade range cooker designed for serious home chefs. Five gas burners spanning 90cm width including powerful 3.8kW wok burner for authentic stir-fry cooking. Dual electric ovens provide 110 liters total capacity - main multifunction fan oven and secondary conventional oven. Separate full-width electric grill compartment. Cast iron pan supports, flame failure devices, electronic ignition throughout. Storage drawer, rotisserie kit included, and premium stainless steel construction with chrome details.",
+    "price": 165000,
+    "compareAtPrice": 198000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Kenwood",
+    "sku": "KEN-RC90-038",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqL8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqK9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 8,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.6,
+      "count": 117
+    },
+    "tags": ["cooker", "range", "kenwood", "90cm", "professional"],
+    "specifications": [
+      {"key": "Width", "value": "90cm Professional", "_id": "697a1b2c8f9e12d3a4b5c787"},
+      {"key": "Burners", "value": "5 Gas including 3.8kW", "_id": "697a1b2c8f9e12d3a4b5c788"},
+      {"key": "Total Capacity", "value": "110L Dual Ovens", "_id": "697a1b2c8f9e12d3a4b5c789"},
+      {"key": "Accessories", "value": "Rotisserie Kit", "_id": "697a1b2c8f9e12d3a4b5c790"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c791",
+    "title": "Defy 60cm Slimline Cooker with Thermofan",
+    "description": "South African engineering adapted for East African markets featuring Thermofan technology for superior heat circulation and faster cooking times. Four-plate vitroceramic hob with rapid-heat zones and touch controls. Multifunction oven with eight cooking modes including defrost and rotisserie. Easy-clean enamel interior, triple-glazed cool-touch door, and illuminated oven cavity. Electronic clock with countdown timer, child safety lock, and energy-efficient A-class rating.",
+    "price": 54000,
+    "compareAtPrice": 68000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Defy",
+    "sku": "DEFY-SL60-039",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxL9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxK8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 21,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.3,
+      "count": 104
+    },
+    "tags": ["cooker", "electric", "defy", "thermofan", "vitroceramic"],
+    "specifications": [
+      {"key": "Hob", "value": "4-Zone Vitroceramic", "_id": "697a1b2c8f9e12d3a4b5c792"},
+      {"key": "Technology", "value": "Thermofan Circulation", "_id": "697a1b2c8f9e12d3a4b5c793"},
+      {"key": "Functions", "value": "8 Cooking Modes", "_id": "697a1b2c8f9e12d3a4b5c794"},
+      {"key": "Origin", "value": "South African Design", "_id": "697a1b2c8f9e12d3a4b5c795"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c796",
+    "title": "Ariston 60cm Built-under Double Oven with Ceramic Hob",
+    "description": "Space-optimizing built-under design perfect for modern fitted kitchens. Dual ovens provide exceptional flexibility with 58-liter main multifunction fan oven and 35-liter top oven ideal for grilling and smaller dishes. Four ceramic zones on integrated hob with residual heat indicators. Diamond Clean enamel interior repels grease for effortless maintenance. Electronic programmable timer, soft-close doors, and telescopic shelf runners. Energy A-rated performance in elegant black glass finish.",
+    "price": 78000,
+    "compareAtPrice": 95000,
+    "category": "Home & Kitchen",
+    "subcategory": "Cookers",
+    "brand": "Ariston",
+    "sku": "ARIS-BU60-040",
+    "images": [
+      "https://m.media-amazon.com/images/I/61KpK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 13,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.5,
+      "count": 86
+    },
+    "tags": ["cooker", "built-under", "ariston", "double oven", "ceramic hob"],
+    "specifications": [
+      {"key": "Installation", "value": "Built-Under", "_id": "697a1b2c8f9e12d3a4b5c797"},
+      {"key": "Main Oven", "value": "58L Multifunction", "_id": "697a1b2c8f9e12d3a4b5c798"},
+      {"key": "Top Oven", "value": "35L with Grill", "_id": "697a1b2c8f9e12d3a4b5c799"},
+      {"key": "Enamel", "value": "Diamond Clean", "_id": "697a1b2c8f9e12d3a4b5c800"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c801",
+    "title": "Samsung 9kg Front Load Washing Machine with EcoBubble",
+    "description": "Revolutionary EcoBubble technology activates detergent in cold water, delivering powerful cleaning while saving up to 70% energy compared to hot water washing. This 9kg capacity front loader features Digital Inverter Motor with 11-year warranty, ensuring quiet operation and exceptional durability. AddWash door lets you add forgotten items mid-cycle. Smart Check diagnostic system troubleshoots issues via smartphone app. Diamond Drum protects fabrics while removing stains effectively. Energy A+++ rated.",
+    "price": 78000,
+    "compareAtPrice": 95000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "Samsung",
+    "sku": "SAM-WM9E-041",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RxL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 24,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.7,
+      "count": 312
+    },
+    "tags": ["washing machine", "samsung", "ecobubble", "front load", "smart"],
+    "specifications": [
+      {"key": "Capacity", "value": "9kg", "_id": "697a1b2c8f9e12d3a4b5c802"},
+      {"key": "Technology", "value": "EcoBubble", "_id": "697a1b2c8f9e12d3a4b5c803"},
+      {"key": "Motor Warranty", "value": "11 Years", "_id": "697a1b2c8f9e12d3a4b5c804"},
+      {"key": "Energy Rating", "value": "A+++", "_id": "697a1b2c8f9e12d3a4b5c805"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c806",
+    "title": "LG 10kg Front Load Washer with AI DD Technology",
+    "description": "Artificial Intelligence Direct Drive technology detects fabric weight and softness automatically, adjusting washing motions for up to 18% better fabric care. This 10kg capacity washer features TurboWash360 that completes full cycle in just 39 minutes. Steam technology removes 99.9% of allergens and sanitizes clothes without harsh chemicals. Smart ThinQ app connectivity allows remote start, cycle monitoring, and download additional wash programs. 6 Motion Direct Drive for optimal fabric care.",
+    "price": 95000,
+    "compareAtPrice": 118000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "LG",
+    "sku": "LG-WM10AI-042",
+    "images": [
+      "https://m.media-amazon.com/images/I/61VqK8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxL9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 18,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.8,
+      "count": 289
+    },
+    "tags": ["washing machine", "lg", "ai technology", "turbowash", "steam"],
+    "specifications": [
+      {"key": "Capacity", "value": "10kg", "_id": "697a1b2c8f9e12d3a4b5c807"},
+      {"key": "AI Technology", "value": "AI DD Smart Detection", "_id": "697a1b2c8f9e12d3a4b5c808"},
+      {"key": "Quick Wash", "value": "TurboWash360 39min", "_id": "697a1b2c8f9e12d3a4b5c809"},
+      {"key": "Sanitization", "value": "Steam 99.9%", "_id": "697a1b2c8f9e12d3a4b5c810"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c811",
+    "title": "Bosch Serie 8 9kg Washing Machine with i-DOS AutoDose",
+    "description": "Intelligent i-DOS system automatically dispenses precise detergent and softener amounts based on load size and fabric type, ensuring optimal results while reducing waste by up to 30%. This premium 9kg washer features Home Connect WiFi for remote control and voice command compatibility with Alexa. ActiveOxygen removes bacteria without chemicals using only tap water and oxygen. SpeedPerfect reduces cycle time by 65% without compromising cleaning. Energy A+++ -30% rating.",
+    "price": 185000,
+    "compareAtPrice": 225000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "Bosch",
+    "sku": "BOSCH-S8-043",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71KpL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 10,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.9,
+      "count": 267
+    },
+    "tags": ["washing machine", "bosch", "i-dos", "autodose", "premium"],
+    "specifications": [
+      {"key": "Capacity", "value": "9kg", "_id": "697a1b2c8f9e12d3a4b5c812"},
+      {"key": "Dosing", "value": "i-DOS AutoDose", "_id": "697a1b2c8f9e12d3a4b5c813"},
+      {"key": "Connectivity", "value": "Home Connect WiFi", "_id": "697a1b2c8f9e12d3a4b5c814"},
+      {"key": "Energy", "value": "A+++ -30%", "_id": "697a1b2c8f9e12d3a4b5c815"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c816",
+    "title": "Whirlpool 8kg Top Load Washer with 6th Sense Technology",
+    "description": "Top-loading convenience meets intelligent washing with 6th Sense technology that automatically adapts water, electricity and time based on load size, saving up to 50% resources. This 8kg capacity washer features ZEN Direct Drive motor for ultra-quiet operation even at high spin speeds. Soft Opening lid prevents slamming, while FreshCare+ steam option keeps laundry fresh for up to 6 hours after cycle ends. Multiple wash programs including delicates, heavy duty, and quick 15-minute cycle.",
+    "price": 58000,
+    "compareAtPrice": 72000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "Whirlpool",
+    "sku": "WHRL-TL8-044",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqL8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqK9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 22,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.5,
+      "count": 198
+    },
+    "tags": ["washing machine", "whirlpool", "top load", "6th sense", "zen motor"],
+    "specifications": [
+      {"key": "Capacity", "value": "8kg", "_id": "697a1b2c8f9e12d3a4b5c817"},
+      {"key": "Type", "value": "Top Load", "_id": "697a1b2c8f9e12d3a4b5c818"},
+      {"key": "Motor", "value": "ZEN Direct Drive", "_id": "697a1b2c8f9e12d3a4b5c819"},
+      {"key": "FreshCare", "value": "6 Hours Steam", "_id": "697a1b2c8f9e12d3a4b5c820"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c821",
+    "title": "Hisense 7kg Front Load Washing Machine with Steam Wash",
+    "description": "Affordable yet feature-rich front loader offering excellent value for money. Steam Wash function penetrates deep into fabrics to remove stubborn stains while eliminating allergens and bacteria. This 7kg capacity washer features Inverter Motor technology for energy-efficient, quiet operation with 10-year warranty. Child Lock ensures safety, LED display shows cycle progress, and delay start timer lets you schedule washing for off-peak hours. Multiple programs including sportswear and wool care.",
+    "price": 48000,
+    "compareAtPrice": 62000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "Hisense",
+    "sku": "HIS-WM7S-045",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxL9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxK8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 30,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.3,
+      "count": 176
+    },
+    "tags": ["washing machine", "hisense", "steam wash", "inverter", "budget"],
+    "specifications": [
+      {"key": "Capacity", "value": "7kg", "_id": "697a1b2c8f9e12d3a4b5c822"},
+      {"key": "Steam Function", "value": "Yes", "_id": "697a1b2c8f9e12d3a4b5c823"},
+      {"key": "Motor Warranty", "value": "10 Years", "_id": "697a1b2c8f9e12d3a4b5c824"},
+      {"key": "Programs", "value": "15 Wash Cycles", "_id": "697a1b2c8f9e12d3a4b5c825"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c826",
+    "title": "Miele W1 9kg Washing Machine with TwinDos AutoDose",
+    "description": "German luxury engineering with exclusive TwinDos automatic dispensing system using two-phase liquid detergent for optimal results with minimal waste. This premium 9kg washer is tested for 20-year lifespan equivalent to 10,000 wash cycles. PowerWash technology delivers exceptional cleaning in just 49 minutes while using only 1 liter per kilogram of laundry. CapDosing allows use of specialized detergents for outdoor wear, sportswear, silk, and down. WiFi connected with remote monitoring.",
+    "price": 385000,
+    "compareAtPrice": 445000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "Miele",
+    "sku": "MIELE-W1-046",
+    "images": [
+      "https://m.media-amazon.com/images/I/61KpK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 5,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 5.0,
+      "count": 342
+    },
+    "tags": ["washing machine", "miele", "luxury", "twindos", "20 year"],
+    "specifications": [
+      {"key": "Capacity", "value": "9kg", "_id": "697a1b2c8f9e12d3a4b5c827"},
+      {"key": "Dosing", "value": "TwinDos 2-Phase", "_id": "697a1b2c8f9e12d3a4b5c828"},
+      {"key": "Lifespan", "value": "20 Years Tested", "_id": "697a1b2c8f9e12d3a4b5c829"},
+      {"key": "Quick Wash", "value": "PowerWash 49min", "_id": "697a1b2c8f9e12d3a4b5c830"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c831",
+    "title": "Electrolux 8kg UltimateCare Front Loader with Vapour Care",
+    "description": "Swedish innovation featuring UltimateCare system with Vapour Care technology that refreshes and dewrinkles clothes without full washing, saving water and energy. This 8kg capacity washer delivers 33% gentler fabric care than hand washing according to Woolmark certification. Hygienic Steam program removes 99.9% bacteria and allergens. Time Manager lets you adjust cycle duration to fit your schedule. Soft Drum pattern protects delicate fabrics while cleaning effectively. Energy A+++ rated.",
+    "price": 125000,
+    "compareAtPrice": 155000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "Electrolux",
+    "sku": "ELUX-UC8-047",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RxL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 14,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.7,
+      "count": 234
+    },
+    "tags": ["washing machine", "electrolux", "vapour care", "woolmark", "gentle"],
+    "specifications": [
+      {"key": "Capacity", "value": "8kg", "_id": "697a1b2c8f9e12d3a4b5c832"},
+      {"key": "Technology", "value": "UltimateCare Vapour", "_id": "697a1b2c8f9e12d3a4b5c833"},
+      {"key": "Certification", "value": "Woolmark Approved", "_id": "697a1b2c8f9e12d3a4b5c834"},
+      {"key": "Fabric Care", "value": "33% Gentler", "_id": "697a1b2c8f9e12d3a4b5c835"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c836",
+    "title": "Beko 10kg RecycledTub Washing Machine with AquaTech",
+    "description": "Environmentally conscious washing machine with drum made from 60+ recycled plastic bottles per unit. AquaTech technology creates powerful shower of water from drum paddles, ensuring even detergent distribution and deep cleaning. This 10kg capacity washer features ProSmart Inverter Motor guaranteeing 10-year reliability and whisper-quiet operation. Pet Hair Removal program effectively removes animal hair from fabrics. StainExpert combats 24 types of stains automatically. Energy A+++ -10% rated.",
+    "price": 68000,
+    "compareAtPrice": 85000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "Beko",
+    "sku": "BEKO-RT10-048",
+    "images": [
+      "https://m.media-amazon.com/images/I/61VqK8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxL9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 19,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.5,
+      "count": 187
+    },
+    "tags": ["washing machine", "beko", "recycled", "aquatech", "eco friendly"],
+    "specifications": [
+      {"key": "Capacity", "value": "10kg", "_id": "697a1b2c8f9e12d3a4b5c837"},
+      {"key": "Eco Feature", "value": "RecycledTub 60 Bottles", "_id": "697a1b2c8f9e12d3a4b5c838"},
+      {"key": "Technology", "value": "AquaTech Shower", "_id": "697a1b2c8f9e12d3a4b5c839"},
+      {"key": "Stain Types", "value": "24 Auto Removal", "_id": "697a1b2c8f9e12d3a4b5c840"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c841",
+    "title": "Siemens iQ500 9kg Washing Machine with varioSpeed",
+    "description": "German precision meets efficiency with varioSpeed technology that reduces any wash cycle time by up to 65% without compromising cleaning quality. This 9kg capacity washer features waterPerfect Plus system that adjusts water usage based on load size and fabric type. Outdoor/Impregnation program maintains waterproofing on technical clothing. touchControl buttons with LED display, reload function to add items mid-cycle, and anti-vibration design for stable operation. Energy A+++ -30% rated.",
+    "price": 142000,
+    "compareAtPrice": 175000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "Siemens",
+    "sku": "SIEM-IQ9-049",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71KpL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 16,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.6,
+      "count": 203
+    },
+    "tags": ["washing machine", "siemens", "variospeed", "german", "efficient"],
+    "specifications": [
+      {"key": "Capacity", "value": "9kg", "_id": "697a1b2c8f9e12d3a4b5c842"},
+      {"key": "Speed Tech", "value": "varioSpeed 65%", "_id": "697a1b2c8f9e12d3a4b5c843"},
+      {"key": "Water System", "value": "waterPerfect Plus", "_id": "697a1b2c8f9e12d3a4b5c844"},
+      {"key": "Energy", "value": "A+++ -30%", "_id": "697a1b2c8f9e12d3a4b5c845"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c846",
+    "title": "Haier 8kg Direct Motion Motor Washing Machine",
+    "description": "Innovative Direct Motion Motor eliminates traditional belt drive for 40% quieter operation and improved energy efficiency. This 8kg capacity washer features Pillow Drum design with unique cushion-like surface that protects delicate fabrics while maintaining powerful cleaning action. Smart Dual Spray rinse system ensures complete detergent removal. ABT antibacterial treatment on door gasket prevents mold growth. Soak program for heavily soiled items, delay start timer, and child lock included.",
+    "price": 62000,
+    "compareAtPrice": 78000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "Haier",
+    "sku": "HAIER-DM8-050",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqL8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqK9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 21,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.4,
+      "count": 158
+    },
+    "tags": ["washing machine", "haier", "direct motion", "quiet", "antibacterial"],
+    "specifications": [
+      {"key": "Capacity", "value": "8kg", "_id": "697a1b2c8f9e12d3a4b5c847"},
+      {"key": "Motor", "value": "Direct Motion Beltless", "_id": "697a1b2c8f9e12d3a4b5c848"},
+      {"key": "Noise Reduction", "value": "40% Quieter", "_id": "697a1b2c8f9e12d3a4b5c849"},
+      {"key": "Drum", "value": "Pillow Protective", "_id": "697a1b2c8f9e12d3a4b5c850"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c851",
+    "title": "AEG 10kg ProSense Washing Machine with AutoDose",
+    "description": "ProSense technology uses advanced sensors to weigh each load and automatically adjusts cycle time, water and energy consumption for perfect results every time. AutoDose automatically dispenses exact amount of detergent needed for up to 44 washes from integrated tanks. This 10kg capacity washer features ProSteam reduces ironing time by up to 30%. SoftPlus pre-soaks fabric softener ensuring even distribution. WiFi connectivity with My AEG app. Premium white finish with chrome details.",
+    "price": 165000,
+    "compareAtPrice": 198000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "AEG",
+    "sku": "AEG-PS10-051",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxL9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxK8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 11,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.7,
+      "count": 224
+    },
+    "tags": ["washing machine", "aeg", "prosense", "autodose", "wifi"],
+    "specifications": [
+      {"key": "Capacity", "value": "10kg", "_id": "697a1b2c8f9e12d3a4b5c852"},
+      {"key": "Sensing", "value": "ProSense Auto-Adjust", "_id": "697a1b2c8f9e12d3a4b5c853"},
+      {"key": "Dosing", "value": "AutoDose 44 Washes", "_id": "697a1b2c8f9e12d3a4b5c854"},
+      {"key": "Steam", "value": "ProSteam -30% Ironing", "_id": "697a1b2c8f9e12d3a4b5c855"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c856",
+    "title": "Candy 9kg RapidO Washing Machine with Smart Touch",
+    "description": "Italian innovation featuring RapidO technology offering complete wash cycles as quick as 14 minutes for lightly soiled items, perfect for Kenya's fast-paced lifestyle. Smart Touch NFC technology lets you download up to 100 additional wash programs to your smartphone and transfer them to the washer instantly. This 9kg capacity washer includes Mix&Wash program that handles mixed fabrics simultaneously. KG Mode weighs load and optimizes resources automatically. Energy A+++ rated.",
+    "price": 72000,
+    "compareAtPrice": 89000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "Candy",
+    "sku": "CNDY-RO9-052",
+    "images": [
+      "https://m.media-amazon.com/images/I/61KpK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 17,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.4,
+      "count": 145
+    },
+    "tags": ["washing machine", "candy", "rapido", "nfc", "quick wash"],
+    "specifications": [
+      {"key": "Capacity", "value": "9kg", "_id": "697a1b2c8f9e12d3a4b5c857"},
+      {"key": "Quick Wash", "value": "RapidO 14 Minutes", "_id": "697a1b2c8f9e12d3a4b5c858"},
+      {"key": "Smart Feature", "value": "NFC 100 Programs", "_id": "697a1b2c8f9e12d3a4b5c859"},
+      {"key": "Load Detection", "value": "KG Mode", "_id": "697a1b2c8f9e12d3a4b5c860"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c861",
+    "title": "Midea 12kg Twin Tub Washing Machine with Spinner",
+    "description": "Practical twin tub design perfect for Kenya's water-conscious households offering independent washing and spinning functions for ultimate flexibility. The generous 12kg washing capacity handles large family loads while separate 9kg spinner ensures clothes come out nearly dry. Powerful pulsator washing action, multiple water level selections, and lint filter keep clothes clean. Rust-proof plastic body, built-in wheels for easy movement, and transparent lids to monitor wash progress. Energy-efficient operation.",
+    "price": 32000,
+    "compareAtPrice": 42000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "Midea",
+    "sku": "MIDEA-TT12-053",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RxL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 38,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.2,
+      "count": 267
+    },
+    "tags": ["washing machine", "midea", "twin tub", "large capacity", "affordable"],
+    "specifications": [
+      {"key": "Wash Capacity", "value": "12kg", "_id": "697a1b2c8f9e12d3a4b5c862"},
+      {"key": "Spin Capacity", "value": "9kg", "_id": "697a1b2c8f9e12d3a4b5c863"},
+      {"key": "Type", "value": "Twin Tub", "_id": "697a1b2c8f9e12d3a4b5c864"},
+      {"key": "Mobility", "value": "Built-in Wheels", "_id": "697a1b2c8f9e12d3a4b5c865"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c866",
+    "title": "Hotpoint 8kg ActiveCare Washing Machine with Stain Removal",
+    "description": "Advanced ActiveCare technology removes over 100 types of stains at just 20°C, saving up to 60% energy compared to conventional 40°C wash while protecting colors and fabrics. This 8kg capacity washer features Rapid cycles completing full wash in 30 or 45 minutes depending on load. Anti-Stain removes even stubborn marks without pre-treatment. Anti-Allergy cycle approved by Allergy UK eliminates 99.9% bacteria and allergens. Digital countdown display and delayed start function up to 24 hours.",
+    "price": 58000,
+    "compareAtPrice": 73000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "Hotpoint",
+    "sku": "HOTP-AC8-054",
+    "images": [
+      "https://m.media-amazon.com/images/I/61VqK8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxL9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 23,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.5,
+      "count": 189
+    },
+    "tags": ["washing machine", "hotpoint", "activecare", "stain removal", "cold wash"],
+    "specifications": [
+      {"key": "Capacity", "value": "8kg", "_id": "697a1b2c8f9e12d3a4b5c867"},
+      {"key": "Stain Removal", "value": "100+ Types at 20°C", "_id": "697a1b2c8f9e12d3a4b5c868"},
+      {"key": "Quick Wash", "value": "Rapid 30/45 Minutes", "_id": "697a1b2c8f9e12d3a4b5c869"},
+      {"key": "Certification", "value": "Allergy UK Approved", "_id": "697a1b2c8f9e12d3a4b5c870"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c871",
+    "title": "Indesit 7kg EcoTime Washing Machine with Water Balance",
+    "description": "Budget-friendly washer with impressive efficiency credentials. EcoTime programs deliver thorough cleaning while reducing energy consumption by up to 70%. Water Balance Plus technology intelligently adjusts water usage based on load size, preventing waste. This 7kg capacity washer features Push&Wash with single button press starting 45-minute cycle perfect for everyday loads. Wool program Woolmark certified for hand-wash-only garments. Delay timer, extra rinse option, and white finish.",
+    "price": 42000,
+    "compareAtPrice": 55000,
+    "category": "Home & Kitchen",
+    "subcategory": "Washing Machines",
+    "brand": "Indesit",
+    "sku": "INDE-ET7-055",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71KpL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 27,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.2,
+      "count": 212
+    },
+    "tags": ["washing machine", "indesit", "ecotime", "water balance", "budget"],
+    "specifications": [
+      {"key": "Capacity", "value": "7kg", "_id": "697a1b2c8f9e12d3a4b5c872"},
+      {"key": "Energy Saving", "value": "EcoTime 70%", "_id": "697a1b2c8f9e12d3a4b5c873"},
+      {"key": "Quick Start", "value": "Push&Wash 45min", "_id": "697a1b2c8f9e12d3a4b5c874"},
+      {"key": "Water Tech", "value": "Water Balance Plus", "_id": "697a1b2c8f9e12d3a4b5c875"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c876",
+    "title": "Philips Airfryer XXL 7.3L with Fat Removal Technology",
+    "description": "Extra-large 7.3-liter capacity cooks complete meals for up to 6 people in one go. Revolutionary Fat Removal Technology captures and drains excess fat during cooking, reducing fat content by up to 90% compared to traditional frying. Twin TurboStar technology removes fat from food while providing crispy golden results. Digital touchscreen with preset programs for chips, chicken, steak, fish, and more. QuickClean basket with non-stick coating dishwasher safe. Includes recipe booklet and app.",
+    "price": 38000,
+    "compareAtPrice": 48000,
+    "category": "Home & Kitchen",
+    "subcategory": "Kitchen Appliances",
+    "brand": "Philips",
+    "sku": "PHIL-AFXXL-056",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqL8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqK9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 28,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.8,
+      "count": 1847
+    },
+    "tags": ["air fryer", "philips", "xxl", "fat removal", "healthy cooking"],
+    "specifications": [
+      {"key": "Capacity", "value": "7.3 Liters", "_id": "697a1b2c8f9e12d3a4b5c877"},
+      {"key": "Serves", "value": "Up to 6 People", "_id": "697a1b2c8f9e12d3a4b5c878"},
+      {"key": "Fat Reduction", "value": "Up to 90%", "_id": "697a1b2c8f9e12d3a4b5c879"},
+      {"key": "Technology", "value": "Twin TurboStar", "_id": "697a1b2c8f9e12d3a4b5c880"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c881",
+    "title": "Ninja Foodi MAX 9.5L Dual Zone Air Fryer",
+    "description": "Revolutionary dual-zone technology lets you cook two different foods at two different temperatures simultaneously, both finishing at the same time thanks to Smart Finish feature. Massive 9.5-liter capacity across two 4.75L drawers perfect for large families or entertaining. Six cooking functions including air fry, roast, bake, reheat, dehydrate, and Max Crisp for extra crunchy results. Cook from frozen to crispy in minutes. Dishwasher-safe ceramic-coated baskets. Digital control panel with built-in timer.",
+    "price": 52000,
+    "compareAtPrice": 65000,
+    "category": "Home & Kitchen",
+    "subcategory": "Kitchen Appliances",
+    "brand": "Ninja",
+    "sku": "NINJA-FDMAX-057",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxL9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxK8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 22,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.9,
+      "count": 2134
+    },
+    "tags": ["air fryer", "ninja", "dual zone", "smart finish", "large capacity"],
+    "specifications": [
+      {"key": "Total Capacity", "value": "9.5L (2x 4.75L)", "_id": "697a1b2c8f9e12d3a4b5c882"},
+      {"key": "Zones", "value": "Dual Independent", "_id": "697a1b2c8f9e12d3a4b5c883"},
+      {"key": "Functions", "value": "6 Cooking Modes", "_id": "697a1b2c8f9e12d3a4b5c884"},
+      {"key": "Smart Feature", "value": "Smart Finish Sync", "_id": "697a1b2c8f9e12d3a4b5c885"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c886",
+    "title": "Tefal ActiFry Genius XL 2in1 Air Fryer 7.2L",
+    "description": "French innovation combining air frying with gentle stirring paddle for perfectly even cooking without manual shaking. The unique 2-in-1 design features dual zone cooking with automatic stirring in lower compartment and static cooking in upper tray. 7.2-liter total capacity feeds up to 8 people. Smart app connectivity offers 250+ recipes with automatic time and temperature settings sent directly to fryer. Nine automatic programs, dual motion technology, and ceramic coating for healthy cooking with minimal oil.",
+    "price": 48000,
+    "compareAtPrice": 62000,
+    "category": "Home & Kitchen",
+    "subcategory": "Kitchen Appliances",
+    "brand": "Tefal",
+    "sku": "TEFAL-AGX-058",
+    "images": [
+      "https://m.media-amazon.com/images/I/61KpK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 19,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.7,
+      "count": 1456
+    },
+    "tags": ["air fryer", "tefal", "actifry", "auto stir", "2in1"],
+    "specifications": [
+      {"key": "Capacity", "value": "7.2L Dual Zone", "_id": "697a1b2c8f9e12d3a4b5c887"},
+      {"key": "Serves", "value": "Up to 8 People", "_id": "697a1b2c8f9e12d3a4b5c888"},
+      {"key": "Unique Feature", "value": "Auto Stirring Paddle", "_id": "697a1b2c8f9e12d3a4b5c889"},
+      {"key": "App Recipes", "value": "250+ Programs", "_id": "697a1b2c8f9e12d3a4b5c890"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c891",
+    "title": "Cosori Pro II 5.5L Smart WiFi Air Fryer",
+    "description": "American-designed air fryer with VeSync app connectivity allowing remote control from anywhere. Monitor cooking progress, adjust temperature and time, or choose from 100+ online recipes all from your smartphone. The 5.5-liter square basket maximizes usable cooking space fitting whole 2kg chicken. Eleven preset functions with shake reminder to ensure even cooking. Quiet operation at just 55dB, rapid heating to 230°C in 3 minutes, and non-stick dishwasher-safe basket. Includes free recipe book.",
+    "price": 28000,
+    "compareAtPrice": 36000,
+    "category": "Home & Kitchen",
+    "subcategory": "Kitchen Appliances",
+    "brand": "Cosori",
+    "sku": "COSO-PRO55-059",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RxL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 34,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.6,
+      "count": 1234
+    },
+    "tags": ["air fryer", "cosori", "wifi", "smart", "app control"],
+    "specifications": [
+      {"key": "Capacity", "value": "5.5 Liters", "_id": "697a1b2c8f9e12d3a4b5c892"},
+      {"key": "Connectivity", "value": "WiFi VeSync App", "_id": "697a1b2c8f9e12d3a4b5c893"},
+      {"key": "Presets", "value": "11 Functions", "_id": "697a1b2c8f9e12d3a4b5c894"},
+      {"key": "Noise Level", "value": "55dB Quiet", "_id": "697a1b2c8f9e12d3a4b5c895"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c896",
+    "title": "Instant Vortex Plus 6-Quart Air Fryer Oven",
+    "description": "Versatile 6-in-1 appliance offering air frying, roasting, broiling, baking, reheating, and dehydrating in one compact unit. EvenCrisp technology delivers crispy, golden results using 95% less oil than traditional frying. The 6-quart/5.7L capacity includes two cooking trays for layered cooking. One-touch smart programs with customizable settings. ClearCook window and internal light let you monitor food without opening. Stainless steel construction with dishwasher-safe components. Includes rotisserie basket and drip pan.",
+    "price": 32000,
+    "compareAtPrice": 42000,
+    "category": "Home & Kitchen",
+    "subcategory": "Kitchen Appliances",
+    "brand": "Instant",
+    "sku": "INST-VP6-060",
+    "images": [
+      "https://m.media-amazon.com/images/I/61VqK8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxL9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 26,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.6,
+      "count": 987
+    },
+    "tags": ["air fryer", "instant", "vortex", "6in1", "oven"],
+    "specifications": [
+      {"key": "Capacity", "value": "6 Quart / 5.7L", "_id": "697a1b2c8f9e12d3a4b5c897"},
+      {"key": "Functions", "value": "6-in-1 Multi-Cook", "_id": "697a1b2c8f9e12d3a4b5c898"},
+      {"key": "Window", "value": "ClearCook with Light", "_id": "697a1b2c8f9e12d3a4b5c899"},
+      {"key": "Oil Reduction", "value": "95% Less", "_id": "697a1b2c8f9e12d3a4b5c900"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c901",
+    "title": "Tower T17088 Vortx 8L Dual Basket Air Fryer",
+    "description": "British-designed dual basket air fryer with innovative Sync and Match functions. Sync ensures both baskets finish cooking simultaneously despite different settings, while Match copies settings from one basket to the other for identical cooking. Combined 8-liter capacity perfect for family meals or batch cooking. Vortx technology circulates superheated air at high speed for crispy results with little to no oil. Each basket independently controlled with digital displays. Three-year manufacturer warranty. Dishwasher-safe components.",
+    "price": 35000,
+    "compareAtPrice": 45000,
+    "category": "Home & Kitchen",
+    "subcategory": "Kitchen Appliances",
+    "brand": "Tower",
+    "sku": "TOWR-VX8D-061",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71KpL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 23,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.5,
+      "count": 823
+    },
+    "tags": ["air fryer", "tower", "dual basket", "sync", "british"],
+    "specifications": [
+      {"key": "Total Capacity", "value": "8L Dual Basket", "_id": "697a1b2c8f9e12d3a4b5c902"},
+      {"key": "Smart Features", "value": "Sync & Match", "_id": "697a1b2c8f9e12d3a4b5c903"},
+      {"key": "Technology", "value": "Vortx Circulation", "_id": "697a1b2c8f9e12d3a4b5c904"},
+      {"key": "Warranty", "value": "3 Years", "_id": "697a1b2c8f9e12d3a4b5c905"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c906",
+    "title": "Chefman 6.3L TurboFry Air Fryer with Viewing Window",
+    "description": "Innovative air fryer featuring viewing window with internal light allowing you to check cooking progress without interrupting the process or losing heat. The generous 6.3-liter capacity accommodates family-sized portions including whole chickens up to 1.8kg. TurboFry technology ensures rapid, even air circulation for consistently crispy results. Eight preset cooking functions with digital touchscreen controls. Auto shut-off safety feature, cool-touch housing, and BPA-free non-stick basket dishwasher safe. Includes detailed recipe guide.",
+    "price": 26000,
+    "compareAtPrice": 34000,
+    "category": "Home & Kitchen",
+    "subcategory": "Kitchen Appliances",
+    "brand": "Chefman",
+    "sku": "CHEF-TF63-062",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqL8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqK9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 29,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.4,
+      "count": 756
+    },
+    "tags": ["air fryer", "chefman", "window", "turbofry", "view cooking"],
+    "specifications": [
+      {"key": "Capacity", "value": "6.3 Liters", "_id": "697a1b2c8f9e12d3a4b5c907"},
+      {"key": "Unique Feature", "value": "Viewing Window + Light", "_id": "697a1b2c8f9e12d3a4b5c908"},
+      {"key": "Presets", "value": "8 Functions", "_id": "697a1b2c8f9e12d3a4b5c909"},
+      {"key": "Safety", "value": "Auto Shut-Off", "_id": "697a1b2c8f9e12d3a4b5c910"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c911",
+    "title": "Gourmia 7L Digital Air Fryer with Dehydrator Function",
+    "description": "Multifunctional air fryer doubling as dehydrator with dedicated settings for making beef jerky, dried fruits, and vegetable chips. FryForce 360° technology ensures even cooking from all angles eliminating need to shake or flip food. The spacious 7-liter capacity handles meals for 4-6 people easily. Twelve one-touch cooking presets including steak, poultry, seafood, vegetables, and baking. Temperature range 50-200°C, timer up to 60 minutes, and guided cooking display. Removable dishwasher-safe basket and crisper tray.",
+    "price": 30000,
+    "compareAtPrice": 39000,
+    "category": "Home & Kitchen",
+    "subcategory": "Kitchen Appliances",
+    "brand": "Gourmia",
+    "sku": "GOUR-AF7D-063",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxL9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxK8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 31,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.5,
+      "count": 674
+    },
+    "tags": ["air fryer", "gourmia", "dehydrator", "fryforce", "multifunctional"],
+    "specifications": [
+      {"key": "Capacity", "value": "7 Liters", "_id": "697a1b2c8f9e12d3a4b5c912"},
+      {"key": "Technology", "value": "FryForce 360°", "_id": "697a1b2c8f9e12d3a4b5c913"},
+      {"key": "Functions", "value": "12 Presets + Dehydrate", "_id": "697a1b2c8f9e12d3a4b5c914"},
+      {"key": "Temp Range", "value": "50-200°C", "_id": "697a1b2c8f9e12d3a4b5c915"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c916",
+    "title": "PowerXL 5.3L Vortex Air Fryer Pro Plus",
+    "description": "Compact yet powerful air fryer perfect for Kenyan apartments and smaller kitchens. Advanced vortex air circulation technology cooks food 30% faster than conventional ovens while using 70% less energy. The 5.3-liter capacity feeds 3-4 people comfortably. Seven preset smart programs with one-touch operation. LED digital display with temperature control from 80-200°C. Rapid air technology creates crispy exterior while maintaining juicy interior. Cool-touch handle, automatic shut-off, and non-stick coating for easy cleanup.",
+    "price": 22000,
+    "compareAtPrice": 29000,
+    "category": "Home & Kitchen",
+    "subcategory": "Kitchen Appliances",
+    "brand": "PowerXL",
+    "sku": "PWXL-VP53-064",
+    "images": [
+      "https://m.media-amazon.com/images/I/61KpK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 36,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.3,
+      "count": 589
+    },
+    "tags": ["air fryer", "powerxl", "compact", "vortex", "energy efficient"],
+    "specifications": [
+      {"key": "Capacity", "value": "5.3 Liters", "_id": "697a1b2c8f9e12d3a4b5c917"},
+      {"key": "Speed", "value": "30% Faster Cooking", "_id": "697a1b2c8f9e12d3a4b5c918"},
+      {"key": "Energy", "value": "70% Less", "_id": "697a1b2c8f9e12d3a4b5c919"},
+      {"key": "Presets", "value": "7 Smart Programs", "_id": "697a1b2c8f9e12d3a4b5c920"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c921",
+    "title": "Black+Decker 4.5L Crisp N Bake Air Fry Toaster Oven",
+    "description": "Versatile countertop appliance combining air fryer, toaster oven, and convection oven in one space-saving unit. Dual convection fans circulate heated air for crispy air-fried results or even baking. The 4.5-liter air fry basket included along with baking pan and rack. Five cooking functions: air fry, bake, broil, toast, and keep warm. Fits six slices of bread or 12-inch pizza. Intuitive dial controls with 60-minute timer and stay-on function. Removable crumb tray for easy cleaning. Stainless steel construction.",
+    "price": 18000,
+    "compareAtPrice": 24000,
+    "category": "Home & Kitchen",
+    "subcategory": "Kitchen Appliances",
+    "brand": "Black+Decker",
+    "sku": "BD-CNB45-065",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71RxL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 33,
+    "featured": false,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.4,
+      "count": 1123
+    },
+    "tags": ["air fryer", "toaster oven", "black decker", "multifunctional", "compact"],
+    "specifications": [
+      {"key": "Capacity", "value": "4.5L Air Fry", "_id": "697a1b2c8f9e12d3a4b5c922"},
+      {"key": "Functions", "value": "5-in-1", "_id": "697a1b2c8f9e12d3a4b5c923"},
+      {"key": "Fits", "value": "6 Slices / 12\" Pizza", "_id": "697a1b2c8f9e12d3a4b5c924"},
+      {"key": "Fans", "value": "Dual Convection", "_id": "697a1b2c8f9e12d3a4b5c925"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c926",
+    "title": "Apple iPhone 15 Pro 256GB with A17 Pro Chip",
+    "description": "Cutting-edge smartphone powered by revolutionary A17 Pro chip built on 3-nanometer technology delivering unprecedented performance and efficiency. Aerospace-grade titanium design is lightest Pro model ever with textured matte glass back. ProMotion 6.1-inch Super Retina XDR always-on display with Dynamic Island. Pro camera system features 48MP main camera with second-generation quad-pixel sensor, 3x telephoto, and ultra-wide lenses. Action button replaces ring switch for customizable shortcuts. USB-C with USB 3 speeds up to 10Gb/s. All-day battery life.",
+    "price": 165000,
+    "compareAtPrice": 185000,
+    "category": "Electronics",
+    "subcategory": "Phones & Tablets",
+    "brand": "Apple",
+    "sku": "APPL-IP15P-066",
+    "images": [
+      "https://m.media-amazon.com/images/I/61VqK8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxL9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 14,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.9,
+      "count": 2847
+    },
+    "tags": ["smartphone", "apple", "iphone 15", "a17 pro", "titanium"],
+    "specifications": [
+      {"key": "Storage", "value": "256GB", "_id": "697a1b2c8f9e12d3a4b5c927"},
+      {"key": "Chip", "value": "A17 Pro 3nm", "_id": "697a1b2c8f9e12d3a4b5c928"},
+      {"key": "Display", "value": "6.1\" ProMotion XDR", "_id": "697a1b2c8f9e12d3a4b5c929"},
+      {"key": "Camera", "value": "48MP Pro System", "_id": "697a1b2c8f9e12d3a4b5c930"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c931",
+    "title": "Samsung Galaxy S24 Ultra 512GB with Galaxy AI",
+    "description": "Flagship Android smartphone featuring groundbreaking Galaxy AI for intelligent photo editing, real-time translation, and smart assistance. Snapdragon 8 Gen 3 for Galaxy delivers desktop-class performance with vapor chamber cooling. Stunning 6.8-inch Dynamic AMOLED 2X display with 2600 nits peak brightness and anti-reflective coating. Revolutionary 200MP main camera with AI-powered Space Zoom up to 100x. Built-in S Pen for precise note-taking and editing. Titanium frame, Gorilla Armor glass, IP68 water resistance. 5000mAh battery with 45W fast charging.",
+    "price": 178000,
+    "compareAtPrice": 205000,
+    "category": "Electronics",
+    "subcategory": "Phones & Tablets",
+    "brand": "Samsung",
+    "sku": "SAM-S24U-067",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71KpL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 12,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.8,
+      "count": 1923
+    },
+    "tags": ["smartphone", "samsung", "galaxy s24", "ai", "200mp"],
+    "specifications": [
+      {"key": "Storage", "value": "512GB", "_id": "697a1b2c8f9e12d3a4b5c932"},
+      {"key": "AI Features", "value": "Galaxy AI", "_id": "697a1b2c8f9e12d3a4b5c933"},
+      {"key": "Display", "value": "6.8\" Dynamic AMOLED 2X", "_id": "697a1b2c8f9e12d3a4b5c934"},
+      {"key": "Camera", "value": "200MP + 100x Zoom", "_id": "697a1b2c8f9e12d3a4b5c935"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c936",
+    "title": "Google Pixel 8 Pro 256GB with Tensor G3 AI Chip",
+    "description": "Pure Android experience directly from Google featuring custom Tensor G3 chip optimized for AI and machine learning. Magic Editor uses AI to reimagine your photos, while Best Take combines similar photos to create perfect group shot. Professional 6.7-inch LTPO OLED display with 120Hz adaptive refresh and up to 2400 nits brightness. Advanced triple camera system with 50MP main, 48MP ultra-wide, and 48MP telephoto with 5x optical zoom. Seven years of OS, security, and feature updates guaranteed. Temperature sensor for health monitoring.",
+    "price": 125000,
+    "compareAtPrice": 145000,
+    "category": "Electronics",
+    "subcategory": "Phones & Tablets",
+    "brand": "Google",
+    "sku": "GOOG-PX8P-068",
+    "images": [
+      "https://m.media-amazon.com/images/I/61YqL8PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqK9QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 18,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.7,
+      "count": 1567
+    },
+    "tags": ["smartphone", "google", "pixel", "tensor g3", "pure android"],
+    "specifications": [
+      {"key": "Storage", "value": "256GB", "_id": "697a1b2c8f9e12d3a4b5c937"},
+      {"key": "Chip", "value": "Google Tensor G3", "_id": "697a1b2c8f9e12d3a4b5c938"},
+      {"key": "Updates", "value": "7 Years Guaranteed", "_id": "697a1b2c8f9e12d3a4b5c939"},
+      {"key": "AI Features", "value": "Magic Editor + Best Take", "_id": "697a1b2c8f9e12d3a4b5c940"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c941",
+    "title": "Dell XPS 15 Laptop Intel Core i7 13th Gen 16GB RAM 1TB SSD",
+    "description": "Premium business laptop featuring stunning 15.6-inch 3.5K OLED InfinityEdge display with 400 nits brightness and 100% DCI-P3 color accuracy perfect for content creators and professionals. Powered by 13th Gen Intel Core i7-13700H processor with NVIDIA GeForce RTX 4050 graphics for demanding workflows. Precision machined aluminum chassis with carbon fiber palm rest. Expansive glass touchpad, backlit keyboard, and quad speaker system tuned by Waves MaxxAudio Pro. Thunderbolt 4 ports, Wi-Fi 6E, and all-day battery life. Windows 11 Pro.",
+    "price": 245000,
+    "compareAtPrice": 285000,
+    "category": "Electronics",
+    "subcategory": "Computers",
+    "brand": "Dell",
+    "sku": "DELL-XPS15-069",
+    "images": [
+      "https://m.media-amazon.com/images/I/61RxL9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71MxK8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 8,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.8,
+      "count": 876
+    },
+    "tags": ["laptop", "dell", "xps", "oled", "content creation"],
+    "specifications": [
+      {"key": "Processor", "value": "Intel Core i7 13th Gen", "_id": "697a1b2c8f9e12d3a4b5c942"},
+      {"key": "RAM", "value": "16GB DDR5", "_id": "697a1b2c8f9e12d3a4b5c943"},
+      {"key": "Storage", "value": "1TB NVMe SSD", "_id": "697a1b2c8f9e12d3a4b5c944"},
+      {"key": "Display", "value": "15.6\" 3.5K OLED", "_id": "697a1b2c8f9e12d3a4b5c945"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  },
+  {
+    "_id": "697a1b2c8f9e12d3a4b5c946",
+    "title": "Apple MacBook Air M3 15-inch 16GB RAM 512GB SSD",
+    "description": "Impossibly thin and light 15-inch laptop powered by revolutionary Apple M3 chip delivering up to 18 hours of battery life. Stunning Liquid Retina display supports one billion colors with 500 nits brightness. Fanless design ensures completely silent operation while maintaining exceptional performance for coding, design, and creative work. 1080p FaceTime HD camera, six-speaker sound system with Spatial Audio, and MagSafe 3 charging. Two Thunderbolt ports, up to 2x faster Wi-Fi 6E. Available in Midnight, Starlight, Space Gray, Silver.",
+    "price": 285000,
+    "compareAtPrice": 325000,
+    "category": "Electronics",
+    "subcategory": "Computers",
+    "brand": "Apple",
+    "sku": "APPL-MBA15-070",
+    "images": [
+      "https://m.media-amazon.com/images/I/61KpK9PRXWL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71VqL8QTVWL._AC_SL1500_.jpg"
+    ],
+    "stock": 10,
+    "featured": true,
+    "active": true,
+    "buybackEnabled": false,
+    "rating": {
+      "average": 4.9,
+      "count": 1234
+    },
+    "tags": ["laptop", "apple", "macbook air", "m3", "silent"],
+    "specifications": [
+      {"key": "Chip", "value": "Apple M3", "_id": "697a1b2c8f9e12d3a4b5c947"},
+      {"key": "RAM", "value": "16GB Unified Memory", "_id": "697a1b2c8f9e12d3a4b5c948"},
+      {"key": "Storage", "value": "512GB SSD", "_id": "697a1b2c8f9e12d3a4b5c949"},
+      {"key": "Battery", "value": "Up to 18 Hours", "_id": "697a1b2c8f9e12d3a4b5c950"}
+    ],
+    "createdAt": "2026-02-02T08:00:00.000Z",
+    "updatedAt": "2026-02-02T08:00:00.000Z",
+    "__v": 0,
+    "seller": "6976297c179fffdb9b330c12"
+  }
+]
