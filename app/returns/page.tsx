@@ -1,8 +1,8 @@
 import { FiRotateCcw, FiCheckCircle, FiXCircle, FiAlertCircle } from 'react-icons/fi';
 
 export const metadata = {
-  title: 'Returns & Refunds - Gadget World',
-  description: 'Our return and refund policy for easy returns',
+  title: 'Returns & Refunds - Edau Farm',
+  description: 'Our return and refund policy for farm products',
 };
 
 export default function ReturnsPage() {

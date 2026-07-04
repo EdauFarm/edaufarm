@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Privacy Policy - Gadget World',
+  title: 'Privacy Policy - Edau Farm',
   description: 'Our privacy policy and how we protect your data',
 };
 
@@ -85,7 +85,7 @@ export default function PrivacyPage() {
             If you have questions about this Privacy Policy, please contact us at:
           </p>
           <div className="bg-gray-50 p-4 rounded-lg mt-2">
-            <p className="text-gray-700">Email: privacy@gadgetworld.loopnet.tech</p>
+            <p className="text-gray-700">Email: privacy@edaufarm.com</p>
             <p className="text-gray-700">Phone: +254 700 000 000</p>
           </div>
         </section>

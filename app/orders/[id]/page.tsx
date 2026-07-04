@@ -207,7 +207,7 @@ export default function OrderDetailPage() {
       <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
         <p className="text-sm text-green-700">
           <strong>Whatsapp | Number | 25431419320</strong><br />
-          <strong>Email:</strong> gadgetworld@estuagcen.resend.app
+          <strong>Email:</strong> support@edaufarm.com
         </p>
       </div>
       <div className="bg-white border border-gray-200 rounded p-6 mb-6">

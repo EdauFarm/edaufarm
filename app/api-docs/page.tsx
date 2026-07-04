@@ -11,7 +11,7 @@ export default function ApiDocsPage() {
       {/* Header */}
       <div className="bg-primary-600 text-white py-6 shadow-lg">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-3xl font-bold">GADGET WORLD API Documentation</h1>
+          <h1 className="text-3xl font-bold">EDAU FARM API Documentation</h1>
           <p className="text-primary-100 mt-2">Interactive API documentation and testing interface</p>
         </div>
       </div>

@@ -1,18 +1,18 @@
 import { FiShoppingBag, FiTruck, FiShield, FiHeart } from 'react-icons/fi';
 
 export const metadata = {
-  title: 'About Us - Gadget World',
-  description: 'Learn about Gadget World - your premier electronics marketplace',
+  title: 'About Us - Edau Farm',
+  description: 'Learn about Edau Farm - West Pokots premier sustainable farm for honey, fruits, and livestock',
 };
 
 export default function AboutPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-4xl font-bold text-gray-900 mb-6">About Gadget World</h1>
-      
+      <h1 className="text-4xl font-bold text-gray-900 mb-6">About Edau Farm</h1>
+
       <div className="prose max-w-none">
         <p className="text-lg text-gray-700 mb-6">
-          Gadget World is your premier destination for electronics and gadgets, providing customers with access to millions of products across various categories including electronics, mobile devices, computers, gaming, and more.
+          Edau Farm is West Pokots premier sustainable farm, providing customers with premium Acacia honey, fresh seasonal fruits, Dorper sheep, and free-range poultry products.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 my-12">

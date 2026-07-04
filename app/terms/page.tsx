@@ -1,20 +1,20 @@
 export const metadata = {
-  title: 'Terms of Service - Gadget World',
-  description: 'Terms and conditions for using Gadget World',
+  title: 'Terms of Service - Edau Farm',
+  description: 'Terms and conditions for using Edau Farm',
 };
 
 export default function TermsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="text-4xl font-bold text-gray-900 mb-6">Terms of Service</h1>
-      
+
       <div className="prose max-w-none space-y-6">
         <p className="text-sm text-gray-600">Last updated: January 27, 2026</p>
 
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-3">1. Acceptance of Terms</h2>
           <p className="text-gray-700">
-            By accessing and using Gadget World's website and services, you agree to be bound by these 
+            By accessing and using Edau Farm's website and services, you agree to be bound by these
             Terms of Service. If you do not agree to these terms, please do not use our services.
           </p>
         </section>
@@ -75,14 +75,14 @@ export default function TermsPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-3">7. Intellectual Property</h2>
           <p className="text-gray-700">
             All content on this website, including text, graphics, logos, and software, is the 
-            property of Gadget World or its content suppliers and is protected by intellectual property laws.
+            property of Edau Farm or its content suppliers and is protected by intellectual property laws.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-3">8. Limitation of Liability</h2>
           <p className="text-gray-700">
-            Gadget World shall not be liable for any indirect, incidental, special, consequential, or 
+            Edau Farm shall not be liable for any indirect, incidental, special, consequential, or 
             punitive damages resulting from your use of or inability to use our services.
           </p>
         </section>
@@ -98,7 +98,7 @@ export default function TermsPage() {
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-3">10. Contact Information</h2>
           <div className="bg-gray-50 p-4 rounded-lg">
-            <p className="text-gray-700">Email: legal@gadgetworld.loopnet.tech</p>
+            <p className="text-gray-700">Email: legal@edaufarm.com</p>
             <p className="text-gray-700">Phone: +254 700 000 000</p>
             <p className="text-gray-700">Address: Nairobi, Kenya</p>
           </div>

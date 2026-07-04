@@ -30,7 +30,7 @@ export default function TopBar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="text-lg font-normal text-gray-900 hover:text-gray-700 transition-colors">
-            Gadget world
+            Edau Farm
           </Link>
           {/* Dynamic Search (center, hidden on mobile) */}
           <div className="flex-1 mx-6 hidden md:block">

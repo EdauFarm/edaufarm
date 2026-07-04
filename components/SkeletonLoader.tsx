@@ -1,6 +1,6 @@
 /**
  * Skeleton Loader Components
- * Gadget World-style shimmer loading states for various UI elements
+ * Edau Farm-style shimmer loading states for various UI elements
  */
 
 export const ProductCardSkeleton = () => (

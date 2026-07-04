@@ -42,7 +42,7 @@ export default function TopBar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-xl font-normal text-gray-900">Gadget world</span>
+            <span className="text-xl font-normal text-gray-900">Edau Farm</span>
           </Link>
 
           {/* Right Icons */}
@@ -82,7 +82,7 @@ export default function TopBar() {
 
               <Link href="/" className="flex items-center">
                 <div className="text-2xl font-bold">
-                  <span className="text-orange-600">GADGET WORLD</span>
+                  <span className="text-primary-600">EDAU FARM</span>
                 </div>
               </Link>
             </div>
@@ -184,7 +184,7 @@ export default function TopBar() {
           <div className="flex flex-col h-full">
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b">
-              <span className="text-2xl font-bold text-orange-600">GADGET WORLD</span>
+              <span className="text-2xl font-bold text-primary-600">EDAU FARM</span>
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="p-2 -mr-2 text-gray-500 hover:text-gray-700"

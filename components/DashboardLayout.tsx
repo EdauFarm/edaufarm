@@ -4,22 +4,7 @@ import { useState, ReactNode } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-import { 
-  LayoutDashboard, 
-  Package, 
-  Users, 
-  ShoppingCart, 
-  BarChart3, 
-  Settings,
-  Menu,
-  X,
-  LogOut,
-  Home,
-  Store,
-  Bell,
-  Search,
-  ChevronRight
-} from 'lucide-react';
+import { LayoutDashboard, Package, Users, ShoppingCart, ChartBar as BarChart3, Settings, Menu, X, LogOut, Hop as Home, Store, Bell, Search, ChevronRight } from 'lucide-react';
 import { signOut } from 'next-auth/react';
 
 interface DashboardLayoutProps {
@@ -130,7 +115,7 @@ export default function DashboardLayout({ children, role }: DashboardLayoutProps
                 </div>
                 <div>
                   <h2 className="text-xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
-                    Gadget World
+                    Edau Farm
                   </h2>
                   <p className="text-xs font-medium text-gray-600 capitalize">{role} Dashboard</p>
                 </div>

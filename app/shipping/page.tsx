@@ -1,8 +1,8 @@
 import { FiTruck, FiPackage, FiMapPin, FiClock } from 'react-icons/fi';
 
 export const metadata = {
-  title: 'Shipping Information - Gadget World',
-  description: 'Learn about our shipping policies and delivery options',
+  title: 'Shipping Information - Edau Farm',
+  description: 'Learn about our shipping policies and delivery options for farm products',
 };
 
 export default function ShippingPage() {

@@ -39,7 +39,7 @@ export default function WelcomeTutorial({ onClose }: WelcomeTutorialProps) {
     {
       title: deviceType === 'ios' ? "Install on iPhone/iPad 📱" : deviceType === 'android' ? "Install on Android 📱" : "Install on Your Device 💻",
       content: deviceType === 'ios' 
-        ? "Follow these simple steps to add Gadget World to your home screen:"
+        ? "Follow these simple steps to add Edau Farm to your home screen:"
         : deviceType === 'android'
         ? "Follow these simple steps to install the app:"
         : "Install Edau Farm for quick access from your desktop:",

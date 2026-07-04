@@ -14,7 +14,7 @@ export const revalidate = 10; // Revalidate every 10 seconds
 export async function generateStaticParams() {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_APP_URL || 'https://gadgetworld.loopnet.tech'}/api/products?featured=true&limit=20`,
+      `${process.env.NEXT_PUBLIC_APP_URL || 'https://edaufarm.com'}/api/products?featured=true&limit=20`,
       { 
         next: { 
           revalidate: 600 // Cache popular products list for 10 minutes
@@ -39,7 +39,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_APP_URL || 'https://gadgetworld.loopnet.tech'}/api/products/${params.id}`,
+      `${process.env.NEXT_PUBLIC_APP_URL || 'https://edaufarm.com'}/api/products/${params.id}`,
       { 
         next: { 
           revalidate: 10 // Cache for 10 seconds
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     const { product } = await res.json();
     
     return {
-      title: `${product.title} - Gadget World`,
+      title: `${product.title} - Edau Farm`,
       description: product.description?.substring(0, 160),
       openGraph: {
         title: product.title,
@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     };
   } catch (error) {
     return {
-      title: 'Product - Gadget World',
+      title: 'Product - Edau Farm',
     };
   }
 }
@@ -81,7 +81,7 @@ async function getProduct(id: string) {
       const protocol = reqHeaders.get('x-forwarded-proto') || 'https';
       baseUrl = `${protocol}://${host}`;
     } catch (e) {
-      baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://gadgetworld.loopnet.tech';
+      baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://edaufarm.com';
     }
     const res = await fetch(
       `${baseUrl}/api/products/${id}`,

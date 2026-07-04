@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { isAdmin } from '@/lib/roleCheck';
 import toast from 'react-hot-toast';
-import { Star, Trash2, Edit, Plus, ArrowLeft, Check, Search } from 'lucide-react';
+import { Star, Trash2, CreditCard as Edit, Plus, ArrowLeft, Check, Search } from 'lucide-react';
 import axios from 'axios';
 import Link from 'next/link';
 
@@ -425,7 +425,7 @@ export default function AdminReviewsPage() {
                       value={formData.userEmail}
                       onChange={(e) => setFormData({ ...formData, userEmail: e.target.value })}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
-                      placeholder="migrated@gadgetworld.com"
+                      placeholder="customer@edaufarm.com"
                     />
                   </div>
                 </div>

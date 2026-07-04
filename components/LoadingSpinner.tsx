@@ -57,7 +57,7 @@ export default function LoadingSpinner({
           </div>
           {branded && (
             <h2 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-2">
-              GADGET WORLD
+              EDAU FARM
             </h2>
           )}
           <div className="flex gap-2 justify-center mt-4">
