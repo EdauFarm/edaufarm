@@ -1,7 +1,7 @@
 {
-  "name": "mkulima-bora",
+  "name": "edau-farm",
   "version": "1.0.0",
-  "description": "Mkulima Bora - Agricultural Marketplace Platform",
+  "description": "Edau Farm - West Pokot's Premier Sustainable Farm. Premium Acacia honey, fresh fruits, Dorper sheep, and free-range poultry.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

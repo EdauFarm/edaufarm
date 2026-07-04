@@ -19,43 +19,43 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    title: 'Fresh from the Farm',
-    subtitle: 'Quality produce directly from local farmers to your table',
-    image: 'https://images.unsplash.com/photo-1500651230702-0e2d8a49d4e7?w=800&q=80',
-    cta: 'Shop Vegetables',
-    ctaLink: '/categories/vegetables',
-    bgGradient: 'from-green-700 via-green-800 to-green-900',
-    emoji: '🥬',
+    title: 'Premium Acacia Honey',
+    subtitle: 'Pure, raw honey from the acacia forests of West Pokot. Harvested with traditional wisdom.',
+    image: 'https://images.unsplash.com/photo-1587049352846-4a232e259e83?w=800&q=80',
+    cta: 'Shop Honey',
+    ctaLink: '/products?category=honey',
+    bgGradient: 'from-amber-600 via-amber-700 to-amber-800',
+    emoji: '🍯',
   },
   {
     id: 2,
-    title: 'Healthy Livestock',
-    subtitle: 'Premium cattle, goats, and poultry from trusted farmers',
-    image: 'https://images.unsplash.com/photo-1516467508483-2e767f6e4d5a?w=800&q=80',
-    cta: 'Browse Livestock',
-    ctaLink: '/categories/livestock',
-    bgGradient: 'from-amber-700 via-amber-800 to-amber-900',
-    emoji: '🐄',
+    title: 'Fresh Seasonal Fruits',
+    subtitle: 'Sun-ripened mangoes, pawpaws, and passion fruits from our orchards.',
+    image: 'https://images.unsplash.com/photo-1619566636858-adf8ef8c7d23?w=800&q=80',
+    cta: 'Shop Fruits',
+    ctaLink: '/products?category=fruits',
+    bgGradient: 'from-orange-500 via-orange-600 to-orange-700',
+    emoji: '🥭',
   },
   {
     id: 3,
-    title: 'Organic Fruits',
-    subtitle: 'Fresh, organic fruits harvested at peak ripeness',
-    image: 'https://images.unsplash.com/photo-1619566636858-adf8ef8c7d23?w=800&q=80',
-    cta: 'Shop Fruits',
-    ctaLink: '/categories/fruits',
-    bgGradient: 'from-emerald-700 via-emerald-800 to-emerald-900',
-    emoji: '🍎',
+    title: 'Premium Dorper Sheep',
+    subtitle: 'Quality breeding stock and healthy meat goats raised on natural pastures.',
+    image: 'https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=800&q=80',
+    cta: 'View Livestock',
+    ctaLink: '/products?category=livestock',
+    bgGradient: 'from-green-700 via-green-800 to-green-900',
+    emoji: '🐑',
   },
   {
     id: 4,
-    title: 'Farm Equipment',
-    subtitle: 'Quality tools and machinery for modern farming',
-    image: 'https://images.unsplash.com/photo-1506900260372-b4608a8b53d8?w=800&q=80',
-    cta: 'Shop Equipment',
-    ctaLink: '/categories/farm-equipment',
-    bgGradient: 'from-gray-700 via-gray-800 to-gray-900',
-    emoji: '🚜',
+    title: 'Free-Range Poultry',
+    subtitle: 'Healthy chickens and eggs from birds raised on open pastures.',
+    image: 'https://images.unsplash.com/photo-1548550023-2cdb30c18c73?w=800&q=80',
+    cta: 'Shop Poultry',
+    ctaLink: '/products?category=poultry',
+    bgGradient: 'from-yellow-600 via-yellow-700 to-amber-800',
+    emoji: '🐔',
   },
 ];
 
@@ -108,12 +108,12 @@ export default function HeroBanner() {
               sizes="100vw"
               className="object-cover"
             />
-            <div className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient} opacity-80`}></div>
+            <div className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient} opacity-85`}></div>
           </div>
 
           <div className="relative w-full h-full flex items-center px-6 md:px-12">
             <div className="flex-1 text-white z-20">
-              <div className="text-4xl md:text-6xl mb-3 md:mb-4">
+              <div className="text-5xl md:text-7xl mb-3 md:mb-4">
                 {slide.emoji}
               </div>
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4 leading-tight drop-shadow-lg">

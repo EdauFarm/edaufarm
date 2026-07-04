@@ -19,35 +19,35 @@ export default function Footer() {
           {/* About */}
           <div>
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <span className="text-2xl">🌱</span> MKULIMA BORA
+              <span className="text-2xl">🌾</span> EDAU FARM
             </h3>
             <p className="text-gray-400 text-sm">
-              Connecting farmers directly with buyers. Fresh produce, quality livestock, and farm products delivered to your doorstep.
+              West Pokot's premier sustainable farm. Premium Acacia honey, fresh seasonal fruits, Dorper sheep, and free-range poultry. Where tradition meets sustainability.
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Products */}
           <div>
-            <h4 className="font-semibold mb-4">Categories</h4>
+            <h4 className="font-semibold mb-4">Our Products</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link href="/categories/vegetables" className="hover:text-white transition-colors">
-                  Vegetables
+                <Link href="/products?category=honey" className="hover:text-white transition-colors">
+                  Acacia Honey
                 </Link>
               </li>
               <li>
-                <Link href="/categories/fruits" className="hover:text-white transition-colors">
-                  Fruits
+                <Link href="/products?category=fruits" className="hover:text-white transition-colors">
+                  Fresh Fruits
                 </Link>
               </li>
               <li>
-                <Link href="/categories/livestock" className="hover:text-white transition-colors">
-                  Livestock
+                <Link href="/products?category=livestock" className="hover:text-white transition-colors">
+                  Dorper Sheep
                 </Link>
               </li>
               <li>
-                <Link href="/categories/seeds-seedlings" className="hover:text-white transition-colors">
-                  Seeds & Seedlings
+                <Link href="/products?category=poultry" className="hover:text-white transition-colors">
+                  Free-Range Poultry
                 </Link>
               </li>
             </ul>
@@ -73,8 +73,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/market-prices" className="hover:text-white transition-colors">
-                  Market Prices
+                <Link href="/about" className="hover:text-white transition-colors">
+                  About Our Farm
                 </Link>
               </li>
             </ul>
@@ -95,8 +95,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/seller-agreement" className="hover:text-white transition-colors">
-                  Seller Agreement
+                <Link href="/about" className="hover:text-white transition-colors">
+                  Our Story
                 </Link>
               </li>
             </ul>
@@ -105,9 +105,9 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="text-center text-sm text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Mkulima Bora. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Edau Farm. All rights reserved.</p>
             <p className="mt-2">
-              From Farm to Table | Supporting Local Farmers
+              West Pokot, Kenya | Where Tradition Meets Sustainability
             </p>
           </div>
         </div>

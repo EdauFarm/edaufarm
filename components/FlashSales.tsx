@@ -86,7 +86,7 @@ export default function FlashSales() {
         products = products.sort(() => Math.random() - 0.5);
         setSeasonalProducts(products);
       } catch (error: any) {
-        setError('Failed to load seasonal deals');
+        setError('Failed to load seasonal harvest deals');
       } finally {
         setLoading(false);
       }
@@ -124,8 +124,8 @@ export default function FlashSales() {
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg shadow-xl overflow-hidden my-8">
         <div className="p-8 text-center">
           <FiAlertCircle className="w-12 h-12 text-white mx-auto mb-4" />
-          <h3 className="text-white text-lg font-semibold mb-2">Seasonal Deals Temporarily Unavailable</h3>
-          <p className="text-primary-100 text-sm">We'll be back with fresh deals soon!</p>
+          <h3 className="text-white text-lg font-semibold mb-2">Seasonal Harvest Temporarily Unavailable</h3>
+          <p className="text-primary-100 text-sm">We'll be back with fresh farm deals soon!</p>
         </div>
       </section>
     );
@@ -136,12 +136,12 @@ export default function FlashSales() {
   }
 
   return (
-    <section className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg shadow-xl overflow-hidden my-8">
-      <div className="flex flex-col sm:flex-row items-center justify-between px-4 md:px-6 py-3 md:py-4 bg-primary-700 gap-3">
+    <section className="bg-gradient-to-r from-amber-600 to-amber-700 rounded-lg shadow-xl overflow-hidden my-8">
+      <div className="flex flex-col sm:flex-row items-center justify-between px-4 md:px-6 py-3 md:py-4 bg-amber-700 gap-3">
         <div className="flex items-center space-x-2 md:space-x-3">
           <FiZap className="w-5 h-5 md:w-6 md:h-6 text-yellow-300 animate-pulse" />
           <h2 className="text-white font-bold text-lg md:text-2xl">Seasonal Harvest Deals</h2>
-          <span className="bg-yellow-400 text-primary-700 px-2 md:px-3 py-0.5 md:py-1 rounded-full text-xs md:text-sm font-bold animate-pulse">
+          <span className="bg-yellow-400 text-amber-800 px-2 md:px-3 py-0.5 md:py-1 rounded-full text-xs md:text-sm font-bold animate-pulse">
             FRESH
           </span>
         </div>
@@ -150,17 +150,17 @@ export default function FlashSales() {
           <FiClock className="w-4 h-4 text-white hidden sm:inline" />
           <span className="text-white text-xs md:text-sm font-medium">Harvest ends in:</span>
           <div className="flex space-x-1 md:space-x-2">
-            <div className="bg-white text-primary-600 px-2 md:px-3 py-1.5 md:py-2 rounded-md font-bold text-xs md:text-base min-w-[2.5rem] md:min-w-[3rem] text-center shadow-md">
+            <div className="bg-white text-amber-700 px-2 md:px-3 py-1.5 md:py-2 rounded-md font-bold text-xs md:text-base min-w-[2.5rem] md:min-w-[3rem] text-center shadow-md">
               {formatTime(timeLeft.hours)}
               <div className="text-[8px] md:text-[10px] text-gray-600 font-normal">HRS</div>
             </div>
             <span className="text-white text-base md:text-xl font-bold self-center">:</span>
-            <div className="bg-white text-primary-600 px-2 md:px-3 py-1.5 md:py-2 rounded-md font-bold text-xs md:text-base min-w-[2.5rem] md:min-w-[3rem] text-center shadow-md">
+            <div className="bg-white text-amber-700 px-2 md:px-3 py-1.5 md:py-2 rounded-md font-bold text-xs md:text-base min-w-[2.5rem] md:min-w-[3rem] text-center shadow-md">
               {formatTime(timeLeft.minutes)}
               <div className="text-[8px] md:text-[10px] text-gray-600 font-normal">MIN</div>
             </div>
             <span className="text-white text-base md:text-xl font-bold self-center">:</span>
-            <div className="bg-white text-primary-600 px-2 md:px-3 py-1.5 md:py-2 rounded-md font-bold text-xs md:text-base min-w-[2.5rem] md:min-w-[3rem] text-center shadow-md">
+            <div className="bg-white text-amber-700 px-2 md:px-3 py-1.5 md:py-2 rounded-md font-bold text-xs md:text-base min-w-[2.5rem] md:min-w-[3rem] text-center shadow-md">
               {formatTime(timeLeft.seconds)}
               <div className="text-[8px] md:text-[10px] text-gray-600 font-normal">SEC</div>
             </div>
@@ -182,9 +182,9 @@ export default function FlashSales() {
             <Link
               key={product.id}
               href={`/products/${product.id}`}
-              className="group bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all hover:scale-105 hover:border-primary-500"
+              className="group bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all hover:scale-105 hover:border-amber-500"
             >
-              <div className="relative aspect-square bg-gradient-to-br from-green-50 to-emerald-50">
+              <div className="relative aspect-square bg-gradient-to-br from-amber-50 to-yellow-50">
                 {product.compare_at_price && (
                   <div className="absolute top-2 left-2 z-10 bg-red-600 text-white px-2 py-1 rounded-md font-bold text-sm">
                     -{calculateDiscount(product.price, product.compare_at_price)}%
@@ -192,7 +192,7 @@ export default function FlashSales() {
                 )}
 
                 {product.is_organic && (
-                  <div className="absolute top-2 right-2 z-10 bg-green-600 text-white px-2 py-1 rounded-md font-bold text-xs">
+                  <div className="absolute top-2 right-2 z-10 bg-primary-600 text-white px-2 py-1 rounded-md font-bold text-xs">
                     Organic
                   </div>
                 )}
@@ -211,7 +211,7 @@ export default function FlashSales() {
                     <div className="w-12 h-12 mb-2 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 flex items-center justify-center">
                       <FiPackage className="w-6 h-6 text-white" />
                     </div>
-                    <p className="text-xs text-gray-500 text-center">Mkulima Bora</p>
+                    <p className="text-xs text-gray-500 text-center">Edau Farm</p>
                   </div>
                 )}
               </div>
@@ -220,12 +220,12 @@ export default function FlashSales() {
                 {product.categories?.name && (
                   <p className="text-[10px] text-primary-600 font-medium mb-1">{product.categories.name}</p>
                 )}
-                <h3 className="text-xs font-medium text-gray-800 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors break-words h-8">
+                <h3 className="text-xs font-medium text-gray-800 mb-2 line-clamp-2 group-hover:text-primary-700 transition-colors break-words h-8">
                   {product.name}
                 </h3>
 
                 <div className="flex flex-col gap-1 mb-2">
-                  <span className="text-sm font-bold text-primary-600">
+                  <span className="text-sm font-bold text-primary-700">
                     {formatCurrency(product.price)}
                   </span>
                   {product.compare_at_price && (
@@ -262,7 +262,7 @@ export default function FlashSales() {
               className="group bg-white rounded-lg border border-gray-200 overflow-hidden active:scale-95 flex-shrink-0"
               style={{ width: '140px' }}
             >
-              <div className="relative aspect-square bg-gradient-to-br from-green-50 to-emerald-50">
+              <div className="relative aspect-square bg-gradient-to-br from-amber-50 to-yellow-50">
                 {product.compare_at_price && (
                   <div className="absolute top-1.5 left-1.5 z-10 bg-red-600 text-white px-1.5 py-0.5 rounded-md font-bold text-xs">
                     -{calculateDiscount(product.price, product.compare_at_price)}%
@@ -270,7 +270,7 @@ export default function FlashSales() {
                 )}
 
                 {product.is_organic && (
-                  <div className="absolute top-1.5 right-1.5 z-10 bg-green-600 text-white px-1.5 py-0.5 rounded-md font-bold text-[10px]">
+                  <div className="absolute top-1.5 right-1.5 z-10 bg-primary-600 text-white px-1.5 py-0.5 rounded-md font-bold text-[10px]">
                     Organic
                   </div>
                 )}
@@ -289,7 +289,7 @@ export default function FlashSales() {
                     <div className="w-10 h-10 mb-1 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 flex items-center justify-center">
                       <FiPackage className="w-5 h-5 text-white" />
                     </div>
-                    <p className="text-[10px] text-gray-500 text-center">Mkulima Bora</p>
+                    <p className="text-[10px] text-gray-500 text-center">Edau Farm</p>
                   </div>
                 )}
               </div>
@@ -300,7 +300,7 @@ export default function FlashSales() {
                 </h3>
 
                 <div className="flex flex-col gap-0.5 mb-1.5">
-                  <span className="text-xs font-bold text-primary-600">
+                  <span className="text-xs font-bold text-primary-700">
                     {formatCurrency(product.price)}
                   </span>
                   {product.compare_at_price && (
@@ -328,9 +328,9 @@ export default function FlashSales() {
 
         <Link
           href="/products?featured=true"
-          className="flex items-center justify-center space-x-2 mt-3 text-primary-600 font-semibold text-sm py-2 border border-primary-600 rounded-lg active:scale-95"
+          className="flex items-center justify-center space-x-2 mt-3 text-primary-700 font-semibold text-sm py-2 border border-primary-600 rounded-lg active:scale-95"
         >
-          <span>See All Seasonal Deals</span>
+          <span>See All Harvest Deals</span>
           <FiArrowRight className="w-4 h-4" />
         </Link>
       </div>

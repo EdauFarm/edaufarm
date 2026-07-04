@@ -32,8 +32,13 @@ const unitLabels: Record<string, string> = {
   sack: 'sack',
   crate: 'crate',
   litre: 'L',
+  liter: 'L',
   dozen: 'dz',
   box: 'box',
+  jar: 'jar',
+  bottle: 'btl',
+  tray: 'tray',
+  bucket: 'bucket',
 };
 
 export default function ProductCard({ product }: ProductCardProps) {
@@ -48,7 +53,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
     const shareData = {
       title: product.name,
-      text: `Check out ${product.name} on Mkulima Bora`,
+      text: `Check out ${product.name} from Edau Farm`,
       url: `${window.location.origin}/products/${product.id}`,
     };
 
@@ -69,14 +74,14 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={`/products/${product.id}`} className="block group">
       <div className="bg-white rounded-lg overflow-hidden border border-gray-100 hover:shadow-md transition-shadow duration-200">
-        <div className="relative aspect-square bg-gradient-to-br from-green-50 to-emerald-50">
+        <div className="relative aspect-square bg-gradient-to-br from-amber-50 to-yellow-50">
           {product.images?.[0] && !imageError ? (
             <Image
               src={product.images[0]}
               alt={product.name}
               fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="object-cover p-4"
+              className="object-cover"
               loading="lazy"
               onError={() => setImageError(true)}
             />
@@ -86,7 +91,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 <FiPackage className="w-10 h-10 text-white" />
               </div>
               <div className="text-center">
-                <p className="text-xs font-semibold text-gray-900 mb-1">Mkulima Bora</p>
+                <p className="text-xs font-semibold text-gray-900 mb-1">Edau Farm</p>
                 <p className="text-xs text-gray-500">Image unavailable</p>
               </div>
             </div>
@@ -99,7 +104,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
 
           {product.is_organic && (
-            <div className="absolute top-2 right-10 bg-green-600 text-white px-2 py-0.5 text-xs font-medium rounded flex items-center gap-1">
+            <div className="absolute top-2 right-10 bg-primary-600 text-white px-2 py-0.5 text-xs font-medium rounded flex items-center gap-1">
               <span>🌿</span> Organic
             </div>
           )}

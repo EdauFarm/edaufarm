@@ -9,21 +9,19 @@ import DynamicSearch from '@/components/DynamicSearch';
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: 'Mkulima Bora - Fresh Farm Products Direct from Farmers',
-  description: 'Connect with local farmers. Buy fresh produce, livestock, seeds, and farm equipment. Quality agricultural products with fast delivery.',
+  title: 'Edau Farm - Premium Honey, Fruits, Livestock & Poultry from West Pokot',
+  description: 'West Pokot\'s premier sustainable farm. Premium Acacia honey, fresh seasonal fruits, Dorper sheep, and free-range poultry. Order fresh farm products online.',
 };
 
 const categoryIcons: Record<string, string> = {
-  'vegetables': '🥬',
-  'fruits': '🍎',
-  'crops-grains': '🌾',
-  'livestock': '🐄',
+  'honey': '🍯',
+  'fruits': '🥭',
+  'livestock': '🐑',
   'poultry': '🐔',
+  'vegetables': '🥬',
   'dairy': '🥛',
-  'seeds-seedlings': '🌱',
-  'fertilizers': '🧪',
-  'farm-equipment': '🚜',
-  'animal-feed': '饲料',
+  'eggs': '🥚',
+  'seeds': '🌱',
 };
 
 async function getCategories() {
@@ -72,18 +70,18 @@ export default async function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <section className="mb-12">
           <div className="mb-6">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Shop by Category</h2>
-            <p className="text-gray-600 mt-1">Browse our agricultural product categories</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Our Farm Products</h2>
+            <p className="text-gray-600 mt-1">Fresh from West Pokot, Kenya</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {categories.map((category) => (
               <Link
                 key={category.id}
-                href={`/categories/${category.slug}`}
-                className="group bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl p-4 sm:p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-primary-100"
+                href={`/products?category=${category.slug}`}
+                className="group bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 sm:p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-amber-100"
               >
                 <div className="text-4xl sm:text-5xl mb-2 sm:mb-3">
-                  {categoryIcons[category.slug] || '🌱'}
+                  {categoryIcons[category.slug] || '🌿'}
                 </div>
                 <h3 className="font-semibold text-gray-800 text-sm sm:text-base group-hover:text-primary-700 transition-colors">
                   {category.name}
@@ -98,28 +96,28 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 sm:p-8 mb-12">
+        <section className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl p-6 sm:p-8 mb-12 border border-amber-100">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-                🌾 Fresh from the Farm
+                🌾 Where Tradition Meets Sustainability
               </h2>
               <p className="text-gray-600">
-                Quality produce directly from local farmers. Support agriculture, eat fresh.
+                Edau Farm has been committed to sustainable agriculture since 2015, honoring our ancestral lands while embracing eco-friendly farming methods.
               </p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600">500+</div>
-                <div className="text-sm text-gray-600">Farmers</div>
+                <div className="text-3xl font-bold text-primary-600">9+</div>
+                <div className="text-sm text-gray-600">Years</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600">10K+</div>
-                <div className="text-sm text-gray-600">Products</div>
+                <div className="text-3xl font-bold text-primary-600">100%</div>
+                <div className="text-sm text-gray-600">Organic</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600">47</div>
-                <div className="text-sm text-gray-600">Counties</div>
+                <div className="text-3xl font-bold text-primary-600">50+</div>
+                <div className="text-sm text-gray-600">Acres</div>
               </div>
             </div>
           </div>
@@ -129,7 +127,7 @@ export default async function Home() {
           <div className="flex items-center justify-between mb-6">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Featured Products</h2>
-              <p className="text-gray-600 mt-1">Handpicked fresh produce from trusted farmers</p>
+              <p className="text-gray-600 mt-1">Premium quality from our farm to your table</p>
             </div>
             <Link
               href="/products"
@@ -148,19 +146,19 @@ export default async function Home() {
 
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <div className="bg-amber-50 rounded-xl p-6 border border-amber-100">
-            <div className="text-3xl mb-3">🚚</div>
-            <h3 className="font-semibold text-gray-900 mb-2">Fast Delivery</h3>
-            <p className="text-sm text-gray-600">Fresh produce delivered within 24-48 hours across Kenya</p>
+            <div className="text-3xl mb-3">🍯</div>
+            <h3 className="font-semibold text-gray-900 mb-2">Pure Acacia Honey</h3>
+            <p className="text-sm text-gray-600">Raw, unprocessed honey from the acacia forests of West Pokot</p>
           </div>
           <div className="bg-green-50 rounded-xl p-6 border border-green-100">
-            <div className="text-3xl mb-3">✅</div>
-            <h3 className="font-semibold text-gray-900 mb-2">Verified Farmers</h3>
-            <p className="text-sm text-gray-600">All sellers are vetted for quality and authenticity</p>
+            <div className="text-3xl mb-3">🐑</div>
+            <h3 className="font-semibold text-gray-900 mb-2">Quality Livestock</h3>
+            <p className="text-sm text-gray-600">Premium Dorper sheep and goats raised on natural pastures</p>
           </div>
-          <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-            <div className="text-3xl mb-3">💳</div>
-            <h3 className="font-semibold text-gray-900 mb-2">Secure Payments</h3>
-            <p className="text-sm text-gray-600">M-Pesa and card payments protected with SSL encryption</p>
+          <div className="bg-yellow-50 rounded-xl p-6 border border-yellow-100">
+            <div className="text-3xl mb-3">🚚</div>
+            <h3 className="font-semibold text-gray-900 mb-2">Farm to Door</h3>
+            <p className="text-sm text-gray-600">Fresh products delivered across Kenya via M-Pesa</p>
           </div>
         </section>
       </div>

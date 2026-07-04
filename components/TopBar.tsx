@@ -29,8 +29,8 @@ export default function TopBar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="text-lg font-semibold text-primary-700 hover:text-primary-600 transition-colors flex items-center gap-2">
-            <span className="text-2xl">🌱</span>
-            <span className="text-primary-700">Mkulima Bora</span>
+            <span className="text-2xl">🌾</span>
+            <span className="text-primary-700">Edau Farm</span>
           </Link>
           {/* ...existing code... */}
           <div className="flex items-center gap-2">
