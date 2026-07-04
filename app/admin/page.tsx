@@ -105,10 +105,10 @@ export default function AdminDashboard() {
 
   // Settings state
   const [systemSettings, setSystemSettings] = useState({
-    siteName: 'Gadget World',
-    siteDescription: 'Best Electronics Shopping Online',
+    siteName: 'Edau Farm',
+    siteDescription: 'West Pokots Premier Sustainable Farm',
     adminEmail: 'docta2856@gmail.com',
-    contactEmail: 'support@gadgetworld.com',
+    contactEmail: 'support@edaufarm.com',
     supportPhone: '+254 700 000 000',
     maintenanceMode: false,
     allowRegistration: true,
@@ -347,7 +347,7 @@ export default function AdminDashboard() {
               </div>
               <div>
                 <h2 className="text-xl font-bold text-slate-900">Admin Panel</h2>
-                <p className="text-sm text-slate-500">Gadget World</p>
+                <p className="text-sm text-slate-500">Edau Farm</p>
               </div>
             </div>
             <button

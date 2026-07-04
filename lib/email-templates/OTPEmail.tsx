@@ -89,7 +89,7 @@ export const OTPEmail: React.FC<OTPEmailProps> = ({ name, otp, purpose }) => {
       <body>
         <div className="container">
           <div className="header">
-            <h1>🛒️ Gadget World</h1>
+            <h1>🌾 Edau Farm</h1>
           </div>
           <div className="content">
             <h2>Hello {name},</h2>
@@ -105,7 +105,7 @@ export const OTPEmail: React.FC<OTPEmailProps> = ({ name, otp, purpose }) => {
               <strong>⚠️ Security Notice:</strong>
               <ul style={{ margin: '10px 0 0', paddingLeft: '20px' }}>
                 <li>Never share this OTP with anyone</li>
-                <li>Gadget World staff will never ask for your OTP</li>
+                <li>Edau Farm staff will never ask for your OTP</li>
                 <li>This code expires in 10 minutes</li>
               </ul>
             </div>
@@ -114,11 +114,11 @@ export const OTPEmail: React.FC<OTPEmailProps> = ({ name, otp, purpose }) => {
             
             <p style={{ marginTop: '30px' }}>
               Best regards,<br/>
-              <strong>The Gadget World Team</strong>
+              <strong>The Edau Farm Team</strong>
             </p>
           </div>
           <div className="footer">
-            <p>© 2026 Gadget World. All rights reserved.</p>
+            <p>© 2026 Edau Farm. All rights reserved.</p>
             <p>This is an automated message, please do not reply to this email.</p>
           </div>
         </div>

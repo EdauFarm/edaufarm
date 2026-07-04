@@ -8,8 +8,8 @@ export default function WelcomeTutorialWrapper() {
 
   useEffect(() => {
     // Check if user has been guided before
-    const hasBeenGuided = localStorage.getItem('gadgetworld-tutorial-guided');
-    const completedDate = localStorage.getItem('gadgetworld-tutorial-completed-date');
+    const hasBeenGuided = localStorage.getItem('edaufarm-tutorial-guided');
+    const completedDate = localStorage.getItem('edaufarm-tutorial-completed-date');
 
     // Show tutorial for new users who haven't been guided
     if (!hasBeenGuided) {

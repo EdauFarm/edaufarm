@@ -169,7 +169,7 @@ const WalletTransactionEmail: React.FC<WalletTransactionEmailProps> = ({
                       For security reasons, never share your wallet PIN or M-Pesa details with anyone.
                     </p>
                     <p style={{ margin: '10px 0 0 0', fontSize: '12px', color: '#9ca3af', textAlign: 'center' }}>
-                      © 2026 Gadget World. All rights reserved.
+                      © 2026 Edau Farm. All rights reserved.
                     </p>
                   </td>
                 </tr>

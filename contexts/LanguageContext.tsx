@@ -102,7 +102,7 @@ const translations = {
     'sell.step3.title': 'Start Selling',
     'sell.step3.desc': 'Receive orders and grow your business',
     'sell.ready.title': 'Ready to Start Selling?',
-    'sell.ready.desc': 'Join thousands of successful merchants on Gadget World',
+    'sell.ready.desc': 'Join thousands of successful merchants on Edau Farm',
     'sell.ready.cta': 'Create Account',
     
     // Help Page

@@ -110,8 +110,8 @@ export function generateHTMLReceipt(order: any, user: any): string {
 </head>
 <body>
   <div class="header">
-    <h1>GADGET WORLD</h1>
-    <p>Africa's #1 Online Shopping Destination</p>
+    <h1 style="color: #4CAF50;">EDAU FARM</h1>
+    <p>West Pokot's Premier Sustainable Farm</p>
   </div>
 
   <div class="receipt-title">ORDER RECEIPT</div>
@@ -181,7 +181,7 @@ export function generateHTMLReceipt(order: any, user: any): string {
   </div>
 
   <div class="footer">
-    <p>Thank you for shopping with Gadget World!</p>
+    <p>Thank you for shopping with Edau Farm!</p>
     <p>For support, contact us at support@updates.loopnet.tech | +254 700 000 000</p>
     <p style="margin-top: 10px;" class="no-print">
       <button onclick="window.print()" style="background: #f68b1e; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px;">Print Receipt</button>

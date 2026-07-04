@@ -50,7 +50,7 @@ const BuybackEmail: React.FC<BuybackEmailProps> = ({
       case 'completed':
         return {
           title: 'Buyback Completed - Wallet Credited',
-          message: `Success! KSh ${approvedAmount?.toLocaleString()} has been credited to your Gadget World wallet for ${productName}. You can withdraw to M-Pesa anytime.`,
+          message: `Success! KSh ${approvedAmount?.toLocaleString()} has been credited to your Edau Farm wallet for ${productName}. You can withdraw to M-Pesa anytime.`,
           color: '#1f2937',
           icon: '🎉',
         };
@@ -168,7 +168,7 @@ const BuybackEmail: React.FC<BuybackEmailProps> = ({
                       Need help? Contact us at <a href="mailto:support@updates.loopnet.tech" style={{ color: '#FF6600' }}>support@updates.loopnet.tech</a> or call +254 700 000 000
                     </p>
                     <p style={{ margin: '10px 0 0 0', fontSize: '12px', color: '#9ca3af', textAlign: 'center' }}>
-                      © 2026 Gadget World. All rights reserved.
+                      © 2026 Edau Farm. All rights reserved.
                     </p>
                   </td>
                 </tr>

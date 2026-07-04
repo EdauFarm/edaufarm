@@ -16,8 +16,8 @@ export async function generateOrderReceipt(order: any, user: any): Promise<Buffe
       });
 
       // Header
-      doc.fontSize(20).font('Helvetica-Bold').text('GADGET WORLD', { align: 'center' });
-      doc.fontSize(10).font('Helvetica').text('Africa\'s #1 Online Shopping Destination', { align: 'center' });
+      doc.fontSize(20).font('Helvetica-Bold').text('EDAU FARM', { align: 'center' });
+      doc.fontSize(10).font('Helvetica').text('West Pokot\'s Premier Sustainable Farm', { align: 'center' });
       doc.moveDown();
       doc.fontSize(16).font('Helvetica-Bold').text('ORDER RECEIPT', { align: 'center' });
       doc.moveDown(2);
@@ -111,7 +111,7 @@ export async function generateOrderReceipt(order: any, user: any): Promise<Buffe
 
       // Footer
       doc.fontSize(8).font('Helvetica').text(
-        'Thank you for shopping with Gadget World!',
+        'Thank you for shopping with Edau Farm!',
         50,
         750,
         { align: 'center' }

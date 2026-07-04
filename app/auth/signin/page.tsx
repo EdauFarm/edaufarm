@@ -65,7 +65,10 @@ function SignInForm() {
       <div className="max-w-md w-full">
         {/* Logo/Header */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Gadget World</h1>
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <span className="text-3xl">🌾</span>
+            <h1 className="text-3xl font-bold text-primary-700">Edau Farm</h1>
+          </div>
           <p className="text-gray-500 text-sm">Welcome back</p>
         </div>
 
@@ -132,10 +135,10 @@ function SignInForm() {
         {/* Sign Up Link */}
         <div className="mt-6 text-center bg-white border border-gray-200 rounded p-6">
           <p className="text-gray-600 text-sm">
-            New to Gadget World?{' '}
+            New to Edau Farm?{' '}
             <Link
               href="/auth/signup"
-              className="text-gray-900 hover:underline font-medium"
+              className="text-primary-700 hover:underline font-medium"
             >
               Create an account
             </Link>

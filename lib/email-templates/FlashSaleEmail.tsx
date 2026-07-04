@@ -183,8 +183,8 @@ export const FlashSaleEmail: React.FC<FlashSaleEmailProps> = ({ name, products, 
           </div>
           
           <div className="footer">
-            <p>© 2026 Gadget World. All rights reserved.</p>
-            <p>You're receiving this because you subscribed to Gadget World marketing emails.</p>
+            <p>© 2026 Edau Farm. All rights reserved.</p>
+            <p>You're receiving this because you subscribed to Edau Farm marketing emails.</p>
             <p><a href="#" style={{ color: '#6b7280' }}>Unsubscribe</a> | <a href="#" style={{ color: '#6b7280' }}>Update Preferences</a></p>
           </div>
         </div>
@@ -350,7 +350,7 @@ export const AbandonedCartEmail: React.FC<AbandonedCartEmailProps> = ({
           </div>
           
           <div className="footer">
-            <p>© 2026 Jumia. All rights reserved.</p>
+            <p>© 2026 Edau Farm. All rights reserved.</p>
             <p>Need help? Contact us at support@updates.loopnet.tech</p>
           </div>
         </div>

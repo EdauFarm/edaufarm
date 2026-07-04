@@ -31,7 +31,7 @@ export default function WelcomeTutorial({ onClose }: WelcomeTutorialProps) {
 
   const steps = [
     {
-      title: "Welcome to Gadget World! 👋",
+      title: "Welcome to Edau Farm! 👋",
       content: "Thank you for visiting! For the best shopping experience, we recommend installing our app on your device. It's fast, works offline, and feels like a native app!",
       icon: <FiSmartphone className="w-6 h-6" />,
       action: "Get Started"
@@ -42,7 +42,7 @@ export default function WelcomeTutorial({ onClose }: WelcomeTutorialProps) {
         ? "Follow these simple steps to add Gadget World to your home screen:"
         : deviceType === 'android'
         ? "Follow these simple steps to install the app:"
-        : "Install Gadget World for quick access from your desktop:",
+        : "Install Edau Farm for quick access from your desktop:",
       icon: <FiDownload className="w-6 h-6" />,
       action: "Show Me How"
     },
@@ -54,7 +54,7 @@ export default function WelcomeTutorial({ onClose }: WelcomeTutorialProps) {
     },
     {
       title: "Ready to Shop! 🛒",
-      content: "Browse our premium collection of electronics, gadgets, laptops, phones, and more. Add items to cart and checkout securely with M-Pesa or other payment methods.",
+      content: "Browse our premium honey, fresh fruits, livestock, and poultry products. Add items to cart and checkout securely with M-Pesa or other payment methods.",
       icon: <FiShoppingCart className="w-6 h-6" />,
       action: "Start Shopping"
     },
@@ -91,16 +91,16 @@ export default function WelcomeTutorial({ onClose }: WelcomeTutorialProps) {
       setCurrentStep(prev => prev + 1);
     } else {
       // Mark tutorial as completed
-      localStorage.setItem('gadgetworld-tutorial-guided', 'true');
-      localStorage.setItem('gadgetworld-tutorial-completed-date', new Date().toISOString());
+      localStorage.setItem('edaufarm-tutorial-guided', 'true');
+      localStorage.setItem('edaufarm-tutorial-completed-date', new Date().toISOString());
       onClose();
     }
   };
 
   const handleSkip = () => {
     // Mark as guided but skipped
-    localStorage.setItem('gadgetworld-tutorial-guided', 'skipped');
-    localStorage.setItem('gadgetworld-tutorial-completed-date', new Date().toISOString());
+    localStorage.setItem('edaufarm-tutorial-guided', 'skipped');
+    localStorage.setItem('edaufarm-tutorial-completed-date', new Date().toISOString());
     onClose();
   };
 
@@ -138,7 +138,7 @@ export default function WelcomeTutorial({ onClose }: WelcomeTutorialProps) {
               <div className="flex-shrink-0 w-6 h-6 bg-gray-900 text-white rounded-full flex items-center justify-center text-xs font-bold">4</div>
               <div className="flex-1">
                 <p className="text-sm text-gray-800"><strong>Tap &quot;Add&quot;</strong></p>
-                <p className="text-xs text-gray-600 mt-1">The Gadget World icon will appear on your home screen! 🎉</p>
+                <p className="text-xs text-gray-600 mt-1">The Edau Farm icon will appear on your home screen! 🎉</p>
               </div>
             </div>
           </div>
@@ -174,7 +174,7 @@ export default function WelcomeTutorial({ onClose }: WelcomeTutorialProps) {
               <div className="flex-shrink-0 w-6 h-6 bg-gray-900 text-white rounded-full flex items-center justify-center text-xs font-bold">4</div>
               <div className="flex-1">
                 <p className="text-sm text-gray-800"><strong>Tap &quot;Install&quot;</strong></p>
-                <p className="text-xs text-gray-600 mt-1">Gadget World will install like a native app! 🎉</p>
+                <p className="text-xs text-gray-600 mt-1">Edau Farm will install like a native app! 🎉</p>
               </div>
             </div>
           </div>
@@ -196,14 +196,14 @@ export default function WelcomeTutorial({ onClose }: WelcomeTutorialProps) {
               <div className="flex-shrink-0 w-6 h-6 bg-gray-900 text-white rounded-full flex items-center justify-center text-xs font-bold">2</div>
               <div className="flex-1">
                 <p className="text-sm text-gray-800"><strong>Click &quot;Install&quot;</strong></p>
-                <p className="text-xs text-gray-600 mt-1">Or go to Menu (⋮) → &quot;Install Gadget World&quot;</p>
+                <p className="text-xs text-gray-600 mt-1">Or go to Menu (⋮) → &quot;Install Edau Farm&quot;</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
               <div className="flex-shrink-0 w-6 h-6 bg-gray-900 text-white rounded-full flex items-center justify-center text-xs font-bold">3</div>
               <div className="flex-1">
                 <p className="text-sm text-gray-800"><strong>Confirm installation</strong></p>
-                <p className="text-xs text-gray-600 mt-1">Gadget World will open in its own window! 🎉</p>
+                <p className="text-xs text-gray-600 mt-1">Edau Farm will open in its own window! 🎉</p>
               </div>
             </div>
           </div>
@@ -279,8 +279,8 @@ export default function WelcomeTutorial({ onClose }: WelcomeTutorialProps) {
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <FiMail className="w-4 h-4 text-gray-600" />
-                <a href="mailto:gadgetworldinternational41@gmail.com" className="text-gray-700 hover:text-gray-900 underline break-all">
-                  gadgetworldinternational41@gmail.com
+                <a href="mailto:support@edaufarm.com" className="text-gray-700 hover:text-gray-900 underline break-all">
+                  support@edaufarm.com
                 </a>
               </div>
             </div>

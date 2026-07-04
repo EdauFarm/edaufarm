@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
       return new Promise((resolve, reject) => {
         const uploadStream = cloudinary.uploader.upload_stream(
           {
-            folder: 'gadgetworld/products',
+            folder: 'edaufarm/products',
             resource_type: 'auto',
             transformation: [
               { width: 1000, height: 1000, crop: 'limit' },

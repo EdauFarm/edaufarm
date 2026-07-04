@@ -16,7 +16,7 @@ export async function sendEmail(
 ) {
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Gadget World <gadgetworld@updates.loopnet.tech>',
+      from: 'Edau Farm <edau@updates.loopnet.tech>',
       to,
       subject,
       html,
@@ -44,9 +44,9 @@ export async function sendOTPEmail(
     );
 
     const { data, error } = await resend.emails.send({
-      from: 'Gadget World <gadgetworld@updates.loopnet.tech>',
+      from: 'Edau Farm <edau@updates.loopnet.tech>',
       to: email,
-      subject: purpose === 'verification' ? 'Verify Your Email - Gadget World' : 'Reset Your Password - Gadget World',
+      subject: purpose === 'verification' ? 'Verify Your Email - Edau Farm' : 'Reset Your Password - Edau Farm',
       html,
     });
 
@@ -78,9 +78,9 @@ export async function sendOrderConfirmationEmail(
     const html = await render(OrderConfirmation(orderData));
 
     const { data, error } = await resend.emails.send({
-      from: 'Jumia Orders <jumia@updates.loopnet.tech>',
+      from: 'Edau Farm Orders <edau@updates.loopnet.tech>',
       to: [email],
-      subject: `Order Confirmation #${orderData.orderNumber} - Jumia`,
+      subject: `Order Confirmation #${orderData.orderNumber} - Edau Farm`,
       html,
     });
 
@@ -112,9 +112,9 @@ export async function sendFlashSaleEmail(
     );
 
     const { data, error } = await resend.emails.send({
-      from: 'Gadget World Deals <gadgetworld@updates.loopnet.tech>',
+      from: 'Edau Farm Deals <edau@updates.loopnet.tech>',
       to: email,
-      subject: '⚡ Flash Sale Alert! Up to 70% OFF - Gadget World',
+      subject: '⚡ Seasonal Harvest Alert! Special Deals - Edau Farm',
       html,
     });
 
@@ -147,7 +147,7 @@ export async function sendAbandonedCartEmail(
     );
 
     const { data, error } = await resend.emails.send({
-      from: 'Gadget World <gadgetworld@updates.loopnet.tech>',
+      from: 'Edau Farm <edau@updates.loopnet.tech>',
       to: [email],
       subject: '🛒 You left items in your cart - Complete your purchase!',
       html,
@@ -209,7 +209,7 @@ export async function sendOrderConfirmation(
       html,
       attachments: [
         {
-          filename: `GadgetWorld-Receipt-${order.orderNumber}.pdf`,
+          filename: `EdauFarm-Receipt-${order.orderNumber}.pdf`,
           content: receiptPDF,
         },
       ],
@@ -256,7 +256,7 @@ export async function sendAdminOrderNotification(order: any, user: any) {
     `;
 
     const { data, error } = await resend.emails.send({
-      from: 'Gadget World System <gadgetworld@updates.loopnet.tech>',
+      from: 'Edau Farm System <edau@updates.loopnet.tech>',
       to: [ADMIN_EMAIL],
       subject: `🛒 New Order #${order.orderNumber} - ${formatPrice(order.total)}`,
       html,
@@ -278,8 +278,8 @@ export async function sendUserOrderCopy(order: any, user: any) {
     const html = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #ea580c; margin: 0;">GADGET WORLD</h1>
-          <p style="color: #666; margin: 5px 0;">Thank you for your order!</p>
+          <h1 style="color: #4CAF50; margin: 0;">EDAU FARM</h1>
+          <p style="color: #666; margin: 5px 0;">West Pokot's Premier Sustainable Farm</p>
         </div>
         
         <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
@@ -345,15 +345,15 @@ export async function sendUserOrderCopy(order: any, user: any) {
         
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 14px;">
           <p>Need help? Contact us at <a href="mailto:support@updates.loopnet.tech" style="color: #ea580c;">support@updates.loopnet.tech</a></p>
-          <p style="margin-top: 15px; color: #999; font-size: 12px;">© ${new Date().getFullYear()} Gadget World. All rights reserved.</p>
+          <p style="margin-top: 15px; color: #999; font-size: 12px;">© ${new Date().getFullYear()} Edau Farm. All rights reserved.</p>
         </div>
       </div>
     `;
 
     const { data, error } = await resend.emails.send({
-      from: 'Gadget World Orders <gadgetworld@updates.loopnet.tech>',
+      from: 'Edau Farm Orders <edau@updates.loopnet.tech>',
       to: [user.email],
-      subject: `Order Confirmation #${order.orderNumber} - Gadget World`,
+      subject: `Order Confirmation #${order.orderNumber} - Edau Farm`,
       html,
     });
 
@@ -381,7 +381,7 @@ export async function sendAccountSetupEmail(
     const html = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #ea580c; margin: 0;">🎉 Welcome to Gadget World!</h1>
+          <h1 style="color: #4CAF50; margin: 0;">🌾 Welcome to Edau Farm!</h1>
         </div>
         
         <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
@@ -420,15 +420,15 @@ export async function sendAccountSetupEmail(
           <p style="margin-top: 15px;">
             Need help? Contact us at <a href="mailto:support@updates.loopnet.tech" style="color: #ea580c;">support@updates.loopnet.tech</a>
           </p>
-          <p style="margin-top: 15px; color: #999; font-size: 12px;">© ${new Date().getFullYear()} Gadget World. All rights reserved.</p>
+          <p style="margin-top: 15px; color: #999; font-size: 12px;">© ${new Date().getFullYear()} Edau Farm. All rights reserved.</p>
         </div>
       </div>
     `;
 
     const { data, error } = await resend.emails.send({
-      from: 'Gadget World <gadgetworld@updates.loopnet.tech>',
+      from: 'Edau Farm <edau@updates.loopnet.tech>',
       to: [email],
-      subject: 'Complete Your Account Setup - Gadget World',
+      subject: 'Complete Your Account Setup - Edau Farm',
       html,
     });
 

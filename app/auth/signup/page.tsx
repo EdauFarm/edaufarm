@@ -104,7 +104,10 @@ export default function SignUpPage() {
       <div className="max-w-md w-full">
         {/* Logo/Header */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Gadget World</h1>
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <span className="text-3xl">🌾</span>
+            <h1 className="text-3xl font-bold text-primary-700">Edau Farm</h1>
+          </div>
           <p className="text-gray-500 text-sm">Create your account</p>
         </div>
 

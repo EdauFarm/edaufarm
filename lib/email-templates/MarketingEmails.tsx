@@ -47,11 +47,11 @@ export const OrderConfirmationHTML = (
         <a href="${process.env.NEXT_PUBLIC_APP_URL}/orders/${orderNumber}" style="display: inline-block; padding: 12px 30px; background: #FF6B35; color: white; text-decoration: none; border-radius: 6px;">Track Order</a>
       </div>
 
-      <p>Thank you for shopping with Gadget World!</p>
-      <p>The Gadget World Team</p>
+      <p>Thank you for shopping with Edau Farm!</p>
+      <p>The Edau Farm Team</p>
     </div>
     <div style="background: #f8f9fa; padding: 20px; text-align: center; color: #666; font-size: 14px;">
-      <p>© 2026 Jumia. All rights reserved.</p>
+      <p>© 2026 Edau Farm. All rights reserved.</p>
       <p>Questions? Contact us at support@updates.loopnet.tech</p>
     </div>
   </div>
@@ -97,10 +97,10 @@ export const PromoEmailHTML = (
 
       <p style="margin-top: 30px;">Don't miss out on this exclusive offer!</p>
       <p>Happy Shopping!</p>
-      <p>The Gadget World Team</p>
+      <p>The Edau Farm Team</p>
     </div>
     <div style="background: #f8f9fa; padding: 20px; text-align: center; color: #666; font-size: 14px;">
-      <p>© 2026 Gadget World. All rights reserved.</p>
+      <p>© 2026 Edau Farm. All rights reserved.</p>
       <p>Don't want these emails? <a href="${process.env.NEXT_PUBLIC_APP_URL}/account/notifications" style="color: #FF6B35;">Manage preferences</a></p>
     </div>
   </div>
@@ -152,7 +152,7 @@ export const AbandonedCartHTML = (
       <p style="margin-top: 30px; text-align: center; color: #666; font-size: 14px;">Hurry! Items in your cart are not reserved and may sell out.</p>
     </div>
     <div style="background: #f8f9fa; padding: 20px; text-align: center; color: #666; font-size: 14px;">
-      <p>© 2026 Gadget World. All rights reserved.</p>
+      <p>© 2026 Edau Farm. All rights reserved.</p>
     </div>
   </div>
 </body>

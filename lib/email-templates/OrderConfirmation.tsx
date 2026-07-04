@@ -200,8 +200,8 @@ export const OrderConfirmation: React.FC<OrderConfirmationProps> = ({
           </div>
           
           <div className="footer">
-            <p>© 2026 Gadget World. All rights reserved.</p>
-            <p>You're receiving this email because you made a purchase at Gadget World.</p>
+            <p>© 2026 Edau Farm. All rights reserved.</p>
+            <p>You're receiving this email because you made a purchase at Edau Farm.</p>
           </div>
         </div>
       </body>

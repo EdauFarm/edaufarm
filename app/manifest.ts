@@ -2,13 +2,13 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Gadget World - Your Premier Electronics Marketplace',
-    short_name: 'Gadget World',
-    description: 'Shop premium electronics, laptops, smart devices, and more at competitive prices.',
+    name: 'Edau Farm - West Pokots Premier Sustainable Farm',
+    short_name: 'Edau Farm',
+    description: 'Premium honey, fresh fruits, livestock, and poultry from West Pokot.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
-    theme_color: '#111827',
+    theme_color: '#4CAF50',
     orientation: 'portrait-primary',
     icons: [
       {
@@ -29,6 +29,6 @@ export default function manifest(): MetadataRoute.Manifest {
         type: 'image/svg+xml',
       },
     ],
-    categories: ['shopping', 'electronics'],
+    categories: ['shopping', 'food'],
   };
 }
