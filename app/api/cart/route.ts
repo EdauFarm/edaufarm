@@ -1,62 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import dbConnect from '@/lib/mongodb';
-import Cart from '@/models/Cart';
-import { authOptions } from '@/lib/auth';
+import { supabase } from '@/lib/supabase';
 
-/**
- * @swagger
- * /cart:
- *   get:
- *     summary: Get user cart
- *     description: Retrieve shopping cart for authenticated user
- *     tags: [Cart]
- *     security:
- *       - BearerAuth: []
- *     responses:
- *       200:
- *         description: User cart
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 cart:
- *                   type: object
- *                   properties:
- *                     _id:
- *                       type: string
- *                     userId:
- *                       type: string
- *                     items:
- *                       type: array
- *                       items:
- *                         type: object
- *                     total:
- *                       type: number
- *       401:
- *         description: Unauthorized
- */
 export async function GET(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const authHeader = request.headers.get('authorization');
+    const userId = authHeader?.replace('Bearer ', '');
 
-    if (!session || !session.user) {
+    if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    await dbConnect();
+    const { data: cartItems, error } = await supabase
+      .from('cart')
+      .select('*, products(*, categories(id, name, slug))')
+      .eq('user_id', userId);
 
-    const existingCart = await Cart.findOne({ userId: session.user.id }).lean();
-
-    if (existingCart) {
-      return NextResponse.json({ cart: existingCart });
+    if (error) {
+      return NextResponse.json(
+        { error: 'Failed to fetch cart', message: error.message },
+        { status: 500 }
+      );
     }
 
-    const newCart = await Cart.create({ userId: session.user.id, items: [], total: 0 });
-    const cart = newCart.toObject();
-
-    return NextResponse.json({ cart });
+    return NextResponse.json({
+      cart: {
+        items: cartItems || [],
+        total: cartItems?.reduce((sum, item) => sum + (item.products?.price || 0) * item.quantity, 0) || 0,
+      },
+    });
   } catch (error: any) {
     return NextResponse.json(
       { error: 'Failed to fetch cart', message: error.message },
@@ -67,42 +38,66 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const authHeader = request.headers.get('authorization');
+    const userId = authHeader?.replace('Bearer ', '');
 
-    if (!session || !session.user) {
+    if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    await dbConnect();
+    const { productId, quantity } = await request.json();
 
-    const { productId, title, price, image, quantity, variant } = await request.json();
-
-    if (!productId || !title || !price || !image || !quantity) {
+    if (!productId || !quantity) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    let cart = await Cart.findOne({ userId: session.user.id });
+    const { data: existingItem, error: fetchError } = await supabase
+      .from('cart')
+      .select('*')
+      .eq('user_id', userId)
+      .eq('product_id', productId)
+      .maybeSingle();
 
-    if (!cart) {
-      cart = await Cart.create({
-        userId: session.user.id,
-        items: [{ productId, title, price, image, quantity, variant }],
-      });
-    } else {
-      const existingItemIndex = cart.items.findIndex(
-        (item) => item.productId.toString() === productId && item.variant === variant
+    if (fetchError) {
+      return NextResponse.json(
+        { error: 'Failed to check cart', message: fetchError.message },
+        { status: 500 }
       );
-
-      if (existingItemIndex > -1) {
-        cart.items[existingItemIndex].quantity += quantity;
-      } else {
-        cart.items.push({ productId, title, price, image, quantity, variant });
-      }
-
-      await cart.save();
     }
 
-    return NextResponse.json({ message: 'Item added to cart', cart });
+    if (existingItem) {
+      const { error: updateError } = await supabase
+        .from('cart')
+        .update({
+          quantity: existingItem.quantity + quantity,
+          updated_at: new Date().toISOString(),
+        })
+        .eq('id', existingItem.id);
+
+      if (updateError) {
+        return NextResponse.json(
+          { error: 'Failed to update cart', message: updateError.message },
+          { status: 500 }
+        );
+      }
+    } else {
+      const { error: insertError } = await supabase
+        .from('cart')
+        .insert({
+          user_id: userId,
+          product_id: productId,
+          quantity,
+        });
+
+      if (insertError) {
+        return NextResponse.json(
+          { error: 'Failed to add to cart', message: insertError.message },
+          { status: 500 }
+        );
+      }
+    }
+
+    return NextResponse.json({ message: 'Item added to cart' });
   } catch (error: any) {
     return NextResponse.json(
       { error: 'Failed to add to cart', message: error.message },
@@ -113,39 +108,47 @@ export async function POST(request: NextRequest) {
 
 export async function PUT(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const authHeader = request.headers.get('authorization');
+    const userId = authHeader?.replace('Bearer ', '');
 
-    if (!session || !session.user) {
+    if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    await dbConnect();
-
-    const { productId, quantity, variant } = await request.json();
-
-    const cart = await Cart.findOne({ userId: session.user.id });
-
-    if (!cart) {
-      return NextResponse.json({ error: 'Cart not found' }, { status: 404 });
-    }
-
-    const itemIndex = cart.items.findIndex(
-      (item) => item.productId.toString() === productId && item.variant === variant
-    );
-
-    if (itemIndex === -1) {
-      return NextResponse.json({ error: 'Item not found in cart' }, { status: 404 });
-    }
+    const { productId, quantity } = await request.json();
 
     if (quantity <= 0) {
-      cart.items.splice(itemIndex, 1);
+      const { error: deleteError } = await supabase
+        .from('cart')
+        .delete()
+        .eq('user_id', userId)
+        .eq('product_id', productId);
+
+      if (deleteError) {
+        return NextResponse.json(
+          { error: 'Failed to remove from cart', message: deleteError.message },
+          { status: 500 }
+        );
+      }
     } else {
-      cart.items[itemIndex].quantity = quantity;
+      const { error: updateError } = await supabase
+        .from('cart')
+        .update({
+          quantity,
+          updated_at: new Date().toISOString(),
+        })
+        .eq('user_id', userId)
+        .eq('product_id', productId);
+
+      if (updateError) {
+        return NextResponse.json(
+          { error: 'Failed to update cart', message: updateError.message },
+          { status: 500 }
+        );
+      }
     }
 
-    await cart.save();
-
-    return NextResponse.json({ message: 'Cart updated', cart });
+    return NextResponse.json({ message: 'Cart updated' });
   } catch (error: any) {
     return NextResponse.json(
       { error: 'Failed to update cart', message: error.message },
@@ -156,24 +159,26 @@ export async function PUT(request: NextRequest) {
 
 export async function DELETE(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const authHeader = request.headers.get('authorization');
+    const userId = authHeader?.replace('Bearer ', '');
 
-    if (!session || !session.user) {
+    if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    await dbConnect();
+    const { error } = await supabase
+      .from('cart')
+      .delete()
+      .eq('user_id', userId);
 
-    const cart = await Cart.findOne({ userId: session.user.id });
-
-    if (!cart) {
-      return NextResponse.json({ error: 'Cart not found' }, { status: 404 });
+    if (error) {
+      return NextResponse.json(
+        { error: 'Failed to clear cart', message: error.message },
+        { status: 500 }
+      );
     }
 
-    cart.items = [];
-    await cart.save();
-
-    return NextResponse.json({ message: 'Cart cleared', cart });
+    return NextResponse.json({ message: 'Cart cleared' });
   } catch (error: any) {
     return NextResponse.json(
       { error: 'Failed to clear cart', message: error.message },

@@ -8,17 +8,27 @@ import axios from 'axios';
 import { FiAlertCircle } from 'react-icons/fi';
 
 interface Product {
-  _id: string;
-  title: string;
-  description: string;
+  id?: string;
+  _id?: string;
+  name?: string;
+  title?: string;
+  description?: string;
   price: number;
+  compare_at_price?: number;
   images: string[];
   category?: string;
+  category_id?: string;
+  unit_type?: string;
+  is_organic?: boolean;
+  rating_avg?: number;
+  rating_count?: number;
+  quantity?: number;
   rating?: {
     average: number;
     count: number;
   };
-  stock: number;
+  stock?: number;
+  categories?: { name: string; slug: string } | null;
 }
 
 interface InfiniteProductListProps {
@@ -142,7 +152,7 @@ export default function InfiniteProductList({
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 mb-8">
           {products.map((product) => (
             <ErrorBoundary
-              key={product._id}
+              key={product.id || product._id}
               fallback={
                 <div className="bg-gray-50 rounded-lg border border-gray-200 p-4 flex flex-col items-center justify-center aspect-square">
                   <FiAlertCircle className="w-8 h-8 text-gray-400 mb-2" />
@@ -150,12 +160,21 @@ export default function InfiniteProductList({
                 </div>
               }
             >
-              <ProductCard 
+              <ProductCard
                 product={{
-                  ...product,
-                  category: product.category || 'Uncategorized',
-                  rating: product.rating || { average: 0, count: 0 },
-                }} 
+                  id: product.id || product._id || '',
+                  name: product.name || product.title || 'Product',
+                  price: product.price,
+                  compare_at_price: product.compare_at_price,
+                  images: product.images || [],
+                  category_id: product.category_id,
+                  unit_type: product.unit_type,
+                  is_organic: product.is_organic,
+                  rating_avg: product.rating_avg || product.rating?.average || 0,
+                  rating_count: product.rating_count || product.rating?.count || 0,
+                  quantity: product.quantity ?? product.stock ?? 0,
+                  categories: product.categories,
+                }}
               />
             </ErrorBoundary>
           ))}

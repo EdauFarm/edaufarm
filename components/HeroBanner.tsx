@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FiChevronLeft, FiChevronRight, FiSmartphone, FiMonitor, FiCpu, FiZap } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 interface Slide {
   id: number;
@@ -13,52 +13,51 @@ interface Slide {
   cta: string;
   ctaLink: string;
   bgGradient: string;
-  icon: any;
+  emoji: string;
 }
 
 const slides: Slide[] = [
   {
     id: 1,
-    title: 'New Arrivals',
-    subtitle: 'Premium Electronics',
-    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&q=80',
-    cta: 'Shop Now',
-    ctaLink: '/products?category=Electronics',
-    bgGradient: 'from-gray-700 via-gray-800 to-gray-900',
-    icon: FiSmartphone,
+    title: 'Fresh from the Farm',
+    subtitle: 'Quality produce directly from local farmers to your table',
+    image: 'https://images.unsplash.com/photo-1500651230702-0e2d8a49d4e7?w=800&q=80',
+    cta: 'Shop Vegetables',
+    ctaLink: '/categories/vegetables',
+    bgGradient: 'from-green-700 via-green-800 to-green-900',
+    emoji: '🥬',
   },
   {
     id: 2,
-    title: 'Premium Laptops',
-    subtitle: 'Power your productivity with top-tier devices',
-    image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80',
-    cta: 'Shop Laptops',
-    ctaLink: '/products?category=Laptops',
-    bgGradient: 'from-gray-800 via-gray-900 to-black',
-    icon: FiMonitor,
+    title: 'Healthy Livestock',
+    subtitle: 'Premium cattle, goats, and poultry from trusted farmers',
+    image: 'https://images.unsplash.com/photo-1516467508483-2e767f6e4d5a?w=800&q=80',
+    cta: 'Browse Livestock',
+    ctaLink: '/categories/livestock',
+    bgGradient: 'from-amber-700 via-amber-800 to-amber-900',
+    emoji: '🐄',
   },
   {
     id: 3,
-    title: 'Smart Devices',
-    subtitle: 'Transform your home with intelligent tech',
-    image: 'https://i.pinimg.com/736x/50/f4/2e/50f42ec2a5088bc4e46a46511efd4d37.jpg',
-    cta: 'Discover More',
-    ctaLink: '/products?category=Smart%20Devices',
-    bgGradient: 'from-gray-600 via-gray-700 to-gray-800',
-    icon: FiCpu,
+    title: 'Organic Fruits',
+    subtitle: 'Fresh, organic fruits harvested at peak ripeness',
+    image: 'https://images.unsplash.com/photo-1619566636858-adf8ef8c7d23?w=800&q=80',
+    cta: 'Shop Fruits',
+    ctaLink: '/categories/fruits',
+    bgGradient: 'from-emerald-700 via-emerald-800 to-emerald-900',
+    emoji: '🍎',
   },
   {
     id: 4,
-    title: 'Flash Sales',
-    subtitle: 'Limited time deals on top gadgets',
-    image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80',
-    cta: 'Shop Deals',
-    ctaLink: '/flash-sales',
-    bgGradient: 'from-gray-700 via-gray-800 to-slate-900',
-    icon: FiZap,
+    title: 'Farm Equipment',
+    subtitle: 'Quality tools and machinery for modern farming',
+    image: 'https://images.unsplash.com/photo-1506900260372-b4608a8b53d8?w=800&q=80',
+    cta: 'Shop Equipment',
+    ctaLink: '/categories/farm-equipment',
+    bgGradient: 'from-gray-700 via-gray-800 to-gray-900',
+    emoji: '🚜',
   },
 ];
-
 
 export default function HeroBanner() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -92,7 +91,6 @@ export default function HeroBanner() {
 
   return (
     <div className="relative rounded-lg overflow-hidden shadow-xl h-[250px] md:h-[350px] lg:h-[400px] group touch-pan-y">
-      {/* Slides */}
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -100,7 +98,6 @@ export default function HeroBanner() {
             index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
         >
-          {/* Background Image with Overlay */}
           <div className="absolute inset-0">
             <Image
               src={slide.image}
@@ -113,11 +110,11 @@ export default function HeroBanner() {
             />
             <div className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient} opacity-80`}></div>
           </div>
-          
+
           <div className="relative w-full h-full flex items-center px-6 md:px-12">
             <div className="flex-1 text-white z-20">
-              <div className="flex items-center space-x-3 mb-3 md:mb-4">
-                <slide.icon className="w-8 h-8 md:w-10 md:h-10 opacity-90" />
+              <div className="text-4xl md:text-6xl mb-3 md:mb-4">
+                {slide.emoji}
               </div>
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4 leading-tight drop-shadow-lg">
                 {slide.title}
@@ -127,7 +124,7 @@ export default function HeroBanner() {
               </p>
               <Link
                 href={slide.ctaLink}
-                className="inline-block bg-white text-gray-900 px-6 md:px-8 py-2.5 md:py-3.5 rounded-lg font-bold text-sm md:text-base hover:bg-gray-50 transition-all hover:scale-105 shadow-xl active:scale-95 hover:shadow-2xl"
+                className="inline-block bg-white text-primary-700 px-6 md:px-8 py-2.5 md:py-3.5 rounded-lg font-bold text-sm md:text-base hover:bg-primary-50 transition-all hover:scale-105 shadow-xl active:scale-95 hover:shadow-2xl"
               >
                 {slide.cta}
               </Link>
@@ -136,7 +133,6 @@ export default function HeroBanner() {
         </div>
       ))}
 
-      {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
         aria-label="Previous slide"
@@ -152,7 +148,6 @@ export default function HeroBanner() {
         <FiChevronRight className="w-5 h-5 md:w-6 md:h-6 text-gray-900" />
       </button>
 
-      {/* Pagination Dots */}
       <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-30 flex space-x-2">
         {slides.map((_, index) => (
           <button

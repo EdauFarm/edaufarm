@@ -1,15 +1,22 @@
-import { NextRequest, NextResponse } from 'next/server';
-import dbConnect from '@/lib/mongodb';
-import Product from '@/models/Product';
+import { NextResponse } from 'next/server';
+import { supabase } from '@/lib/supabase';
 
-// Force dynamic - no caching
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
-    await dbConnect();
+    const { data: categories, error } = await supabase
+      .from('categories')
+      .select('*')
+      .eq('is_active', true)
+      .order('display_order');
 
-    const categories = await Product.distinct('category');
+    if (error) {
+      return NextResponse.json(
+        { error: 'Failed to fetch categories', message: error.message },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({ categories }, {
       headers: {

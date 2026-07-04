@@ -1,7 +1,6 @@
 import { AuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import bcrypt from 'bcryptjs';
-import dbConnect from '@/lib/mongodb';
+import { supabase } from './supabase';
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -16,28 +15,30 @@ export const authOptions: AuthOptions = {
           throw new Error('Invalid credentials');
         }
 
-        await dbConnect();
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email: credentials.email.toLowerCase(),
+          password: credentials.password,
+        });
 
-        // Import User model only on server-side
-        const User = (await import('@/models/User')).default;
-        
-        const user = await User.findOne({ email: credentials.email });
+        if (error) {
+          throw new Error(error.message);
+        }
 
-        if (!user) {
+        if (!data.user) {
           throw new Error('User not found');
         }
 
-        const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
-
-        if (!isPasswordValid) {
-          throw new Error('Invalid password');
-        }
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', data.user.id)
+          .maybeSingle();
 
         return {
-          id: user._id.toString(),
-          email: user.email,
-          name: user.name,
-          role: user.role,
+          id: data.user.id,
+          email: data.user.email || '',
+          name: profile?.full_name || data.user.email?.split('@')[0] || 'User',
+          role: profile?.role || 'buyer',
         };
       },
     }),

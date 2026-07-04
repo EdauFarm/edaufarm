@@ -1,17 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import dbConnect from '@/lib/mongodb';
-import Review from '@/models/Review';
-import Order from '@/models/Order';
-import Product from '@/models/Product';
+import { supabase } from '@/lib/supabase';
 
 export const dynamic = 'force-dynamic';
 
-// GET reviews for a product
 export async function GET(request: NextRequest) {
   try {
-    await dbConnect();
-
     const { searchParams } = new URL(request.url);
     const productId = searchParams.get('productId');
 
@@ -22,11 +15,20 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const reviews = await Review.find({ productId })
-      .sort({ createdAt: -1 })
-      .lean();
+    const { data: reviews, error } = await supabase
+      .from('reviews')
+      .select('*')
+      .eq('product_id', productId)
+      .order('created_at', { ascending: false });
 
-    return NextResponse.json({ reviews });
+    if (error) {
+      return NextResponse.json(
+        { error: 'Failed to fetch reviews', message: error.message },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({ reviews: reviews || [] });
   } catch (error: any) {
     return NextResponse.json(
       { error: 'Failed to fetch reviews', message: error.message },
@@ -35,13 +37,12 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// POST a new review
 export async function POST(request: NextRequest) {
   try {
-    await dbConnect();
+    const authHeader = request.headers.get('authorization');
+    const userId = authHeader?.replace('Bearer ', '');
 
-    const session = await getServerSession();
-    if (!session || !session.user) {
+    if (!userId) {
       return NextResponse.json(
         { error: 'You must be logged in to post a review' },
         { status: 401 }
@@ -49,7 +50,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { productId, rating, comment } = body;
+    const { productId, rating, title, comment } = body;
 
     if (!productId || !rating || !comment) {
       return NextResponse.json(
@@ -65,11 +66,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if user has already reviewed this product
-    const existingReview = await Review.findOne({
-      productId,
-      userEmail: session.user.email,
-    });
+    const { data: existingReview, error: checkError } = await supabase
+      .from('reviews')
+      .select('id')
+      .eq('product_id', productId)
+      .eq('user_id', userId)
+      .maybeSingle();
 
     if (existingReview) {
       return NextResponse.json(
@@ -78,31 +80,50 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if user has purchased this product (verified buyer)
-    const hasPurchased = await Order.findOne({
-      userEmail: session.user.email,
-      'items.productId': productId,
-      status: { $in: ['processing', 'shipped', 'delivered'] },
-    });
+    const { data: hasPurchased, error: orderCheckError } = await supabase
+      .from('orders')
+      .select('id')
+      .eq('buyer_id', userId)
+      .eq('status', 'delivered')
+      .limit(1)
+      .maybeSingle();
 
-    const review = await Review.create({
-      productId,
-      userId: session.user.email, // Using email as userId for now
-      userName: session.user.name || 'Anonymous',
-      userEmail: session.user.email,
-      rating,
-      comment,
-      verified: !!hasPurchased,
-    });
+    const { data: review, error: insertError } = await supabase
+      .from('reviews')
+      .insert({
+        product_id: productId,
+        user_id: userId,
+        rating,
+        title: title || null,
+        comment,
+        is_verified_purchase: !!hasPurchased,
+      })
+      .select()
+      .single();
 
-    // Update product rating
-    const reviews = await Review.find({ productId });
-    const averageRating = reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
-    
-    await Product.findByIdAndUpdate(productId, {
-      'rating.average': averageRating,
-      'rating.count': reviews.length,
-    });
+    if (insertError) {
+      return NextResponse.json(
+        { error: 'Failed to post review', message: insertError.message },
+        { status: 500 }
+      );
+    }
+
+    const { data: allReviews, error: fetchError } = await supabase
+      .from('reviews')
+      .select('rating')
+      .eq('product_id', productId);
+
+    if (allReviews && allReviews.length > 0) {
+      const avgRating = allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length;
+
+      await supabase
+        .from('products')
+        .update({
+          rating_avg: avgRating,
+          rating_count: allReviews.length,
+        })
+        .eq('id', productId);
+    }
 
     return NextResponse.json(
       { message: 'Review posted successfully', review },
@@ -116,13 +137,12 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// DELETE a review
 export async function DELETE(request: NextRequest) {
   try {
-    await dbConnect();
+    const authHeader = request.headers.get('authorization');
+    const userId = authHeader?.replace('Bearer ', '');
 
-    const session = await getServerSession();
-    if (!session || !session.user) {
+    if (!userId) {
       return NextResponse.json(
         { error: 'You must be logged in to delete a review' },
         { status: 401 }
@@ -139,7 +159,11 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    const review = await Review.findById(reviewId);
+    const { data: review, error: fetchError } = await supabase
+      .from('reviews')
+      .select('*')
+      .eq('id', reviewId)
+      .maybeSingle();
 
     if (!review) {
       return NextResponse.json(
@@ -148,26 +172,48 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    // Check if user owns this review
-    if (review.userEmail !== session.user.email) {
+    if (review.user_id !== userId) {
       return NextResponse.json(
         { error: 'You can only delete your own reviews' },
         { status: 403 }
       );
     }
 
-    await Review.findByIdAndDelete(reviewId);
+    const { error: deleteError } = await supabase
+      .from('reviews')
+      .delete()
+      .eq('id', reviewId);
 
-    // Update product rating
-    const reviews = await Review.find({ productId: review.productId });
-    const averageRating = reviews.length > 0 
-      ? reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length 
-      : 0;
-    
-    await Product.findByIdAndUpdate(review.productId, {
-      'rating.average': averageRating,
-      'rating.count': reviews.length,
-    });
+    if (deleteError) {
+      return NextResponse.json(
+        { error: 'Failed to delete review', message: deleteError.message },
+        { status: 500 }
+      );
+    }
+
+    const { data: allReviews } = await supabase
+      .from('reviews')
+      .select('rating')
+      .eq('product_id', review.product_id);
+
+    if (allReviews && allReviews.length > 0) {
+      const avgRating = allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length;
+      await supabase
+        .from('products')
+        .update({
+          rating_avg: avgRating,
+          rating_count: allReviews.length,
+        })
+        .eq('id', review.product_id);
+    } else {
+      await supabase
+        .from('products')
+        .update({
+          rating_avg: 0,
+          rating_count: 0,
+        })
+        .eq('id', review.product_id);
+    }
 
     return NextResponse.json({ message: 'Review deleted successfully' });
   } catch (error: any) {

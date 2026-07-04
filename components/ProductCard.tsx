@@ -10,35 +10,46 @@ import { FiPackage, FiShare2 } from 'react-icons/fi';
 
 interface ProductCardProps {
   product: {
-    _id: string;
-    title: string;
+    id: string;
+    name: string;
     price: number;
-    compareAtPrice?: number;
+    compare_at_price?: number;
     images: string[];
-    category: string;
-    rating: {
-      average: number;
-      count: number;
-    };
-    stock: number;
+    category_id?: string;
+    unit_type?: string;
+    is_organic?: boolean;
+    rating_avg?: number;
+    rating_count?: number;
+    quantity?: number;
+    categories?: { name: string; slug: string } | null;
   };
 }
 
+const unitLabels: Record<string, string> = {
+  piece: 'pcs',
+  kg: 'kg',
+  bunch: 'bunch',
+  sack: 'sack',
+  crate: 'crate',
+  litre: 'L',
+  dozen: 'dz',
+  box: 'box',
+};
+
 export default function ProductCard({ product }: ProductCardProps) {
-    const { currency } = useCurrency();
-    // Assume all product prices are stored in KES as base
-    const formatCurrency = (amount: number) => convertAndFormatPrice(amount, 'KES', currency.code);
+  const { currency } = useCurrency();
+  const formatCurrency = (amount: number) => convertAndFormatPrice(amount, 'KES', currency.code);
   const [imageError, setImageError] = useState(false);
-  const discount = calculateDiscount(product.price, product.compareAtPrice);
+  const discount = calculateDiscount(product.price, product.compare_at_price);
 
   const handleShare = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
 
     const shareData = {
-      title: product.title,
-      text: `Check out this ${product.title} on Gadget World`,
-      url: `${window.location.origin}/products/${product._id}`,
+      title: product.name,
+      text: `Check out ${product.name} on Mkulima Bora`,
+      url: `${window.location.origin}/products/${product.id}`,
     };
 
     if (navigator.share) {
@@ -47,7 +58,6 @@ export default function ProductCard({ product }: ProductCardProps) {
       } catch (error) {
       }
     } else {
-      // Fallback for browsers that don't support Web Share API
       navigator.clipboard.writeText(shareData.url).then(() => {
         alert('Product link copied to clipboard!');
       }).catch(() => {
@@ -57,41 +67,44 @@ export default function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <Link href={`/products/${product._id}`} className="block group">
+    <Link href={`/products/${product.id}`} className="block group">
       <div className="bg-white rounded-lg overflow-hidden border border-gray-100 hover:shadow-md transition-shadow duration-200">
-        {/* Image Container */}
-        <div className="relative aspect-square bg-gradient-to-br from-gray-50 to-gray-100">
-          {product.images[0] && !imageError ? (
+        <div className="relative aspect-square bg-gradient-to-br from-green-50 to-emerald-50">
+          {product.images?.[0] && !imageError ? (
             <Image
               src={product.images[0]}
-              alt={product.title}
+              alt={product.name}
               fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="object-contain p-4"
+              className="object-cover p-4"
               loading="lazy"
               onError={() => setImageError(true)}
             />
           ) : (
             <div className="flex flex-col items-center justify-center h-full p-4">
-              <div className="w-20 h-20 mb-3 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+              <div className="w-20 h-20 mb-3 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 flex items-center justify-center">
                 <FiPackage className="w-10 h-10 text-white" />
               </div>
               <div className="text-center">
-                <p className="text-xs font-semibold text-gray-900 mb-1">Gadget World</p>
+                <p className="text-xs font-semibold text-gray-900 mb-1">Mkulima Bora</p>
                 <p className="text-xs text-gray-500">Image unavailable</p>
               </div>
             </div>
           )}
-          
-          {/* Sale Badge */}
+
           {discount > 0 && (
             <div className="absolute top-2 left-2 bg-red-600 text-white px-2 py-0.5 text-xs font-medium rounded">
-              Sale
+              -{discount}%
             </div>
           )}
-          
-          {/* Stock Badge */}
-          {product.stock === 0 && (
+
+          {product.is_organic && (
+            <div className="absolute top-2 right-10 bg-green-600 text-white px-2 py-0.5 text-xs font-medium rounded flex items-center gap-1">
+              <span>🌿</span> Organic
+            </div>
+          )}
+
+          {(product.quantity === 0) && (
             <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
               <span className="bg-white text-gray-900 px-4 py-2 rounded-lg font-semibold text-sm">
                 Out of Stock
@@ -99,7 +112,6 @@ export default function ProductCard({ product }: ProductCardProps) {
             </div>
           )}
 
-          {/* Share Button */}
           <button
             onClick={handleShare}
             className="absolute top-2 right-2 bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 p-2 rounded-full shadow-md hover:shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100 lg:opacity-100"
@@ -109,31 +121,39 @@ export default function ProductCard({ product }: ProductCardProps) {
           </button>
         </div>
 
-        {/* Product Info */}
         <div className="p-3">
-          <h3 className="text-sm text-gray-900 line-clamp-2 mb-2 min-h-[2.5rem] group-hover:text-gray-700 transition-colors">
-            {product.title}
+          {product.categories?.name && (
+            <p className="text-xs text-primary-600 mb-1 font-medium">
+              {product.categories.name}
+            </p>
+          )}
+          <h3 className="text-sm text-gray-900 line-clamp-2 mb-1 min-h-[2.5rem] group-hover:text-gray-700 transition-colors">
+            {product.name}
           </h3>
-          
+
           <div className="flex flex-col gap-1">
-            {product.compareAtPrice && product.compareAtPrice > product.price && (
+            {product.compare_at_price && product.compare_at_price > product.price && (
               <div className="text-xs text-gray-400 line-through">
-                {formatCurrency(product.compareAtPrice)}
+                {formatCurrency(product.compare_at_price)}
               </div>
             )}
-            <div className="text-lg font-semibold text-gray-900">
-              {formatCurrency(product.price)}
+            <div className="flex items-baseline gap-1">
+              <div className="text-lg font-semibold text-gray-900">
+                {formatCurrency(product.price)}
+              </div>
+              {product.unit_type && (
+                <span className="text-xs text-gray-500">/ {unitLabels[product.unit_type] || product.unit_type}</span>
+              )}
             </div>
           </div>
-          
-          {/* Rating */}
-          {product.rating && product.rating.count > 0 && (
+
+          {product.rating_count && product.rating_count > 0 && (
             <div className="flex items-center gap-1 mt-2">
               <div className="flex text-yellow-400">
-                {'★'.repeat(Math.round(product.rating.average))}
-                {'☆'.repeat(5 - Math.round(product.rating.average))}
+                {'★'.repeat(Math.round(product.rating_avg || 0))}
+                {'☆'.repeat(5 - Math.round(product.rating_avg || 0))}
               </div>
-              <span className="text-xs text-gray-500">({product.rating.count})</span>
+              <span className="text-xs text-gray-500">({product.rating_count})</span>
             </div>
           )}
         </div>

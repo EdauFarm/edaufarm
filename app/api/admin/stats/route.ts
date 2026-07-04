@@ -1,128 +1,112 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
-import dbConnect from '@/lib/mongodb';
-import Product from '@/models/Product';
-import User from '@/models/User';
-import Order from '@/models/Order';
+import { supabase } from '@/lib/supabase';
 
 export const dynamic = 'force-dynamic';
 
-/**
- * @swagger
- * /admin/stats:
- *   get:
- *     summary: Get admin statistics
- *     description: Retrieve platform statistics (admin only)
- *     tags: [Admin]
- *     security:
- *       - BearerAuth: []
- *     responses:
- *       200:
- *         description: Platform statistics
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 totalProducts:
- *                   type: integer
- *                   example: 1250
- *                 totalUsers:
- *                   type: integer
- *                   example: 5432
- *                 totalOrders:
- *                   type: integer
- *                   example: 876
- *                 totalRevenue:
- *                   type: number
- *                   example: 4567890
- *       401:
- *         description: Unauthorized
- *       403:
- *         description: Forbidden - Admin only
- */
 export async function GET(req: NextRequest) {
   try {
     const session = await getServerSession(authOptions);
-    if (!session) {
+    if (!session?.user?.id) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    // TODO: Add admin role check
-    // if (session.user.role !== 'admin') {
-    //   return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
-    // }
+    const { data: profile, error: profileError } = await supabase
+      .from('profiles')
+      .select('role')
+      .eq('id', session.user.id)
+      .maybeSingle();
 
-    await dbConnect();
+    if (profile?.role !== 'admin') {
+      return NextResponse.json({ error: 'Forbidden - Admin only' }, { status: 403 });
+    }
 
     const [
-      totalProducts,
-      totalUsers,
-      totalOrders,
-      pendingOrders,
-      lowStockProducts,
-      recentOrders,
-      recentUsers,
-      orders,
-      topProducts
+      { count: totalProducts },
+      { count: totalUsers },
+      { count: totalOrders },
+      { count: pendingOrders },
+      { count: lowStockProducts },
     ] = await Promise.all([
-      Product.countDocuments(),
-      User.countDocuments(),
-      Order.countDocuments(),
-      Order.countDocuments({ status: { $in: ['pending', 'processing'] } }),
-      Product.countDocuments({ stock: { $lte: 5 } }),
-      Order.find().sort({ createdAt: -1 }).limit(10).populate('userId', 'name email').lean(),
-      User.find().sort({ createdAt: -1 }).limit(10).select('name email createdAt').lean(),
-      Order.find().lean(),
-      Product.find().sort({ sales: -1 }).limit(10).select('title price sales').lean(),
+      supabase.from('products').select('*', { count: 'exact', head: true }),
+      supabase.from('profiles').select('*', { count: 'exact', head: true }),
+      supabase.from('orders').select('*', { count: 'exact', head: true }),
+      supabase.from('orders').select('*', { count: 'exact', head: true }).in('status', ['pending', 'processing']),
+      supabase.from('products').select('*', { count: 'exact', head: true }).lte('quantity', 5),
     ]);
 
-    const totalRevenue = orders.reduce((sum, order) => sum + (order.total || 0), 0);
+    const { data: orders } = await supabase
+      .from('orders')
+      .select('total, created_at');
 
-    // Calculate monthly revenue for the last 12 months
-    const monthlyRevenue = [];
+    const totalRevenue = (orders || []).reduce((sum: number, o: { total: number }) => sum + (o.total || 0), 0);
+
+    const monthlyRevenue: number[] = [];
     const now = new Date();
     for (let i = 11; i >= 0; i--) {
       const monthStart = new Date(now.getFullYear(), now.getMonth() - i, 1);
       const monthEnd = new Date(now.getFullYear(), now.getMonth() - i + 1, 1);
 
-      const monthOrders = orders.filter(order => {
-        const orderDate = new Date(order.createdAt);
+      const monthOrders = (orders || []).filter((o: { created_at: string }) => {
+        const orderDate = new Date(o.created_at);
         return orderDate >= monthStart && orderDate < monthEnd;
       });
 
-      const monthTotal = monthOrders.reduce((sum, order) => sum + (order.total || 0), 0);
+      const monthTotal = monthOrders.reduce((sum: number, o: { total: number }) => sum + (o.total || 0), 0);
       monthlyRevenue.push(Math.round(monthTotal * 100) / 100);
     }
 
+    const { data: recentOrders } = await supabase
+      .from('orders')
+      .select('id, order_number, total, status, created_at, profiles(full_name, email)')
+      .order('created_at', { ascending: false })
+      .limit(10);
+
+    const { data: recentUsers } = await supabase
+      .from('profiles')
+      .select('id, full_name, email, created_at')
+      .order('created_at', { ascending: false })
+      .limit(10);
+
+    const { data: topProducts } = await supabase
+      .from('products')
+      .select('id, name, price, rating_count')
+      .order('rating_count', { ascending: false })
+      .limit(10);
+
     return NextResponse.json({
-      totalProducts,
-      totalUsers,
-      totalOrders,
+      totalProducts: totalProducts || 0,
+      totalUsers: totalUsers || 0,
+      totalOrders: totalOrders || 0,
       totalRevenue: Math.round(totalRevenue * 100) / 100,
-      pendingOrders,
-      lowStockProducts,
-      recentOrders: recentOrders.map(order => ({
-        _id: order._id,
-        customerName: (order.userId as any)?.name || 'Unknown',
-        total: order.total || 0,
-        status: order.status || 'pending',
-        createdAt: order.createdAt,
+      pendingOrders: pendingOrders || 0,
+      lowStockProducts: lowStockProducts || 0,
+      recentOrders: (recentOrders || []).map((o: { id: string; order_number: string; total: number; status: string; created_at: string; profiles: { full_name: string } | { full_name: string }[] | null }) => ({
+        _id: o.id,
+        order_number: o.order_number,
+        customerName: (Array.isArray(o.profiles) ? o.profiles[0]?.full_name : o.profiles?.full_name) || 'Unknown',
+        total: o.total || 0,
+        status: o.status || 'pending',
+        createdAt: o.created_at,
       })),
-      recentUsers,
+      recentUsers: (recentUsers || []).map(u => ({
+        _id: u.id,
+        name: u.full_name,
+        email: u.email,
+        createdAt: u.created_at,
+      })),
       monthlyRevenue,
-      topProducts: topProducts.map(product => ({
-        _id: product._id,
-        title: product.title,
-        price: product.price,
-        sales: 0, // TODO: Calculate actual sales from orders
+      topProducts: (topProducts || []).map(p => ({
+        _id: p.id,
+        title: p.name,
+        price: p.price,
+        sales: p.rating_count || 0,
       })),
     });
-
   } catch (error: any) {
     return NextResponse.json(
-      { error: 'Failed to fetch stats' },
+      { error: 'Failed to fetch stats', message: error.message },
       { status: 500 }
     );
   }

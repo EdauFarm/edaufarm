@@ -1,247 +1,113 @@
 import { NextRequest, NextResponse } from 'next/server';
-import dbConnect from '@/lib/mongodb';
-import Product from '@/models/Product';
-import User from '@/models/User';
+import { supabase } from '@/lib/supabase';
 
-// Enable caching with revalidation
-export const revalidate = 10; // Revalidate every 10 seconds for faster price updates
+export const revalidate = 10;
 
-/**
- * @swagger
- * /products:
- *   get:
- *     summary: Get all products
- *     description: Retrieve a paginated list of products with optional filters
- *     tags: [Products]
- *     parameters:
- *       - in: query
- *         name: page
- *         schema:
- *           type: integer
- *           default: 1
- *         description: Page number for pagination
- *       - in: query
- *         name: limit
- *         schema:
- *           type: integer
- *           default: 12
- *         description: Number of products per page
- *       - in: query
- *         name: category
- *         schema:
- *           type: string
- *         description: Filter by category
- *       - in: query
- *         name: search
- *         schema:
- *           type: string
- *         description: Search in title, description, and tags
- *       - in: query
- *         name: sortBy
- *         schema:
- *           type: string
- *           enum: [createdAt, price, title]
- *           default: createdAt
- *         description: Sort field
- *       - in: query
- *         name: order
- *         schema:
- *           type: string
- *           enum: [asc, desc]
- *           default: desc
- *         description: Sort order
- *       - in: query
- *         name: minPrice
- *         schema:
- *           type: number
- *         description: Minimum price filter
- *       - in: query
- *         name: maxPrice
- *         schema:
- *           type: number
- *         description: Maximum price filter
- *       - in: query
- *         name: featured
- *         schema:
- *           type: string
- *           enum: ['true', 'false']
- *         description: Filter featured products
- *     responses:
- *       200:
- *         description: List of products
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 success:
- *                   type: boolean
- *                   example: true
- *                 products:
- *                   type: array
- *                   items:
- *                     $ref: '#/components/schemas/Product'
- *                 pagination:
- *                   type: object
- *                   properties:
- *                     page:
- *                       type: integer
- *                     limit:
- *                       type: integer
- *                     total:
- *                       type: integer
- *                     pages:
- *                       type: integer
- *       500:
- *         description: Server error
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Error'
- */
 export async function GET(request: NextRequest) {
   const startTime = Date.now();
-  
-  try {
-    // Connect to database with timeout
-    await Promise.race([
-      dbConnect(),
-      new Promise((_, reject) => 
-        setTimeout(() => reject(new Error('Database connection timeout')), 10000)
-      )
-    ]);
 
+  try {
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get('page') || '1');
     const limit = parseInt(searchParams.get('limit') || '12');
     const category = searchParams.get('category');
-    const search = searchParams.get('search') || searchParams.get('q'); // Support both 'search' and 'q'
-    const sortBy = searchParams.get('sortBy') || 'createdAt';
-    const order = searchParams.get('order') === 'asc' ? 1 : -1;
+    const search = searchParams.get('search') || searchParams.get('q');
+    const sortBy = searchParams.get('sortBy') || 'created_at';
+    const order = searchParams.get('order') === 'asc' ? false : true;
     const minPrice = searchParams.get('minPrice');
     const maxPrice = searchParams.get('maxPrice');
     const featured = searchParams.get('featured');
-    const sort = searchParams.get('sort'); // rating, price, newest
-    const all = searchParams.get('all') === '1';
+    const sort = searchParams.get('sort');
 
+    const offset = (page - 1) * limit;
 
-    const skip = (page - 1) * limit;
-
-
-    // Build query
-    const query: any = {};
-    // If ?all=1, do not filter by active status
-    if (!all) {
-      // Show only active products
-      query.$or = [
-        { active: true },
-        { active: { $exists: false } }
-      ];
-    }
+    let query = supabase
+      .from('products')
+      .select('*, categories(id, name, slug)', { count: 'exact' })
+      .eq('is_in_stock', true);
 
     if (category && category !== 'null' && category !== 'undefined') {
-      // Case-insensitive category matching
-      query.category = { $regex: new RegExp(`^${category}$`, 'i') };
+      query = query.eq('categories.slug', category);
     }
 
     if (search && search.trim()) {
-      const searchTerms = search.trim().split(/\s+/).filter(term => term.length > 0);
-      
-      // Create regex patterns for each search term
-      const searchPatterns = searchTerms.map(term => ({
-        $or: [
-          { title: { $regex: term, $options: 'i' } },
-          { title_fr: { $regex: term, $options: 'i' } },
-          { title_ar: { $regex: term, $options: 'i' } },
-          { description: { $regex: term, $options: 'i' } },
-          { description_fr: { $regex: term, $options: 'i' } },
-          { description_ar: { $regex: term, $options: 'i' } },
-          { category: { $regex: term, $options: 'i' } },
-          { tags: { $regex: term, $options: 'i' } },
-        ]
-      }));
-      
-      // Combine all search patterns with AND logic (all terms must match)
-      if (query.$or) {
-        // If we already have an $or (from active status), we need to restructure
-        const existingOr = query.$or;
-        delete query.$or;
-        query.$and = [
-          { $or: existingOr },
-          ...searchPatterns
-        ];
-      } else {
-        query.$and = searchPatterns;
-      }
+      const searchTerm = search.trim();
+      query = query.or(`name.ilike.%${searchTerm}%,description.ilike.%${searchTerm}%,tags.cs.{${searchTerm}}`);
     }
 
-    if (minPrice || maxPrice) {
-      query.price = {};
-      if (minPrice) query.price.$gte = parseFloat(minPrice);
-      if (maxPrice) query.price.$lte = parseFloat(maxPrice);
+    if (minPrice) {
+      query = query.gte('price', parseFloat(minPrice));
+    }
+
+    if (maxPrice) {
+      query = query.lte('price', parseFloat(maxPrice));
     }
 
     if (featured === 'true') {
-      query.featured = true;
+      query = query.eq('is_featured', true);
     }
 
-    // Determine sort criteria
-    let sortCriteria: any = {};
+    let sortColumn = 'created_at';
+    let ascending = false;
+
     if (sort === 'rating') {
-      sortCriteria = { 'rating.average': -1 };
+      sortColumn = 'rating_avg';
+      ascending = false;
     } else if (sort === 'price-low') {
-      sortCriteria = { price: 1 };
+      sortColumn = 'price';
+      ascending = true;
     } else if (sort === 'price-high') {
-      sortCriteria = { price: -1 };
-    } else if (sortBy) {
-      sortCriteria = { [sortBy]: order };
+      sortColumn = 'price';
+      ascending = false;
     } else {
-      sortCriteria = { createdAt: -1 };
+      sortColumn = sortBy === 'createdAt' ? 'created_at' : sortBy;
+      ascending = !order;
     }
 
+    query = query.order(sortColumn, { ascending });
+    query = query.range(offset, offset + limit - 1);
 
-    // Ensure User model is registered for populate to work
-    User; // This forces the model to be loaded
+    const { data: products, error, count } = await query;
 
-    // Execute query with optimized projection and error handling
-    const projection = {
-      title: 1,
-      price: 1,
-      compareAtPrice: 1,
-      images: 1,
-      category: 1,
-      subcategory: 1,
-      brand: 1,
-      stock: 1,
-      rating: 1,
-      featured: 1,
-      active: 1,
-      tags: 1,
-      buybackEnabled: 1,
-      createdAt: 1,
-    };
-
-    const products = await Product.find(query, projection)
-      .sort(sortCriteria)
-      .skip(skip)
-      .limit(limit)
-      .lean()
-      .catch(err => {
-        return []; // Return empty array on query error
+    if (error) {
+      console.error('Supabase query error:', error);
+      return NextResponse.json({
+        success: true,
+        products: [],
+        pagination: { page, limit, total: 0, pages: 1 },
       });
+    }
 
-    const total = await Product.countDocuments(query).catch(() => 0);
-    
+    const mappedProducts = (products || []).map((p) => ({
+      id: p.id,
+      name: p.name,
+      title: p.name,
+      description: p.description,
+      price: p.price,
+      compare_at_price: p.compare_at_price,
+      images: p.images || [],
+      category_id: p.category_id,
+      unit_type: p.unit_type,
+      is_organic: p.is_organic,
+      rating_avg: p.rating_avg,
+      rating_count: p.rating_count,
+      quantity: p.quantity,
+      categories: p.categories,
+      is_in_stock: p.is_in_stock,
+      is_featured: p.is_featured,
+      created_at: p.created_at,
+    }));
+
     const elapsed = Date.now() - startTime;
 
     return NextResponse.json({
       success: true,
-      products: products || [],
+      products: mappedProducts,
       pagination: {
         page,
         limit,
-        total,
-        pages: Math.ceil(total / limit) || 1,
+        total: count || 0,
+        pages: Math.ceil((count || 0) / limit) || 1,
       },
     }, {
       headers: {
@@ -250,44 +116,57 @@ export async function GET(request: NextRequest) {
     });
   } catch (error: any) {
     const elapsed = Date.now() - startTime;
-    
-    // Return a proper error response instead of crashing
-    return NextResponse.json(
-      { 
-        success: false,
-        error: 'Failed to fetch products', 
-        message: error.message || 'Unknown error',
-        products: [], // Always return an empty array
-        pagination: {
-          page: 1,
-          limit: 12,
-          total: 0,
-          pages: 1,
-        }
-      },
-      { status: 200 } // Use 200 to prevent client-side errors
-    );
+
+    return NextResponse.json({
+      success: false,
+      error: 'Failed to fetch products',
+      message: error.message || 'Unknown error',
+      products: [],
+      pagination: { page: 1, limit: 12, total: 0, pages: 1 },
+    }, { status: 200 });
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
-    await dbConnect();
-
     const body = await request.json();
 
-    // Validate required fields
-    const { title, description, price, category, sku, stock } = body;
+    const { name, description, price, category_id, quantity, images, unit_type, seller_id } = body;
 
-    if (!title || !description || !price || !category || !sku || stock === undefined) {
+    if (!name || !price) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'Missing required fields: name and price are required' },
         { status: 400 }
       );
     }
 
-    // Create product
-    const product = await Product.create(body);
+    const slug = name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+
+    const { data: product, error } = await supabase
+      .from('products')
+      .insert({
+        name,
+        slug,
+        description: description || null,
+        price,
+        category_id: category_id || null,
+        quantity: quantity || 0,
+        images: images || [],
+        unit_type: unit_type || 'piece',
+        seller_id: seller_id || null,
+      })
+      .select()
+      .single();
+
+    if (error) {
+      return NextResponse.json(
+        { error: 'Failed to create product', message: error.message },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json(
       { message: 'Product created successfully', product },

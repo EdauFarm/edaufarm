@@ -1,12 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
-import dbConnect from '@/lib/mongodb';
-import Product from '@/models/Product';
-import mongoose from 'mongoose';
-import User from '@/models/User';
+import { supabase } from '@/lib/supabase';
 
-// Enable caching with 10-minute revalidation
 export const revalidate = 600;
 
 export async function GET(
@@ -14,19 +8,20 @@ export async function GET(
   context: { params: Promise<{ id: string }> }
 ) {
   const { id } = await context.params;
-  let objectId;
-  try {
-    objectId = new mongoose.Types.ObjectId(id);
-  } catch (e) {
-    return NextResponse.json(
-      { error: 'Invalid product id', message: 'ID must be a valid ObjectId' },
-      { status: 400 }
-    );
-  }
-  try {
-    await dbConnect();
 
-    const product = await Product.findById(objectId).lean();
+  try {
+    const { data: product, error } = await supabase
+      .from('products')
+      .select('*, categories(id, name, slug)')
+      .eq('id', id)
+      .maybeSingle();
+
+    if (error) {
+      return NextResponse.json(
+        { error: 'Failed to fetch product', message: error.message },
+        { status: 500 }
+      );
+    }
 
     if (!product) {
       return NextResponse.json(
@@ -35,7 +30,31 @@ export async function GET(
       );
     }
 
-    return NextResponse.json({ product }, {
+    const mappedProduct = {
+      id: product.id,
+      name: product.name,
+      title: product.name,
+      description: product.description,
+      price: product.price,
+      compare_at_price: product.compare_at_price,
+      images: product.images || [],
+      category_id: product.category_id,
+      unit_type: product.unit_type,
+      is_organic: product.is_organic,
+      rating_avg: product.rating_avg,
+      rating_count: product.rating_count,
+      quantity: product.quantity,
+      categories: product.categories,
+      is_in_stock: product.is_in_stock,
+      is_featured: product.is_featured,
+      is_seasonal: product.is_seasonal,
+      origin_farm: product.origin_farm,
+      harvest_date: product.harvest_date,
+      seller_id: product.seller_id,
+      created_at: product.created_at,
+    };
+
+    return NextResponse.json({ product: mappedProduct }, {
       headers: {
         'Cache-Control': 'public, s-maxage=600, stale-while-revalidate=1200',
       },
@@ -53,43 +72,26 @@ export async function PUT(
   context: { params: Promise<{ id: string }> }
 ) {
   const { id } = await context.params;
-  let objectId;
+
   try {
-    objectId = new mongoose.Types.ObjectId(id);
-  } catch (e) {
-    return NextResponse.json(
-      { error: 'Invalid product id', message: 'ID must be a valid ObjectId' },
-      { status: 400 }
-    );
-  }
-  try {
-    const session = await getServerSession(authOptions);
-
-    if (!session || !session.user) {
-      return NextResponse.json(
-        { error: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
-
-    await dbConnect();
-
-    const user = await User.findById(session.user.id);
-    
-    if (!user || user.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Only admins can update products' },
-        { status: 403 }
-      );
-    }
-
     const body = await request.json();
 
-    const product = await Product.findByIdAndUpdate(
-      objectId,
-      body,
-      { new: true, runValidators: true }
-    );
+    const { data: product, error } = await supabase
+      .from('products')
+      .update({
+        ...body,
+        updated_at: new Date().toISOString(),
+      })
+      .eq('id', id)
+      .select()
+      .maybeSingle();
+
+    if (error) {
+      return NextResponse.json(
+        { error: 'Failed to update product', message: error.message },
+        { status: 500 }
+      );
+    }
 
     if (!product) {
       return NextResponse.json(
@@ -112,37 +114,21 @@ export async function DELETE(
   context: { params: Promise<{ id: string }> }
 ) {
   const { id } = await context.params;
-  let objectId;
-  try {
-    objectId = new mongoose.Types.ObjectId(id);
-  } catch (e) {
-    return NextResponse.json(
-      { error: 'Invalid product id', message: 'ID must be a valid ObjectId' },
-      { status: 400 }
-    );
-  }
-  try {
-    const session = await getServerSession(authOptions);
 
-    if (!session || !session.user) {
+  try {
+    const { data: product, error } = await supabase
+      .from('products')
+      .delete()
+      .eq('id', id)
+      .select()
+      .maybeSingle();
+
+    if (error) {
       return NextResponse.json(
-        { error: 'Unauthorized' },
-        { status: 401 }
+        { error: 'Failed to delete product', message: error.message },
+        { status: 500 }
       );
     }
-
-    await dbConnect();
-
-    const user = await User.findById(session.user.id);
-    
-    if (!user || user.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Only admins can delete products' },
-        { status: 403 }
-      );
-    }
-
-    const product = await Product.findByIdAndDelete(objectId);
 
     if (!product) {
       return NextResponse.json(

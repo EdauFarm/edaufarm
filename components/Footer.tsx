@@ -18,35 +18,36 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-bold mb-4">GADGET WORLD</h3>
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <span className="text-2xl">🌱</span> MKULIMA BORA
+            </h3>
             <p className="text-gray-400 text-sm">
-              Your one-stop shop for quality products at affordable prices. Shop with
-              confidence and enjoy fast delivery across Kenya.
+              Connecting farmers directly with buyers. Fresh produce, quality livestock, and farm products delivered to your doorstep.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h4 className="font-semibold mb-4">Categories</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
-                  About Us
+                <Link href="/categories/vegetables" className="hover:text-white transition-colors">
+                  Vegetables
                 </Link>
               </li>
               <li>
-                <Link href="/help" className="hover:text-white transition-colors">
-                  Contact & Help
+                <Link href="/categories/fruits" className="hover:text-white transition-colors">
+                  Fruits
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-white transition-colors">
-                  All Products
+                <Link href="/categories/livestock" className="hover:text-white transition-colors">
+                  Livestock
                 </Link>
               </li>
               <li>
-                <Link href="/flash-sales" className="hover:text-white transition-colors">
-                  Flash Sales
+                <Link href="/categories/seeds-seedlings" className="hover:text-white transition-colors">
+                  Seeds & Seedlings
                 </Link>
               </li>
             </ul>
@@ -54,7 +55,7 @@ export default function Footer() {
 
           {/* Customer Service */}
           <div>
-            <h4 className="font-semibold mb-4">Customer Service</h4>
+            <h4 className="font-semibold mb-4">Support</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <Link href="/help" className="hover:text-white transition-colors">
@@ -63,7 +64,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/shipping" className="hover:text-white transition-colors">
-                  Shipping Info
+                  Delivery Info
                 </Link>
               </li>
               <li>
@@ -72,9 +73,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="https://wa.me/254791792027" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
-                  <span>📱</span> WhatsApp: 0791792027
-                </a>
+                <Link href="/market-prices" className="hover:text-white transition-colors">
+                  Market Prices
+                </Link>
               </li>
             </ul>
           </div>
@@ -94,8 +95,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/help" className="hover:text-white transition-colors">
-                  Cookie Policy
+                <Link href="/seller-agreement" className="hover:text-white transition-colors">
+                  Seller Agreement
                 </Link>
               </li>
             </ul>
@@ -104,10 +105,9 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="text-center text-sm text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Gadget World. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Mkulima Bora. All rights reserved.</p>
             <p className="mt-2">
-              Call us: <span className="text-white font-semibold">0791792027</span> | 
-              Email: <span className="text-white font-semibold">gadgetworld@estuagcen.resend.app</span>
+              From Farm to Table | Supporting Local Farmers
             </p>
           </div>
         </div>
