@@ -1,3 +1,4 @@
+import NewsletterSection from '@/components/NewsletterSection';
 import InfiniteProductList from '@/components/InfiniteProductList';
 import HeroBanner from '@/components/HeroBanner';
 import ErrorBoundary from '@/components/ErrorBoundary';
@@ -353,19 +354,7 @@ export default async function Home() {
 
         {/* Newsletter */}
         <section className="mb-8">
-          <div className="bg-gradient-to-br from-primary-50 to-green-50 rounded-2xl p-8 sm:p-12 text-center border border-primary-100">
-            <div className="text-4xl mb-4">📬</div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Stay Updated</h2>
-            <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-              Get notified about seasonal harvests, special offers, and farm updates. Be the first to know when fresh products are available!
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-primary-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-colors"
-            >
-              Subscribe for Updates
-            </Link>
-          </div>
+          <NewsletterSection />
         </section>
       </div>
     </div>

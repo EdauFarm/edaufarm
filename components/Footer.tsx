@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FiFacebook, FiInstagram, FiTwitter, FiMail, FiPhone } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   const pathname = usePathname();
@@ -13,8 +14,12 @@ export default function Footer() {
     return null;
   }
 
+  const whatsappNumber = '+254727690165';
+  const whatsappLink = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`;
+  const facebookLink = 'https://www.facebook.com/share/1CfKA9PZjD/';
+
   return (
-    <footer className="bg-primary-700 text-white mt-16 pb-16 md:pb-0">
+    <footer className="bg-primary-700 text-white mt-16 pb-20 md:pb-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
@@ -92,8 +97,10 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-white">Get in Touch</h4>
             <ul className="space-y-3 text-sm text-primary-100">
               <li className="flex items-center gap-2">
-                <FiPhone className="w-4 h-4" />
-                <span>+254 700 000 000</span>
+                <FaWhatsapp className="w-4 h-4" />
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-accent-400 transition-colors">
+                  +254 727 690165
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <FiMail className="w-4 h-4" />
@@ -113,13 +120,28 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} Edau Farm. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="text-primary-200 hover:text-white transition-colors">
+              <a
+                href={facebookLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-200 hover:text-white transition-colors"
+                title="Follow us on Facebook"
+              >
                 <FiFacebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-primary-200 hover:text-white transition-colors">
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-200 hover:text-green-400 transition-colors"
+                title="Chat with us on WhatsApp"
+              >
+                <FaWhatsapp className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-primary-200 hover:text-white transition-colors" title="Instagram">
                 <FiInstagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-primary-200 hover:text-white transition-colors">
+              <a href="#" className="text-primary-200 hover:text-white transition-colors" title="Twitter">
                 <FiTwitter className="w-5 h-5" />
               </a>
             </div>
