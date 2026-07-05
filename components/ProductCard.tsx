@@ -73,8 +73,8 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Link href={`/products/${product.id}`} className="block group">
-      <div className="bg-white rounded-lg overflow-hidden border border-gray-100 hover:shadow-md transition-shadow duration-200">
-        <div className="relative aspect-square bg-gradient-to-br from-amber-50 to-yellow-50">
+      <div className="bg-white rounded-xl overflow-hidden border border-primary-100 hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+        <div className="relative aspect-square bg-gradient-to-br from-primary-50 to-green-50">
           {product.images?.[0] && !imageError ? (
             <Image
               src={product.images[0]}

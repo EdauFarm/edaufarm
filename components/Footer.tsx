@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { FiFacebook, FiInstagram, FiTwitter, FiMail, FiPhone } from 'react-icons/fi';
 
 export default function Footer() {
   const pathname = usePathname();
@@ -13,102 +14,115 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-gray-900 text-white mt-16 pb-16 md:pb-0">
+    <footer className="bg-primary-700 text-white mt-16 pb-16 md:pb-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <span className="text-2xl">🌾</span> EDAU FARM
-            </h3>
-            <p className="text-gray-400 text-sm">
-              West Pokot's premier sustainable farm. Premium Acacia honey, fresh seasonal fruits, Dorper sheep, and free-range poultry. Where tradition meets sustainability.
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                <span className="text-2xl">🌾</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold">EDAU FARM</h3>
+                <p className="text-primary-200 text-xs">Est. 2015</p>
+              </div>
+            </div>
+            <p className="text-primary-100 text-sm leading-relaxed">
+              West Pokot&apos;s premier sustainable farm. Premium Acacia honey, fresh seasonal fruits, Dorper sheep, and free-range poultry. Where tradition meets sustainability.
             </p>
           </div>
 
           {/* Products */}
           <div>
-            <h4 className="font-semibold mb-4">Our Products</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
+            <h4 className="font-semibold mb-4 text-white">Our Products</h4>
+            <ul className="space-y-2 text-sm text-primary-100">
               <li>
-                <Link href="/products?category=honey" className="hover:text-white transition-colors">
-                  Acacia Honey
+                <Link href="/products?category=honey" className="hover:text-accent-400 transition-colors flex items-center gap-2">
+                  <span>🍯</span> Acacia Honey
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=fruits" className="hover:text-white transition-colors">
-                  Fresh Fruits
+                <Link href="/products?category=fruits" className="hover:text-accent-400 transition-colors flex items-center gap-2">
+                  <span>🥭</span> Fresh Fruits
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=livestock" className="hover:text-white transition-colors">
-                  Dorper Sheep
+                <Link href="/products?category=livestock" className="hover:text-accent-400 transition-colors flex items-center gap-2">
+                  <span>🐑</span> Dorper Sheep
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=poultry" className="hover:text-white transition-colors">
-                  Free-Range Poultry
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Customer Service */}
-          <div>
-            <h4 className="font-semibold mb-4">Support</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>
-                <Link href="/help" className="hover:text-white transition-colors">
-                  Help Center
-                </Link>
-              </li>
-              <li>
-                <Link href="/shipping" className="hover:text-white transition-colors">
-                  Delivery Info
-                </Link>
-              </li>
-              <li>
-                <Link href="/returns" className="hover:text-white transition-colors">
-                  Returns & Refunds
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-white transition-colors">
-                  About Our Farm
+                <Link href="/products?category=poultry" className="hover:text-accent-400 transition-colors flex items-center gap-2">
+                  <span>🐔</span> Free-Range Poultry
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
+            <h4 className="font-semibold mb-4 text-white">Quick Links</h4>
+            <ul className="space-y-2 text-sm text-primary-100">
               <li>
-                <Link href="/privacy" className="hover:text-white transition-colors">
-                  Privacy Policy
+                <Link href="/products" className="hover:text-accent-400 transition-colors">
+                  Shop All Products
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-white transition-colors">
-                  Terms of Service
+                <Link href="/gallery" className="hover:text-accent-400 transition-colors">
+                  Gallery
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
-                  Our Story
+                <Link href="/farm-visits" className="hover:text-accent-400 transition-colors">
+                  Book a Farm Visit
                 </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-accent-400 transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold mb-4 text-white">Get in Touch</h4>
+            <ul className="space-y-3 text-sm text-primary-100">
+              <li className="flex items-center gap-2">
+                <FiPhone className="w-4 h-4" />
+                <span>+254 700 000 000</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <FiMail className="w-4 h-4" />
+                <span>info@edaufarm.com</span>
+              </li>
+              <li className="pt-2">
+                <p className="text-primary-200">West Pokot County, Kenya</p>
+                <p className="text-primary-200 text-xs">Along Kitale-Kapenguria Road</p>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="text-center text-sm text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Edau Farm. All rights reserved.</p>
-            <p className="mt-2">
-              West Pokot, Kenya | Where Tradition Meets Sustainability
+        <div className="border-t border-primary-600 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-primary-200">
+              &copy; {new Date().getFullYear()} Edau Farm. All rights reserved.
             </p>
+            <div className="flex items-center gap-4">
+              <a href="#" className="text-primary-200 hover:text-white transition-colors">
+                <FiFacebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-primary-200 hover:text-white transition-colors">
+                <FiInstagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-primary-200 hover:text-white transition-colors">
+                <FiTwitter className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

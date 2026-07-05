@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { useSession } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
-import { FiShoppingCart, FiUser, FiSearch, FiMenu, FiX } from 'react-icons/fi';
+import { FiShoppingCart, FiUser, FiSearch, FiMenu, FiX, FiLogIn, FiSmartphone } from 'react-icons/fi';
 import { useCartStore } from '@/store/cartStore';
 import { useState } from 'react';
 import DynamicSearch from './DynamicSearch';
@@ -11,7 +11,7 @@ import DynamicSearch from './DynamicSearch';
 const navLinks = [
   { href: '/products', label: 'Products' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/farm-visits', label: 'Farm Visits' },
+  { href: '/farm-visits', label: 'Farm Visit' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -20,7 +20,6 @@ export default function TopBar() {
   const { items } = useCartStore();
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
 
   const cartItemsCount = items.reduce((acc, item) => acc + item.quantity, 0);
 
@@ -35,29 +34,27 @@ export default function TopBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="text-lg font-semibold text-primary-700 hover:text-primary-600 transition-colors flex items-center gap-2">
-            <span className="text-2xl">🌾</span>
-            <span className="text-primary-700 font-bold">Edau Farm</span>
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
+                <span className="text-white font-bold text-lg">EF</span>
+              </div>
+              <div className="hidden sm:block">
+                <span className="text-primary-700 font-bold text-lg">Edau Farm</span>
+              </div>
+            </div>
           </Link>
 
-          {/* Desktop Navigation with Collapsed Search */}
-          <div className="hidden md:flex items-center gap-4 flex-1 max-w-2xl mx-8">
-            {/* Collapsible Search */}
-            <div className="flex-1">
-              <DynamicSearch />
-            </div>
-          </div>
-
-          {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-6">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   pathname === link.href
-                    ? 'text-primary-600'
-                    : 'text-primary-700 hover:text-primary-600'
+                    ? 'bg-primary-50 text-primary-700'
+                    : 'text-gray-600 hover:text-primary-700 hover:bg-primary-50'
                 }`}
               >
                 {link.label}
@@ -65,24 +62,50 @@ export default function TopBar() {
             ))}
           </nav>
 
+          {/* Desktop Search */}
+          <div className="hidden lg:flex flex-1 max-w-md mx-8">
+            <DynamicSearch />
+          </div>
+
           {/* Right side icons */}
           <div className="flex items-center gap-2">
-            <Link href={session ? '/account' : '/auth/signin'} className="p-2 hover:bg-primary-50 rounded-md transition-colors" title="Account">
-              <FiUser className="w-5 h-5 text-primary-700" />
+            {/* Shop Button */}
+            <Link
+              href="/products"
+              className="hidden sm:flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors shadow-sm hover:shadow-md"
+            >
+              <span>Shop</span>
             </Link>
-            <Link href="/cart" className="relative p-2 hover:bg-primary-50 rounded-md transition-colors" title="Cart">
+
+            {/* Cart */}
+            <Link href="/cart" className="relative p-2 hover:bg-primary-50 rounded-lg transition-colors" title="Cart">
               <FiShoppingCart className="w-5 h-5 text-primary-700" />
               {cartItemsCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-primary-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-medium">
+                <span className="absolute -top-1 -right-1 bg-accent-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
                   {cartItemsCount > 9 ? '9+' : cartItemsCount}
                 </span>
               )}
             </Link>
 
+            {/* Login/Account */}
+            {session ? (
+              <Link href="/account" className="p-2 hover:bg-primary-50 rounded-lg transition-colors" title="Account">
+                <FiUser className="w-5 h-5 text-primary-700" />
+              </Link>
+            ) : (
+              <Link
+                href="/auth/signin"
+                className="hidden sm:flex items-center gap-2 text-primary-700 hover:text-primary-800 font-medium text-sm px-3 py-2 rounded-lg hover:bg-primary-50 transition-colors"
+              >
+                <FiLogIn className="w-4 h-4" />
+                <span>Login</span>
+              </Link>
+            )}
+
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 hover:bg-primary-50 rounded-md md:hidden transition-colors"
+              className="p-2 hover:bg-primary-50 rounded-lg lg:hidden transition-colors"
               title="Menu"
             >
               {mobileMenuOpen ? (
@@ -96,26 +119,49 @@ export default function TopBar() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-primary-100">
+          <nav className="lg:hidden py-4 border-t border-primary-100">
             {/* Mobile Search */}
             <div className="mb-4">
               <DynamicSearch />
             </div>
-            <div className="flex flex-col gap-2">
+
+            {/* Nav Links */}
+            <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                     pathname === link.href
-                      ? 'bg-primary-50 text-primary-600'
-                      : 'text-primary-700 hover:bg-primary-50'
+                      ? 'bg-primary-50 text-primary-700'
+                      : 'text-gray-700 hover:bg-primary-50 hover:text-primary-700'
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
+
+              {/* Shop Button Mobile */}
+              <Link
+                href="/products"
+                onClick={() => setMobileMenuOpen(false)}
+                className="mt-2 bg-primary-600 text-white px-4 py-3 rounded-lg text-sm font-semibold text-center hover:bg-primary-700 transition-colors"
+              >
+                Shop Now
+              </Link>
+
+              {/* Login Mobile */}
+              {!session && (
+                <Link
+                  href="/auth/signin"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 text-primary-700 font-medium text-sm px-4 py-3 rounded-lg hover:bg-primary-50 transition-colors"
+                >
+                  <FiLogIn className="w-4 h-4" />
+                  <span>Login</span>
+                </Link>
+              )}
             </div>
           </nav>
         )}
