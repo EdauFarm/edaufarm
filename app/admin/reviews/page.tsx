@@ -200,9 +200,9 @@ export default function AdminReviewsPage() {
   };
 
   const filteredProducts = products.filter(product =>
-    product.title.toLowerCase().includes(productSearch.toLowerCase()) ||
-    product._id.toLowerCase().includes(productSearch.toLowerCase()) ||
-    product.category.toLowerCase().includes(productSearch.toLowerCase())
+    (product.title || '').toLowerCase().includes(productSearch.toLowerCase()) ||
+    (product._id || '').toLowerCase().includes(productSearch.toLowerCase()) ||
+    (product.category || '').toLowerCase().includes(productSearch.toLowerCase())
   );
 
   if (status === 'loading' || loading) {

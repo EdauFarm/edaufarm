@@ -112,7 +112,7 @@ export default function CategoryGrid() {
 
   // Deduplicate categories by name
   const uniqueCategories = Array.from(
-    new Map(categories.map(cat => [cat.name.toLowerCase(), cat])).values()
+    new Map(categories.map(cat => [(cat.name || '').toLowerCase(), cat])).values()
   );
   return (
     <section className="my-8">

@@ -16,7 +16,7 @@ export const authOptions: AuthOptions = {
         }
 
         const { data, error } = await supabase.auth.signInWithPassword({
-          email: credentials.email.toLowerCase(),
+          email: credentials.email?.toLowerCase() || '',
           password: credentials.password,
         });
 

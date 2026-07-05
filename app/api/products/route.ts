@@ -140,7 +140,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const slug = name
+    const slug = (name || '')
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/(^-|-$)/g, '');

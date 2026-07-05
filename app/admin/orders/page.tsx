@@ -119,11 +119,11 @@ export default function AdminOrdersPage() {
   };
 
   const filteredOrders = orders.filter(order => {
-    const matchesSearch = 
-      order._id.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      order.userId?.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      order.userId?.email?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      order.mpesaCode?.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch =
+      (order._id || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (order.userId?.name || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (order.userId?.email || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (order.mpesaCode || '').toLowerCase().includes(searchQuery.toLowerCase());
     
     const matchesStatus = statusFilter === 'all' || order.status === statusFilter;
     

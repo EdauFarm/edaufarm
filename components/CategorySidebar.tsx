@@ -28,7 +28,7 @@ export default function CategorySidebar() {
 
   // Deduplicate categories by label
   const uniqueCategories = Array.from(
-    new Map(categories.map(cat => [cat.label.toLowerCase(), cat])).values()
+    new Map(categories.map(cat => [(cat.label || '').toLowerCase(), cat])).values()
   );
   return (
     <aside className="w-60 bg-white rounded-lg shadow-sm overflow-hidden sticky top-20 h-[calc(100vh-6rem)] overflow-y-auto">
