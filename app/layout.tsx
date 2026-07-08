@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     template: '%s | Edau Farm - West Pokot\'s Premier Sustainable Farm',
     default: 'Edau Farm - Premium Honey, Fruits, Livestock & Poultry',
   },
-  description: 'West Pokot\'s premier sustainable farm. Premium Acacia honey, fresh seasonal fruits, Dorper sheep, and free-range poultry. Tradition meets sustainability.',
-  keywords: ['edau farm', 'west pokot', 'acacia honey', 'organic honey', 'dorper sheep', 'free-range poultry', 'sustainable farming', 'kenya farm', 'fresh fruits', 'agricultural products'],
+  description: 'West Pokot\'s premier sustainable farm since 2015. Premium Acacia honey, fresh seasonal fruits, Dorper sheep, and free-range poultry. Order online with M-Pesa delivery across Kenya.',
+  keywords: ['edau farm', 'west pokot', 'acacia honey', 'organic honey kenya', 'dorper sheep', 'free-range poultry', 'sustainable farming', 'kenya farm', 'fresh fruits kenya', 'agricultural products', 'kitale farm', 'organic produce'],
   authors: [{ name: 'Edau Farm' }],
   creator: 'Edau Farm',
   publisher: 'Edau Farm',
@@ -43,16 +43,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Edau Farm - Premium Honey, Fruits, Livestock & Poultry',
-    description: 'West Pokot\'s premier sustainable farm. Premium Acacia honey, fresh seasonal fruits, Dorper sheep, and free-range poultry.',
+    description: 'West Pokot\'s premier sustainable farm since 2015. Premium Acacia honey, fresh seasonal fruits, Dorper sheep, and free-range poultry. Order online with M-Pesa.',
     url: 'https://edaufarm.com',
     siteName: 'Edau Farm',
-    locale: 'en_US',
+    locale: 'en_KE',
     type: 'website',
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1500651230702-0e2d8a49d4e7?w=1200',
+        width: 1200,
+        height: 630,
+        alt: 'Edau Farm - Sustainable Agriculture in West Pokot, Kenya',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Edau Farm - West Pokot\'s Premier Sustainable Farm',
-    description: 'Premium Acacia honey, fresh seasonal fruits, Dorper sheep, and free-range poultry from West Pokot, Kenya.',
+    description: 'Premium Acacia honey, fresh seasonal fruits, Dorper sheep, and free-range poultry from West Pokot, Kenya. Order online.',
+    images: ['https://images.unsplash.com/photo-1500651230702-0e2d8a49d4e7?w=1200'],
   },
   robots: {
     index: true,
@@ -67,6 +76,8 @@ export const metadata: Metadata = {
   },
   other: {
     'mobile-web-app-capable': 'yes',
+    'geo.region': 'KE-42',
+    'geo.placename': 'West Pokot County',
   },
 };
 

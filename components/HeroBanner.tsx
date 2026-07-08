@@ -13,49 +13,44 @@ interface Slide {
   cta: string;
   ctaLink: string;
   bgGradient: string;
-  emoji: string;
 }
 
 const slides: Slide[] = [
   {
     id: 1,
-    title: 'Premium Acacia Honey',
-    subtitle: 'Pure, raw honey from the acacia forests of West Pokot. Harvested with traditional wisdom.',
+    title: 'Pure Acacia Honey from West Pokot',
+    subtitle: 'For families who value quality. Raw, unprocessed honey harvested using traditional methods that preserve its natural goodness.',
     image: 'https://images.unsplash.com/photo-1587049352846-4a232e259e83?w=800&q=80',
     cta: 'Shop Honey',
     ctaLink: '/products?category=honey',
-    bgGradient: 'from-amber-600 via-amber-700 to-amber-800',
-    emoji: '🍯',
+    bgGradient: 'from-amber-700 via-amber-800 to-amber-900',
   },
   {
     id: 2,
-    title: 'Fresh Seasonal Fruits',
-    subtitle: 'Sun-ripened mangoes, pawpaws, and passion fruits from our orchards.',
+    title: 'Farm-Fresh Fruits, Delivered',
+    subtitle: 'For health-conscious households. Sun-ripened mangoes, pawpaws, and seasonal fruits grown without harmful chemicals.',
     image: 'https://images.unsplash.com/photo-1619566636858-adf8ef8c7d23?w=800&q=80',
     cta: 'Shop Fruits',
     ctaLink: '/products?category=fruits',
-    bgGradient: 'from-orange-500 via-orange-600 to-orange-700',
-    emoji: '🥭',
+    bgGradient: 'from-green-700 via-green-800 to-green-900',
   },
   {
     id: 3,
-    title: 'Premium Dorper Sheep',
-    subtitle: 'Quality breeding stock and healthy meat goats raised on natural pastures.',
+    title: 'Quality Dorper Sheep and Livestock',
+    subtitle: 'For farmers seeking superior breeding stock. Healthy animals raised on natural West Pokot pastures.',
     image: 'https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=800&q=80',
     cta: 'View Livestock',
     ctaLink: '/products?category=livestock',
-    bgGradient: 'from-green-700 via-green-800 to-green-900',
-    emoji: '🐑',
+    bgGradient: 'from-primary-700 via-primary-800 to-primary-900',
   },
   {
     id: 4,
-    title: 'Free-Range Poultry',
-    subtitle: 'Healthy chickens and eggs from birds raised on open pastures.',
+    title: 'Free-Range Eggs and Poultry',
+    subtitle: 'For those who understand the difference. Birds raised on open pastures produce richer, healthier eggs and meat.',
     image: 'https://images.unsplash.com/photo-1548550023-2cdb30c18c73?w=800&q=80',
     cta: 'Shop Poultry',
     ctaLink: '/products?category=poultry',
-    bgGradient: 'from-yellow-600 via-yellow-700 to-amber-800',
-    emoji: '🐔',
+    bgGradient: 'from-yellow-700 via-amber-700 to-amber-800',
   },
 ];
 
@@ -108,14 +103,11 @@ export default function HeroBanner() {
               sizes="100vw"
               className="object-cover"
             />
-            <div className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient} opacity-85`}></div>
+            <div className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient} opacity-90`}></div>
           </div>
 
           <div className="relative w-full h-full flex items-center px-6 md:px-12">
             <div className="flex-1 text-white z-20">
-              <div className="text-5xl md:text-7xl mb-3 md:mb-4">
-                {slide.emoji}
-              </div>
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4 leading-tight drop-shadow-lg">
                 {slide.title}
               </h2>

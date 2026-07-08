@@ -108,7 +108,7 @@ export default function Footer() {
               </li>
               <li className="pt-2">
                 <p className="text-primary-200">West Pokot County, Kenya</p>
-                <p className="text-primary-200 text-xs">Along Kitale-Kapenguria Road</p>
+                <p className="text-primary-200 text-xs">Along Kitale-Lodwar Road</p>
               </li>
             </ul>
           </div>
