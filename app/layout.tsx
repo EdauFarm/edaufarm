@@ -1,6 +1,7 @@
 import './globals.css';
 import './no-zoom.css';
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import TopBar from '@/components/TopBar.jsx';
 import BottomNav from '@/components/BottomNav';
 import Footer from '@/components/Footer';
@@ -8,10 +9,13 @@ import { Toaster } from 'react-hot-toast';
 import AuthProvider from '@/components/AuthProvider';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { Analytics } from '@vercel/analytics/react';
-import WelcomeTutorialWrapper from '@/components/WelcomeTutorialWrapper';
 import { CurrencyProvider } from '@/contexts/CurrencyContext';
 
-// const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -87,19 +91,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={inter.variable}>
+      <body className="antialiased">
         <CurrencyProvider>
           <LanguageProvider>
             <AuthProvider>
               <div className="min-h-screen flex flex-col">
                 <TopBar />
-                <main className="flex-1 bg-gray-50">{children}</main>
+                <main className="flex-1 bg-white">{children}</main>
                 <Footer />
                 <BottomNav />
               </div>
               <Toaster position="top-right" />
-              <WelcomeTutorialWrapper />
               <Analytics />
             </AuthProvider>
           </LanguageProvider>

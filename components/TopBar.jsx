@@ -1,17 +1,18 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DynamicSearch from './DynamicSearch';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
-import { FiShoppingCart, FiUser, FiMenu, FiX, FiLogIn } from 'react-icons/fi';
+import { FiShoppingCart, FiUser, FiMenu, FiX, FiLogIn, FiSearch } from 'react-icons/fi';
 import { useCartStore } from '@/store/cartStore';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
-  { href: '/products', label: 'Products' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/farm-visits', label: 'Farm Visit' },
+  { href: '/products', label: 'Shop' },
+  { href: '/about', label: 'About' },
+  { href: '/farm-visits', label: 'Visit' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -20,148 +21,256 @@ export default function TopBar() {
   const { items } = useCartStore();
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const cartItemsCount = items.reduce((acc, item) => acc + item.quantity, 0);
 
-  // Hide TopBar on admin pages
   const isAdminPage = pathname?.startsWith('/admin');
-  if (isAdminPage) {
-    return null;
-  }
+  if (isAdminPage) return null;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="bg-white border-b border-primary-100 sticky top-0 z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-              <span className="text-white font-bold text-lg">EF</span>
-            </div>
-            <span className="text-primary-700 font-bold text-lg hidden sm:block">Edau Farm</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  pathname === link.href
-                    ? 'bg-primary-50 text-primary-700'
-                    : 'text-gray-600 hover:text-primary-700 hover:bg-primary-50'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Desktop Search */}
-          <div className="hidden lg:flex flex-1 max-w-md mx-6">
-            <DynamicSearch />
-          </div>
-
-          {/* Right side icons */}
-          <div className="flex items-center gap-2">
-            {/* Shop Button */}
-            <Link
-              href="/products"
-              className="hidden sm:flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors shadow-sm hover:shadow-md"
-            >
-              <span>Shop</span>
+    <>
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-white/80 backdrop-blur-xl border-b border-neutral-200/50 shadow-soft'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 lg:h-20">
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-9 h-9 bg-primary-900 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                <span className="text-white font-bold text-sm">EF</span>
+              </div>
+              <span className={`text-lg font-semibold tracking-tight transition-colors ${
+                scrolled ? 'text-neutral-950' : 'text-neutral-900'
+              }`}>
+                Edau Farm
+              </span>
             </Link>
 
-            {/* Cart */}
-            <Link href="/cart" className="relative p-2 hover:bg-primary-50 rounded-lg transition-colors" title="Cart">
-              <FiShoppingCart className="w-5 h-5 text-primary-700" />
-              {cartItemsCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-amber-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
-                  {cartItemsCount > 9 ? '9+' : cartItemsCount}
-                </span>
-              )}
-            </Link>
-
-            {/* Login/Account */}
-            {session ? (
-              <Link href="/account" className="p-2 hover:bg-primary-50 rounded-lg transition-colors" title="Account">
-                <FiUser className="w-5 h-5 text-primary-700" />
-              </Link>
-            ) : (
-              <Link
-                href="/auth/signin"
-                className="hidden sm:flex items-center gap-2 text-primary-700 hover:text-primary-800 font-medium text-sm px-3 py-2 rounded-lg hover:bg-primary-50 transition-colors"
-              >
-                <FiLogIn className="w-4 h-4" />
-                <span>Login</span>
-              </Link>
-            )}
-
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 hover:bg-primary-50 rounded-lg lg:hidden transition-colors"
-              title="Menu"
-            >
-              {mobileMenuOpen ? (
-                <FiX className="w-5 h-5 text-primary-700" />
-              ) : (
-                <FiMenu className="w-5 h-5 text-primary-700" />
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <nav className="lg:hidden py-4 border-t border-primary-100">
-            {/* Mobile Search */}
-            <div className="mb-4">
-              <DynamicSearch />
-            </div>
-
-            {/* Nav Links */}
-            <div className="flex flex-col gap-1">
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                  className={`relative px-4 py-2 text-sm font-medium transition-colors ${
                     pathname === link.href
-                      ? 'bg-primary-50 text-primary-700'
-                      : 'text-gray-700 hover:bg-primary-50 hover:text-primary-700'
+                      ? 'text-primary-900'
+                      : scrolled
+                        ? 'text-neutral-600 hover:text-neutral-900'
+                        : 'text-neutral-700 hover:text-neutral-900'
                   }`}
                 >
                   {link.label}
+                  {pathname === link.href && (
+                    <motion.div
+                      layoutId="activeNav"
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary-900 rounded-full"
+                      transition={{ duration: 0.2 }}
+                    />
+                  )}
                 </Link>
               ))}
+            </nav>
 
-              {/* Shop Button Mobile */}
+            {/* Right side */}
+            <div className="flex items-center gap-2">
+              {/* Search Toggle - Desktop */}
+              <button
+                onClick={() => setSearchOpen(!searchOpen)}
+                className={`hidden lg:flex p-2.5 rounded-full transition-all ${
+                  scrolled
+                    ? 'hover:bg-neutral-100 text-neutral-600'
+                    : 'hover:bg-white/50 text-neutral-700'
+                }`}
+              >
+                <FiSearch className="w-5 h-5" />
+              </button>
+
+              {/* Cart */}
+              <Link
+                href="/cart"
+                className={`relative p-2.5 rounded-full transition-all ${
+                  scrolled
+                    ? 'hover:bg-neutral-100 text-neutral-600'
+                    : 'hover:bg-white/50 text-neutral-700'
+                }`}
+              >
+                <FiShoppingCart className="w-5 h-5" />
+                <AnimatePresence>
+                  {cartItemsCount > 0 && (
+                    <motion.span
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      exit={{ scale: 0 }}
+                      className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-primary-900 text-white text-xs font-medium rounded-full flex items-center justify-center"
+                    >
+                      {cartItemsCount > 9 ? '9+' : cartItemsCount}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </Link>
+
+              {/* Account */}
+              {session ? (
+                <Link
+                  href="/account"
+                  className={`p-2.5 rounded-full transition-all ${
+                    scrolled
+                      ? 'hover:bg-neutral-100 text-neutral-600'
+                      : 'hover:bg-white/50 text-neutral-700'
+                  }`}
+                >
+                  <FiUser className="w-5 h-5" />
+                </Link>
+              ) : (
+                <Link
+                  href="/auth/signin"
+                  className={`hidden sm:flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all rounded-full ${
+                    scrolled
+                      ? 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100'
+                      : 'text-neutral-700 hover:text-neutral-900 hover:bg-white/50'
+                  }`}
+                >
+                  <FiLogIn className="w-4 h-4" />
+                  <span>Sign in</span>
+                </Link>
+              )}
+
+              {/* CTA Button */}
               <Link
                 href="/products"
-                onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 bg-primary-600 text-white px-4 py-3 rounded-lg text-sm font-semibold text-center hover:bg-primary-700 transition-colors"
+                className="hidden sm:flex items-center gap-2 bg-primary-900 hover:bg-primary-950 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:shadow-lg"
               >
                 Shop Now
               </Link>
 
-              {/* Login Mobile */}
-              {!session && (
-                <Link
-                  href="/auth/signin"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 text-primary-700 font-medium text-sm px-4 py-3 rounded-lg hover:bg-primary-50 transition-colors"
-                >
-                  <FiLogIn className="w-4 h-4" />
-                  <span>Login</span>
-                </Link>
-              )}
+              {/* Mobile menu button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className={`lg:hidden p-2.5 rounded-full transition-all ${
+                  scrolled
+                    ? 'hover:bg-neutral-100 text-neutral-600'
+                    : 'hover:bg-white/50 text-neutral-700'
+                }`}
+              >
+                {mobileMenuOpen ? (
+                  <FiX className="w-5 h-5" />
+                ) : (
+                  <FiMenu className="w-5 h-5" />
+                )}
+              </button>
             </div>
-          </nav>
+          </div>
+
+          {/* Search Bar - Desktop */}
+          <AnimatePresence>
+            {searchOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.2 }}
+                className="hidden lg:block pb-4"
+              >
+                <DynamicSearch />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </motion.header>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 lg:hidden"
+          >
+            <div
+              className="absolute inset-0 bg-black/20 backdrop-blur-sm"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-2xl"
+            >
+              <div className="flex flex-col h-full pt-20">
+                <div className="p-4">
+                  <DynamicSearch />
+                </div>
+                <nav className="flex-1 px-4 py-6">
+                  <div className="space-y-1">
+                    {navLinks.map((link, i) => (
+                      <motion.div
+                        key={link.href}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.05 }}
+                      >
+                        <Link
+                          href={link.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={`block px-4 py-3 rounded-xl text-base font-medium transition-colors ${
+                            pathname === link.href
+                              ? 'bg-primary-50 text-primary-900'
+                              : 'text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900'
+                          }`}
+                        >
+                          {link.label}
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                </nav>
+                <div className="p-4 border-t border-neutral-100">
+                  <Link
+                    href="/products"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full bg-primary-900 text-white px-6 py-3.5 rounded-xl font-semibold hover:bg-primary-950 transition-colors"
+                  >
+                    Shop Now
+                  </Link>
+                  {!session && (
+                    <Link
+                      href="/auth/signin"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center justify-center gap-2 w-full mt-3 text-neutral-600 hover:text-neutral-900 font-medium py-3 transition-colors"
+                    >
+                      <FiLogIn className="w-4 h-4" />
+                      Sign in
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
         )}
-      </div>
-    </header>
+      </AnimatePresence>
+
+      {/* Spacer for fixed header */}
+      <div className="h-16 lg:h-20" />
+    </>
   );
 }
