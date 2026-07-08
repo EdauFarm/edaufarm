@@ -1,6 +1,7 @@
 import NewsletterSection from '@/components/NewsletterSection';
 import ProductCard from '@/components/ProductCard';
 import ErrorBoundary from '@/components/ErrorBoundary';
+import FarmStoryVideo from '@/components/FarmStoryVideo';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -222,6 +223,107 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Edau Honey - Premium Section */}
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="https://images.unsplash.com/photo-1587049352846-4a232e259e83?w=800&q=80"
+                alt="Edau Farm Premium Acacia Honey"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            </div>
+            <div>
+              <span className="inline-flex items-center gap-2 bg-amber-100 text-amber-900 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+                Premium Quality
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-950 tracking-tight mb-4">
+                Edau Acacia Honey
+              </h2>
+              <p className="text-lg text-neutral-600 leading-relaxed mb-8">
+                Raw, unprocessed honey harvested from the acacia forests of West Pokot. Our traditional methods preserve all the natural enzymes, antioxidants, and authentic flavor.
+              </p>
+
+              {/* Pricing Table */}
+              <div className="bg-white rounded-2xl shadow-lg border border-amber-100 overflow-hidden mb-8">
+                <div className="grid grid-cols-2 gap-px bg-amber-100">
+                  <div className="bg-white p-4">
+                    <div className="text-sm text-neutral-500">Size</div>
+                    <div className="font-semibold text-neutral-900">250g</div>
+                  </div>
+                  <div className="bg-white p-4 text-right">
+                    <div className="text-sm text-neutral-500">Price</div>
+                    <div className="font-semibold text-amber-700">Ksh 300</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-px bg-amber-100">
+                  <div className="bg-white p-4">
+                    <div className="font-semibold text-neutral-900">500g</div>
+                  </div>
+                  <div className="bg-white p-4 text-right">
+                    <div className="font-semibold text-amber-700">Ksh 500</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-px bg-amber-100">
+                  <div className="bg-white p-4">
+                    <div className="font-semibold text-neutral-900">1 KG</div>
+                  </div>
+                  <div className="bg-white p-4 text-right">
+                    <div className="font-semibold text-amber-700">Ksh 900</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-px bg-amber-100">
+                  <div className="bg-white p-4">
+                    <div className="font-semibold text-neutral-900">3 Litres</div>
+                  </div>
+                  <div className="bg-white p-4 text-right">
+                    <div className="font-semibold text-amber-700">Ksh 4,000</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-px bg-amber-100">
+                  <div className="bg-white p-4">
+                    <div className="font-semibold text-neutral-900">5 Litres</div>
+                  </div>
+                  <div className="bg-white p-4 text-right">
+                    <div className="font-semibold text-amber-700">Ksh 6,500</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-px bg-amber-100">
+                  <div className="bg-white p-4">
+                    <div className="font-semibold text-neutral-900">10 Litres</div>
+                  </div>
+                  <div className="bg-white p-4 text-right">
+                    <div className="font-semibold text-amber-700">Ksh 9,000</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-px bg-amber-100">
+                  <div className="bg-amber-50 p-4">
+                    <div className="font-bold text-neutral-900">20 Litres</div>
+                    <div className="text-xs text-amber-600">Best Value</div>
+                  </div>
+                  <div className="bg-amber-50 p-4 text-right">
+                    <div className="font-bold text-amber-700">Ksh 15,000</div>
+                  </div>
+                </div>
+              </div>
+
+              <Link
+                href="/products?category=honey"
+                className="inline-flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full font-medium transition-colors"
+              >
+                Order Honey
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Products */}
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -298,14 +400,7 @@ export default async function Home() {
                 </Link>
               </div>
             </div>
-            <div className="order-1 lg:order-2 relative h-[300px] lg:h-[450px] rounded-2xl overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4e7?w=800&q=80"
-                alt="Edau Farm - Sustainable Agriculture"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <FarmStoryVideo />
           </div>
         </div>
       </section>

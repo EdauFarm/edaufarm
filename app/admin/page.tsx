@@ -115,7 +115,8 @@ export default function AdminDashboard() {
     allowRegistration: true,
     emailService: 'connected',
     databaseStatus: 'connected',
-    paymentGateway: 'active'
+    paymentGateway: 'active',
+    farmStoryVideoUrl: ''
   });
   const [savingSettings, setSavingSettings] = useState(false);
 
@@ -135,10 +136,26 @@ export default function AdminDashboard() {
       setLoading(true);
       const response = await axios.get('/api/admin/stats');
       setStats(response.data);
+      // Fetch site settings too
+      fetchSiteSettings();
     } catch (error) {
       toast.error('Failed to load dashboard data');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchSiteSettings = async () => {
+    try {
+      const response = await axios.get('/api/site-settings');
+      if (response.data.settings) {
+        setSystemSettings(prev => ({
+          ...prev,
+          farmStoryVideoUrl: response.data.settings.farm_story_video_url || ''
+        }));
+      }
+    } catch (error) {
+      // Silently fail - settings not critical
     }
   };
 
@@ -202,6 +219,13 @@ export default function AdminDashboard() {
     try {
       setSavingSettings(true);
       await axios.patch('/api/admin/settings/system', systemSettings);
+      // Save video URL to site settings
+      if (systemSettings.farmStoryVideoUrl) {
+        await axios.post('/api/site-settings', {
+          key: 'farm_story_video_url',
+          value: systemSettings.farmStoryVideoUrl
+        });
+      }
       toast.success('System settings saved successfully');
     } catch (error) {
       toast.error('Failed to save system settings');
@@ -1113,6 +1137,20 @@ export default function AdminDashboard() {
                         className="w-full px-3 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                       />
                     </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Farm Story Video URL (YouTube embed)
+                    </label>
+                    <input
+                      type="text"
+                      value={systemSettings.farmStoryVideoUrl}
+                      onChange={(e) => updateSystemSetting('farmStoryVideoUrl', e.target.value)}
+                      placeholder="https://www.youtube.com/embed/VIDEO_ID"
+                      className="w-full px-3 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    />
+                    <p className="text-xs text-gray-500 mt-1">This video will be displayed on the homepage Farm Story section</p>
                   </div>
 
                   <div className="flex items-center">
