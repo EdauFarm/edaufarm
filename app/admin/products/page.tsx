@@ -5,21 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { isAdmin } from '@/lib/roleCheck';
 import toast from 'react-hot-toast';
-import { 
-  Package, 
-  Search, 
-  Filter,
-  Edit, 
-  Trash2, 
-  CheckCircle, 
-  XCircle,
-  Clock,
-  Eye,
-  ChevronLeft,
-  ChevronRight,
-  DollarSign,
-  Plus
-} from 'lucide-react';
+import { Package, Search, ListFilter as Filter, CreditCard as Edit, Trash2, CircleCheck as CheckCircle, Circle as XCircle, Clock, Eye, ChevronLeft, ChevronRight, DollarSign, Plus } from 'lucide-react';
 import { formatPrice } from '@/lib/utils';
 import axios from 'axios';
 import Link from 'next/link';
@@ -182,18 +168,10 @@ export default function AdminProductsPage() {
 
   if (status === 'loading' || loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-primary-50 to-green-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="relative mb-6">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-24 h-24 bg-purple-500/20 rounded-full animate-ping" />
-            </div>
-            <div className="relative">
-              <div className="w-16 h-16 border-4 border-gray-200 rounded-full"></div>
-              <div className="absolute inset-0 w-16 h-16 border-4 border-purple-600 rounded-full border-t-transparent animate-spin"></div>
-            </div>
-          </div>
-          <p className="text-gray-600 animate-pulse">Loading products...</p>
+          <div className="w-16 h-16 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-primary-600 font-medium">Loading Edau Farm Products...</p>
         </div>
       </div>
     );
@@ -208,14 +186,14 @@ export default function AdminProductsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-green-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-4 mb-4">
             <Link
               href="/admin"
-              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+              className="flex items-center gap-2 text-primary-600 hover:text-primary-800 transition-colors"
             >
               <ChevronLeft className="w-5 h-5" />
               <span>Back to Dashboard</span>
@@ -223,22 +201,22 @@ export default function AdminProductsPage() {
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-              <h1 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-2">
+              <h1 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary-700 to-primary-600 bg-clip-text text-transparent mb-2">
                 Product Management
               </h1>
-              <p className="text-gray-600">Manage all products in your catalog</p>
+              <p className="text-gray-600">Manage all farm products in your catalog</p>
             </div>
             <div className="flex gap-3">
               <button
                 onClick={handleAutoInactive}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg hover:shadow-lg hover:shadow-purple-500/30 transition-all font-semibold"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg hover:shadow-lg hover:shadow-primary-500/30 transition-all font-semibold"
               >
                 <Eye className="w-5 h-5" />
                 Auto-Hide Inactive
               </button>
               <Link
                 href="/admin/products/new"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg hover:shadow-lg hover:shadow-orange-500/30 transition-all font-semibold"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:shadow-lg hover:shadow-green-500/30 transition-all font-semibold"
               >
                 <Package className="w-5 h-5" />
                 Add Product
@@ -249,7 +227,7 @@ export default function AdminProductsPage() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-xl transition-all duration-300 group">
+          <div className="bg-white rounded-2xl shadow-sm border border-primary-100 p-6 hover:shadow-xl transition-all duration-300 group">
             <div className="flex items-center justify-between mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-gray-500 to-gray-600 rounded-xl flex items-center justify-center shadow-lg shadow-gray-500/30 group-hover:scale-110 transition-transform">
                 <Package className="w-6 h-6 text-white" />
@@ -260,11 +238,11 @@ export default function AdminProductsPage() {
             </div>
             <div>
               <p className="text-gray-500 text-sm font-medium mb-1">Total Products</p>
-              <h3 className="text-3xl font-bold text-gray-900">{stats.total.toLocaleString()}</h3>
+              <h3 className="text-3xl font-bold text-primary-800">{stats.total.toLocaleString()}</h3>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-xl transition-all duration-300 group">
+          <div className="bg-white rounded-2xl shadow-sm border border-primary-100 p-6 hover:shadow-xl transition-all duration-300 group">
             <div className="flex items-center justify-between mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg shadow-green-500/30 group-hover:scale-110 transition-transform">
                 <CheckCircle className="w-6 h-6 text-white" />
@@ -279,7 +257,7 @@ export default function AdminProductsPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-xl transition-all duration-300 group">
+          <div className="bg-white rounded-2xl shadow-sm border border-primary-100 p-6 hover:shadow-xl transition-all duration-300 group">
             <div className="flex items-center justify-between mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg shadow-yellow-500/30 group-hover:scale-110 transition-transform">
                 <Clock className="w-6 h-6 text-white" />
@@ -294,24 +272,24 @@ export default function AdminProductsPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-xl transition-all duration-300 group">
+          <div className="bg-white rounded-2xl shadow-sm border border-primary-100 p-6 hover:shadow-xl transition-all duration-300 group">
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform">
                 <Package className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xs font-semibold text-purple-600 bg-purple-50 px-3 py-1 rounded-full">
+              <span className="text-xs font-semibold text-primary-600 bg-primary-50 px-3 py-1 rounded-full">
                 Featured
               </span>
             </div>
             <div>
               <p className="text-gray-500 text-sm font-medium mb-1">Featured</p>
-              <h3 className="text-3xl font-bold text-purple-600">{stats.featured.toLocaleString()}</h3>
+              <h3 className="text-3xl font-bold text-primary-600">{stats.featured.toLocaleString()}</h3>
             </div>
           </div>
         </div>
 
         {/* Filters */}
-        <div className="bg-white rounded-lg shadow p-6 mb-6">
+        <div className="bg-white rounded-lg shadow border border-primary-100 p-6 mb-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -326,7 +304,7 @@ export default function AdminProductsPage() {
                   setPage(1);
                 }}
                 placeholder="Search by title, SKU, or category..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               />
             </div>
 
@@ -341,7 +319,7 @@ export default function AdminProductsPage() {
                   setStatusFilter(e.target.value as any);
                   setPage(1);
                 }}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               >
                 <option value="all">All Products</option>
                 <option value="active">Active Only</option>

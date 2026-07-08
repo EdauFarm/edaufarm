@@ -5,20 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { isAdmin } from '@/lib/roleCheck';
 import toast from 'react-hot-toast';
-import { 
-  Users, 
-  Search, 
-  Shield, 
-  ShoppingBag, 
-  UserCircle, 
-  Edit, 
-  Trash2, 
-  CheckCircle, 
-  XCircle,
-  Filter,
-  ChevronLeft,
-  ChevronRight
-} from 'lucide-react';
+import { Users, Search, Shield, ShoppingBag, CircleUser as UserCircle, CreditCard as Edit, Trash2, CircleCheck as CheckCircle, Circle as XCircle, ListFilter as Filter, ChevronLeft, ChevronRight } from 'lucide-react';
 import axios from 'axios';
 import Link from 'next/link';
 
@@ -185,8 +172,11 @@ export default function AdminUsersPage() {
 
   if (status === 'loading' || loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
+      <div className="min-h-screen bg-gradient-to-br from-primary-50 to-green-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-primary-600 font-medium">Loading Edau Farm Users...</p>
+        </div>
       </div>
     );
   }
@@ -199,46 +189,46 @@ export default function AdminUsersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-green-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-4 mb-4">
             <Link
               href="/admin"
-              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+              className="flex items-center gap-2 text-primary-600 hover:text-primary-800 transition-colors"
             >
               <ChevronLeft className="w-5 h-5" />
               <span>Back to Dashboard</span>
             </Link>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900">User Management</h1>
+          <h1 className="text-3xl font-bold text-primary-800">User Management</h1>
           <p className="text-gray-600 mt-2">Manage all user accounts and roles</p>
         </div>
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className="bg-white rounded-lg shadow border border-primary-100 p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-600 text-sm">Total Users</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1">{stats.total}</p>
+                <p className="text-2xl font-bold text-primary-800 mt-1">{stats.total}</p>
               </div>
-              <Users className="w-10 h-10 text-gray-500" />
+              <Users className="w-10 h-10 text-primary-500" />
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className="bg-white rounded-lg shadow border border-primary-100 p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-600 text-sm">Admins</p>
-                <p className="text-2xl font-bold text-purple-600 mt-1">{stats.admins}</p>
+                <p className="text-2xl font-bold text-primary-600 mt-1">{stats.admins}</p>
               </div>
-              <Shield className="w-10 h-10 text-purple-500" />
+              <Shield className="w-10 h-10 text-primary-500" />
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className="bg-white rounded-lg shadow border border-primary-100 p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-600 text-sm">Regular Users</p>
@@ -248,7 +238,7 @@ export default function AdminUsersPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className="bg-white rounded-lg shadow border border-primary-100 p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-600 text-sm">Verified</p>
@@ -260,7 +250,7 @@ export default function AdminUsersPage() {
         </div>
 
         {/* Filters */}
-        <div className="bg-white rounded-lg shadow p-6 mb-6">
+        <div className="bg-white rounded-lg shadow border border-primary-100 p-6 mb-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -272,7 +262,7 @@ export default function AdminUsersPage() {
                 value={searchTerm}
                 onChange={(e) => handleSearch(e.target.value)}
                 placeholder="Search by name, email, or phone..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               />
             </div>
 
@@ -284,7 +274,7 @@ export default function AdminUsersPage() {
               <select
                 value={roleFilter}
                 onChange={(e) => handleRoleChange(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               >
                 <option value="all">All Roles</option>
                 <option value="user">Users</option>
@@ -300,7 +290,7 @@ export default function AdminUsersPage() {
               <select
                 value={verifiedFilter}
                 onChange={(e) => handleVerifiedChange(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               >
                 <option value="all">All Users</option>
                 <option value="true">Verified</option>
@@ -311,41 +301,41 @@ export default function AdminUsersPage() {
         </div>
 
         {/* Users Table */}
-        <div className="bg-white rounded-lg shadow overflow-hidden">
+        <div className="bg-white rounded-lg shadow border border-primary-100 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+              <thead className="bg-primary-50">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-primary-700 uppercase tracking-wider">
                     User
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-primary-700 uppercase tracking-wider">
                     Contact
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-primary-700 uppercase tracking-wider">
                     Role
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-primary-700 uppercase tracking-wider">
                     Status
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-primary-700 uppercase tracking-wider">
                     Wallet
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-primary-700 uppercase tracking-wider">
                     Joined
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-primary-700 uppercase tracking-wider">
                     Actions
                   </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {users.map((user) => (
-                  <tr key={user._id} className="hover:bg-gray-50">
+                  <tr key={user._id} className="hover:bg-primary-50">
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
-                        <div className="flex-shrink-0 h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center">
-                          <span className="text-gray-600 font-semibold">
+                        <div className="flex-shrink-0 h-10 w-10 bg-primary-100 rounded-full flex items-center justify-center">
+                          <span className="text-primary-600 font-semibold">
                             {user.name.charAt(0).toUpperCase()}
                           </span>
                         </div>
@@ -394,7 +384,7 @@ export default function AdminUsersPage() {
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => openEditModal(user)}
-                          className="text-purple-600 hover:text-purple-900"
+                          className="text-primary-600 hover:text-primary-800"
                           title="Edit"
                         >
                           <Edit className="w-4 h-4" />
@@ -402,7 +392,7 @@ export default function AdminUsersPage() {
                         {user._id !== session?.user?.id && (
                           <button
                             onClick={() => handleDeleteUser(user._id, user.name)}
-                            className="text-red-600 hover:text-red-900"
+                            className="text-red-600 hover:text-red-800"
                             title="Delete"
                           >
                             <Trash2 className="w-4 h-4" />
@@ -418,7 +408,7 @@ export default function AdminUsersPage() {
 
           {/* Pagination */}
           {totalPages > 1 && (
-            <div className="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-200">
+            <div className="bg-primary-50 px-6 py-4 flex items-center justify-between border-t border-gray-200">
               <div className="text-sm text-gray-700">
                 Page {page} of {totalPages}
               </div>
@@ -426,7 +416,7 @@ export default function AdminUsersPage() {
                 <button
                   onClick={() => setPage(p => Math.max(1, p - 1))}
                   disabled={page === 1}
-                  className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  className="px-4 py-2 border border-primary-200 rounded-lg hover:bg-primary-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                 >
                   <ChevronLeft className="w-4 h-4" />
                   Previous
@@ -434,7 +424,7 @@ export default function AdminUsersPage() {
                 <button
                   onClick={() => setPage(p => Math.min(totalPages, p + 1))}
                   disabled={page === totalPages}
-                  className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  className="px-4 py-2 border border-primary-200 rounded-lg hover:bg-primary-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                 >
                   Next
                   <ChevronRight className="w-4 h-4" />
@@ -449,8 +439,8 @@ export default function AdminUsersPage() {
       {editModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Edit User</h2>
-            
+            <h2 className="text-2xl font-bold text-primary-800 mb-4">Edit User</h2>
+
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
@@ -458,7 +448,7 @@ export default function AdminUsersPage() {
                   type="text"
                   value={editModal.name}
                   onChange={(e) => setEditModal({ ...editModal, name: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
               </div>
 
@@ -468,7 +458,7 @@ export default function AdminUsersPage() {
                   type="tel"
                   value={editModal.phone}
                   onChange={(e) => setEditModal({ ...editModal, phone: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
               </div>
 
@@ -477,7 +467,7 @@ export default function AdminUsersPage() {
                 <select
                   value={editModal.role}
                   onChange={(e) => setEditModal({ ...editModal, role: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   disabled={editModal.userId === session?.user?.id}
                 >
                   <option value="user">User</option>
@@ -494,7 +484,7 @@ export default function AdminUsersPage() {
                   id="isVerified"
                   checked={editModal.isVerified}
                   onChange={(e) => setEditModal({ ...editModal, isVerified: e.target.checked })}
-                  className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                 />
                 <label htmlFor="isVerified" className="ml-2 block text-sm text-gray-900">
                   Verified Account
@@ -509,7 +499,7 @@ export default function AdminUsersPage() {
                   step="0.01"
                   value={editModal.walletBalance}
                   onChange={(e) => setEditModal({ ...editModal, walletBalance: parseFloat(e.target.value) || 0 })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
                 <p className="text-xs text-gray-500 mt-1">Set the user's wallet balance</p>
               </div>
@@ -525,7 +515,7 @@ export default function AdminUsersPage() {
               <button
                 onClick={handleUpdateUser}
                 disabled={saving}
-                className="flex-1 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {saving ? 'Saving...' : 'Save Changes'}
               </button>

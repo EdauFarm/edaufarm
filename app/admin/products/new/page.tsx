@@ -5,10 +5,26 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { isAdmin } from '@/lib/roleCheck';
 import toast from 'react-hot-toast';
-import { Package, Upload, ArrowLeft } from 'lucide-react';
+import { Package, ArrowLeft } from 'lucide-react';
 import axios from 'axios';
 import Link from 'next/link';
 import ImageUploader from '@/components/admin/ImageUploader';
+
+// Edau Farm product categories
+const FARM_CATEGORIES = [
+  'honey',
+  'fruits',
+  'vegetables',
+  'livestock',
+  'poultry',
+  'dairy',
+  'eggs',
+  'grains',
+  'herbs',
+  'seeds',
+  'fertilizers',
+  'farm-tools',
+];
 
 export default function NewProductPage() {
   const { data: session, status } = useSession();
@@ -21,7 +37,9 @@ export default function NewProductPage() {
     compareAtPrice: '',
     category: '',
     subcategory: '',
-    brand: '',
+    unit_type: 'piece',
+    origin_farm: 'Edau Farm',
+    is_organic: false,
     sku: '',
     stock: '',
     images: [] as string[],
@@ -30,6 +48,8 @@ export default function NewProductPage() {
     featured: false,
     active: true,
   });
+
+  const [imageKey, setImageKey] = useState(0);
 
   useEffect(() => {
     if (status === 'unauthenticated') {
@@ -49,16 +69,18 @@ export default function NewProductPage() {
     try {
       const productData = {
         ...formData,
+        name: formData.title,
         price: parseFloat(formData.price),
-        compareAtPrice: formData.compareAtPrice ? parseFloat(formData.compareAtPrice) : undefined,
-        stock: parseInt(formData.stock),
+        compare_at_price: formData.compareAtPrice ? parseFloat(formData.compareAtPrice) : undefined,
+        quantity: parseInt(formData.stock),
         images: formData.images.filter(img => img.trim() !== ''),
         specifications: formData.specifications.filter(spec => spec.key && spec.value),
         tags: formData.tags.split(',').map(tag => tag.trim()).filter(tag => tag !== ''),
+        is_in_stock: parseInt(formData.stock) > 0,
       };
 
-      const response = await axios.post('/api/products/upload', productData);
-      
+      const response = await axios.post('/api/products', productData);
+
       toast.success('Product created successfully');
       router.push('/admin/products');
     } catch (error: any) {
@@ -102,40 +124,49 @@ export default function NewProductPage() {
 
   if (status === 'loading') {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-primary-50 to-green-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-gray-200 border-t-purple-600 rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
+          <div className="w-16 h-16 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-primary-600 font-medium">Loading...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-green-50 py-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <Link
             href="/admin"
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-4"
+            className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 mb-4"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Dashboard
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900">Create New Product</h1>
-          <p className="text-gray-600 mt-2">Add a new product to your catalog</p>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg">
+              <span className="text-white font-bold text-lg">EF</span>
+            </div>
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900">Add New Product</h1>
+              <p className="text-gray-600 mt-1">Add a new farm product to Edau Farm catalog</p>
+            </div>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Basic Information */}
-          <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Basic Information</h2>
-            
+          <div className="bg-white rounded-2xl shadow-lg border border-primary-100 p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <span className="text-2xl">📦</span> Basic Information
+            </h2>
+
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Product Title *
+                  Product Name *
                 </label>
                 <input
                   type="text"
@@ -143,8 +174,8 @@ export default function NewProductPage() {
                   value={formData.title}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  placeholder="Enter product title"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-gray-50 focus:bg-white"
+                  placeholder="e.g., Pure Acacia Honey 500g"
                 />
               </div>
 
@@ -158,15 +189,15 @@ export default function NewProductPage() {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  placeholder="Enter product description"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-gray-50 focus:bg-white"
+                  placeholder="Describe the product - origin, quality, usage, etc."
                 />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Price *
+                    Price (KSh) *
                   </label>
                   <input
                     type="number"
@@ -176,14 +207,14 @@ export default function NewProductPage() {
                     required
                     step="0.01"
                     min="0"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="0.00"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-gray-50 focus:bg-white"
+                    placeholder="e.g., 850"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Compare at Price
+                    Compare at Price (KSh)
                   </label>
                   <input
                     type="number"
@@ -192,8 +223,8 @@ export default function NewProductPage() {
                     onChange={handleChange}
                     step="0.01"
                     min="0"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="0.00"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-gray-50 focus:bg-white"
+                    placeholder="Original price for discount display"
                   />
                 </div>
               </div>
@@ -201,75 +232,82 @@ export default function NewProductPage() {
           </div>
 
           {/* Category & Details */}
-          <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Category & Details</h2>
-            
+          <div className="bg-white rounded-2xl shadow-lg border border-primary-100 p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <span className="text-2xl">🏷️</span> Category & Details
+            </h2>
+
             <div className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Category *
                   </label>
-                  <input
-                    type="text"
+                  <select
                     name="category"
                     value={formData.category}
                     onChange={handleChange}
                     required
-                    list="category-suggestions"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="Type or select a category"
-                  />
-                  <datalist id="category-suggestions">
-                    <option value="phones" />
-                    <option value="laptops" />
-                    <option value="tablets" />
-                    <option value="soundbars" />
-                    <option value="fridges" />
-                    <option value="cookers" />
-                    <option value="accessories" />
-                    <option value="high-end-gadgets" />
-                    <option value="smartwatches" />
-                    <option value="headphones" />
-                    <option value="cameras" />
-                    <option value="gaming" />
-                    <option value="tvs" />
-                  </datalist>
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-gray-50 focus:bg-white"
+                  >
+                    <option value="">Select a category</option>
+                    <option value="honey">Honey & Bee Products</option>
+                    <option value="fruits">Fresh Fruits</option>
+                    <option value="vegetables">Fresh Vegetables</option>
+                    <option value="livestock">Livestock (Sheep, Goats)</option>
+                    <option value="poultry">Poultry & Eggs</option>
+                    <option value="dairy">Dairy Products</option>
+                    <option value="eggs">Farm Eggs</option>
+                    <option value="grains">Grains & Cereals</option>
+                    <option value="herbs">Herbs & Spices</option>
+                    <option value="seeds">Seeds & Seedlings</option>
+                    <option value="fertilizers">Organic Fertilizers</option>
+                    <option value="farm-tools">Farm Tools & Equipment</option>
+                  </select>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Subcategory
+                    Unit Type *
                   </label>
-                  <input
-                    type="text"
-                    name="subcategory"
-                    value={formData.subcategory}
+                  <select
+                    name="unit_type"
+                    value={formData.unit_type}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="e.g., Smartphones"
-                  />
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-gray-50 focus:bg-white"
+                  >
+                    <option value="piece">Piece</option>
+                    <option value="kg">Kilogram (kg)</option>
+                    <option value="bunch">Bunch</option>
+                    <option value="sack">Sack</option>
+                    <option value="crate">Crate</option>
+                    <option value="litre">Litre</option>
+                    <option value="dozen">Dozen</option>
+                    <option value="box">Box</option>
+                    <option value="jar">Jar</option>
+                    <option value="tray">Tray</option>
+                  </select>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Brand
+                    Origin Farm
                   </label>
                   <input
                     type="text"
-                    name="brand"
-                    value={formData.brand}
+                    name="origin_farm"
+                    value={formData.origin_farm}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="e.g., Samsung"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-gray-50 focus:bg-white"
+                    placeholder="e.g., Edau Farm"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    SKU *
+                    SKU / Product Code *
                   </label>
                   <input
                     type="text"
@@ -277,14 +315,14 @@ export default function NewProductPage() {
                     value={formData.sku}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="e.g., PHN-001"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-gray-50 focus:bg-white"
+                    placeholder="e.g., HNY-500G"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Stock *
+                    Stock Quantity *
                   </label>
                   <input
                     type="number"
@@ -293,44 +331,90 @@ export default function NewProductPage() {
                     onChange={handleChange}
                     required
                     min="0"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="0"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-gray-50 focus:bg-white"
+                    placeholder="e.g., 50"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Tags (comma separated)
-                </label>
-                <input
-                  type="text"
-                  name="tags"
-                  value={formData.tags}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  placeholder="e.g., premium, bestseller, new"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Tags (comma separated)
+                  </label>
+                  <input
+                    type="text"
+                    name="tags"
+                    value={formData.tags}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-gray-50 focus:bg-white"
+                    placeholder="e.g., organic, fresh, seasonal, premium"
+                  />
+                </div>
+
+                <div className="flex items-center gap-6 pt-8">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="is_organic"
+                      checked={formData.is_organic}
+                      onChange={handleChange}
+                      className="w-5 h-5 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                    />
+                    <span className="text-gray-700 flex items-center gap-1">
+                      <span>🌿</span> Organic
+                    </span>
+                  </label>
+
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="featured"
+                      checked={formData.featured}
+                      onChange={handleChange}
+                      className="w-5 h-5 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                    />
+                    <span className="text-gray-700">Featured</span>
+                  </label>
+
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="active"
+                      checked={formData.active}
+                      onChange={handleChange}
+                      className="w-5 h-5 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                    />
+                    <span className="text-gray-700">Active</span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Images */}
-          <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Product Images</h2>
-            <div className="mb-4 p-3 bg-purple-50 border border-purple-200 rounded-lg">
-              <p className="text-sm text-purple-700">
-                ✨ <strong>Upload & Reorder:</strong> Upload images or add URLs, then drag to reorder. 
-                The first image will be your primary display image on the product page.
+          <div className="bg-white rounded-2xl shadow-lg border border-primary-100 p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <span className="text-2xl">📷</span> Product Images
+            </h2>
+            <div className="mb-4 p-3 bg-primary-50 border border-primary-200 rounded-lg">
+              <p className="text-sm text-primary-700">
+                Upload product images - drag to reorder. First image is the primary display image.
               </p>
             </div>
-            <ImageUploader images={formData.images} onChange={handleImagesChange} />
+            <ImageUploader
+              key={imageKey}
+              images={formData.images}
+              onChange={handleImagesChange}
+            />
           </div>
 
           {/* Specifications */}
-          <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Specifications</h2>
-            
+          <div className="bg-white rounded-2xl shadow-lg border border-primary-100 p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <span className="text-2xl">📋</span> Specifications
+            </h2>
+
             <div className="space-y-3">
               {formData.specifications.map((spec, index) => (
                 <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -338,22 +422,22 @@ export default function NewProductPage() {
                     type="text"
                     value={spec.key}
                     onChange={(e) => handleSpecChange(index, 'key', e.target.value)}
-                    className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="Key (e.g., Display)"
+                    className="px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-gray-50 focus:bg-white"
+                    placeholder="e.g., Weight, Harvest Date, Origin"
                   />
                   <div className="flex gap-2">
                     <input
                       type="text"
                       value={spec.value}
                       onChange={(e) => handleSpecChange(index, 'value', e.target.value)}
-                      className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                      placeholder="Value (e.g., 6.5 inch)"
+                      className="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-gray-50 focus:bg-white"
+                      placeholder="e.g., 500g, July 2024, West Pokot"
                     />
                     {formData.specifications.length > 1 && (
                       <button
                         type="button"
                         onClick={() => removeSpecField(index)}
-                        className="px-4 py-2 text-red-600 border border-red-300 rounded-lg hover:bg-red-50"
+                        className="px-4 py-3 text-red-600 border border-red-200 rounded-xl hover:bg-red-50 transition-colors"
                       >
                         Remove
                       </button>
@@ -364,39 +448,10 @@ export default function NewProductPage() {
               <button
                 type="button"
                 onClick={addSpecField}
-                className="w-full px-4 py-2 border-2 border-dashed border-gray-300 rounded-lg text-gray-600 hover:border-purple-500 hover:text-purple-600 transition-colors"
+                className="w-full px-4 py-3 border-2 border-dashed border-primary-300 rounded-xl text-primary-600 hover:border-primary-500 hover:bg-primary-50 transition-colors"
               >
                 + Add Specification
               </button>
-            </div>
-          </div>
-
-          {/* Options */}
-          <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Options</h2>
-            
-            <div className="space-y-3">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  name="featured"
-                  checked={formData.featured}
-                  onChange={handleChange}
-                  className="w-5 h-5 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
-                />
-                <span className="text-gray-700">Featured Product</span>
-              </label>
-
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  name="active"
-                  checked={formData.active}
-                  onChange={handleChange}
-                  className="w-5 h-5 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
-                />
-                <span className="text-gray-700">Active (Visible to customers)</span>
-              </label>
             </div>
           </div>
 
@@ -405,7 +460,7 @@ export default function NewProductPage() {
             <button
               type="submit"
               disabled={loading}
-              className="flex-1 bg-gradient-to-r from-slate-800 to-slate-900 text-white px-6 py-3 rounded-lg hover:shadow-lg disabled:opacity-50 font-semibold flex items-center justify-center gap-2"
+              className="flex-1 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-4 rounded-xl hover:shadow-lg disabled:opacity-50 font-semibold flex items-center justify-center gap-2 transition-all"
             >
               {loading ? (
                 <>
@@ -415,13 +470,13 @@ export default function NewProductPage() {
               ) : (
                 <>
                   <Package className="w-5 h-5" />
-                  Create Product
+                  Add Product
                 </>
               )}
             </button>
             <Link
               href="/admin/products"
-              className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 text-gray-700 font-semibold"
+              className="px-6 py-4 border border-gray-200 rounded-xl hover:bg-gray-50 text-gray-700 font-semibold transition-colors"
             >
               Cancel
             </Link>

@@ -109,7 +109,7 @@ export default function AdminDashboard() {
     siteDescription: 'West Pokots Premier Sustainable Farm',
     adminEmail: 'docta2856@gmail.com',
     contactEmail: 'support@edaufarm.com',
-    supportPhone: '+254 700 000 000',
+    supportPhone: '+254 727 690165',
     maintenanceMode: false,
     allowRegistration: true,
     emailService: 'connected',
@@ -256,7 +256,7 @@ export default function AdminDashboard() {
       change: '+8.2%',
       changeType: 'positive',
       icon: FiShoppingBag,
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-primary-500 to-primary-600'
     },
     {
       title: 'Total Users',
@@ -264,7 +264,7 @@ export default function AdminDashboard() {
       change: '+15.3%',
       changeType: 'positive',
       icon: FiUsers,
-      color: 'from-purple-500 to-purple-600'
+      color: 'from-blue-500 to-blue-600'
     },
     {
       title: 'Total Products',
@@ -272,7 +272,7 @@ export default function AdminDashboard() {
       change: '+5.7%',
       changeType: 'positive',
       icon: FiPackage,
-      color: 'from-indigo-500 to-indigo-600'
+      color: 'from-teal-500 to-teal-600'
     },
     {
       title: 'Pending Orders',
@@ -280,7 +280,7 @@ export default function AdminDashboard() {
       change: '-2.1%',
       changeType: 'positive',
       icon: FiClock,
-      color: 'from-yellow-500 to-yellow-600'
+      color: 'from-amber-500 to-amber-600'
     },
     {
       title: 'Low Stock Items',
@@ -317,14 +317,17 @@ export default function AdminDashboard() {
 
   if (status === 'loading' || loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-slate-800"></div>
+      <div className="min-h-screen bg-gradient-to-br from-primary-50 to-green-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-primary-600 font-medium">Loading Edau Farm Admin...</p>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-green-50 flex">
       {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
         <div
@@ -334,27 +337,27 @@ export default function AdminDashboard() {
       )}
 
       {/* Sidebar */}
-      <aside className={`fixed lg:static top-0 left-0 h-screen bg-white border-r border-slate-200 shadow-2xl transition-transform duration-300 z-50 w-72 flex flex-col ${
+      <aside className={`fixed lg:static top-0 left-0 h-screen bg-white border-r border-primary-100 shadow-2xl transition-transform duration-300 z-50 w-72 flex flex-col ${
         sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
       }`}>
 
         {/* Sidebar Header */}
-        <div className="p-6 border-b border-slate-200">
+        <div className="p-6 border-b border-primary-100">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl flex items-center justify-center">
                 <FiShield className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-slate-900">Admin Panel</h2>
-                <p className="text-sm text-slate-500">Edau Farm</p>
+                <h2 className="text-xl font-bold text-primary-800">Admin Panel</h2>
+                <p className="text-sm text-primary-600">Edau Farm</p>
               </div>
             </div>
             <button
               onClick={() => setSidebarOpen(false)}
-              className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+              className="lg:hidden p-2 rounded-lg hover:bg-primary-50 transition-colors"
             >
-              <FiX className="w-5 h-5 text-slate-600" />
+              <FiX className="w-5 h-5 text-primary-600" />
             </button>
           </div>
         </div>
@@ -367,7 +370,7 @@ export default function AdminDashboard() {
                 {item.href ? (
                   <Link
                     href={item.href}
-                    className="w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                    className="w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 text-gray-700 hover:bg-primary-50 hover:text-primary-800"
                     onClick={() => setSidebarOpen(false)}
                   >
                     <item.icon className="w-5 h-5" />
@@ -381,8 +384,8 @@ export default function AdminDashboard() {
                     }}
                     className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 ${
                       activeTab === item.id
-                        ? 'bg-slate-900 text-white shadow-lg'
-                        : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
+                        ? 'bg-primary-600 text-white shadow-lg'
+                        : 'text-gray-700 hover:bg-primary-50 hover:text-primary-800'
                     }`}
                   >
                     <item.icon className="w-5 h-5" />
@@ -395,18 +398,18 @@ export default function AdminDashboard() {
         </nav>
 
         {/* User Info */}
-        <div className="p-4 border-t border-slate-200">
-          <div className="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
-            <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-slate-700 rounded-full flex items-center justify-center">
+        <div className="p-4 border-t border-primary-100">
+          <div className="flex items-center space-x-3 p-3 bg-primary-50 rounded-xl">
+            <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center">
               <span className="text-white font-semibold text-sm">
                 {session?.user?.name?.charAt(0)?.toUpperCase() || 'A'}
               </span>
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-slate-900 truncate">
+              <p className="text-sm font-medium text-primary-800 truncate">
                 {session?.user?.name || 'Admin'}
               </p>
-              <p className="text-xs text-slate-500">Administrator</p>
+              <p className="text-xs text-primary-600">Administrator</p>
             </div>
           </div>
         </div>
@@ -415,32 +418,32 @@ export default function AdminDashboard() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-w-0 lg:ml-0">
         {/* Header */}
-        <header className="bg-white border-b border-slate-200 px-4 lg:px-6 py-4">
+        <header className="bg-white border-b border-primary-100 px-4 lg:px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <button
                 onClick={() => setSidebarOpen(true)}
-                className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+                className="lg:hidden p-2 rounded-lg hover:bg-primary-50 transition-colors"
               >
-                <FiMenu className="w-5 h-5 text-slate-600" />
+                <FiMenu className="w-5 h-5 text-primary-600" />
               </button>
               <div>
-                <h1 className="text-xl lg:text-2xl font-bold text-slate-900">
+                <h1 className="text-xl lg:text-2xl font-bold text-primary-800">
                   {navigationItems.find(item => item.id === activeTab)?.label || 'Dashboard'}
                 </h1>
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-primary-600">
                   Welcome back, {session?.user?.name?.split(' ')[0] || 'Admin'}
                 </p>
               </div>
             </div>
 
             <div className="flex items-center space-x-3">
-              <button className="p-2 rounded-lg hover:bg-slate-100 transition-colors relative">
-                <FiBell className="w-5 h-5 text-slate-600" />
+              <button className="p-2 rounded-lg hover:bg-primary-50 transition-colors relative">
+                <FiBell className="w-5 h-5 text-primary-600" />
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
-              <button className="p-2 rounded-lg hover:bg-slate-100 transition-colors">
-                <FiSettings className="w-5 h-5 text-slate-600" />
+              <button className="p-2 rounded-lg hover:bg-primary-50 transition-colors">
+                <FiSettings className="w-5 h-5 text-primary-600" />
               </button>
             </div>
           </div>
@@ -453,14 +456,14 @@ export default function AdminDashboard() {
               {/* Stats Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
                 {dashboardCards.map((card, index) => (
-                  <div key={index} className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 hover:shadow-xl transition-all duration-300">
+                  <div key={index} className="bg-white rounded-2xl shadow-lg border border-primary-100 p-6 hover:shadow-xl transition-all duration-300">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm font-medium text-slate-600">{card.title}</p>
-                        <p className="text-3xl font-bold text-slate-900 mt-1">{card.value}</p>
+                        <p className="text-sm font-medium text-gray-600">{card.title}</p>
+                        <p className="text-3xl font-bold text-primary-800 mt-1">{card.value}</p>
                         <p className={`text-sm font-medium mt-2 ${
                           card.changeType === 'positive' ? 'text-green-600' :
-                          card.changeType === 'negative' ? 'text-red-600' : 'text-slate-600'
+                          card.changeType === 'negative' ? 'text-red-600' : 'text-gray-600'
                         }`}>
                           {card.change} from last month
                         </p>
@@ -476,34 +479,34 @@ export default function AdminDashboard() {
               {/* Recent Activity */}
               <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 lg:gap-6">
                 {/* Recent Orders */}
-                <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-2xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-lg font-semibold text-slate-900">Recent Orders</h3>
-                    <Link href="/admin/orders" className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                    <h3 className="text-lg font-semibold text-primary-800">Recent Orders</h3>
+                    <Link href="/admin/orders" className="text-sm text-primary-600 hover:text-primary-800 transition-colors">
                       View all →
                     </Link>
                   </div>
                   <div className="space-y-4">
                     {stats?.recentOrders?.slice(0, 5).map((order) => (
-                      <div key={order._id} className="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+                      <div key={order._id} className="flex items-center justify-between p-3 bg-primary-50 rounded-xl">
                         <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-slate-200 rounded-lg flex items-center justify-center">
-                            <FiShoppingBag className="w-5 h-5 text-slate-600" />
+                          <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                            <FiShoppingBag className="w-5 h-5 text-primary-600" />
                           </div>
                           <div>
-                            <p className="text-sm font-medium text-slate-900">Order #{order._id.slice(-8)}</p>
-                            <p className="text-xs text-slate-500">{order.customerName}</p>
+                            <p className="text-sm font-medium text-primary-800">Order #{order._id.slice(-8)}</p>
+                            <p className="text-xs text-primary-600">{order.customerName}</p>
                           </div>
                         </div>
                         <div className="text-right">
-                          <p className="text-sm font-semibold text-slate-900">{formatPrice(order.total)}</p>
+                          <p className="text-sm font-semibold text-primary-800">{formatPrice(order.total)}</p>
                           <span className={`inline-block px-2 py-1 text-xs rounded-full ${getStatusColor(order.status)}`}>
                             {order.status}
                           </span>
                         </div>
                       </div>
                     )) || (
-                      <div className="text-center py-8 text-slate-500">
+                      <div className="text-center py-8 text-gray-500">
                         <FiShoppingBag className="w-12 h-12 mx-auto mb-3 opacity-50" />
                         <p>No recent orders</p>
                       </div>
@@ -512,29 +515,29 @@ export default function AdminDashboard() {
                 </div>
 
                 {/* Top Products */}
-                <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-2xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-lg font-semibold text-slate-900">Top Products</h3>
-                    <Link href="/admin/products" className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                    <h3 className="text-lg font-semibold text-primary-800">Top Products</h3>
+                    <Link href="/admin/products" className="text-sm text-primary-600 hover:text-primary-800 transition-colors">
                       View all →
                     </Link>
                   </div>
                   <div className="space-y-4">
                     {stats?.topProducts?.slice(0, 5).map((product, index: number) => (
                       <div key={product._id} className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center text-sm font-semibold text-slate-600">
+                        <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-sm font-semibold text-primary-600">
                           {index + 1}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-medium text-slate-900 truncate">{product.title}</p>
-                          <p className="text-xs text-slate-500">{product.sales || 0} sales</p>
+                          <p className="text-sm font-medium text-primary-800 truncate">{product.title}</p>
+                          <p className="text-xs text-primary-600">{product.sales || 0} sales</p>
                         </div>
-                        <div className="text-sm font-semibold text-slate-900">
+                        <div className="text-sm font-semibold text-primary-800">
                           {formatPrice(product.price)}
                         </div>
                       </div>
                     )) || (
-                      <div className="text-center py-8 text-slate-500">
+                      <div className="text-center py-8 text-gray-500">
                         <FiPackage className="w-12 h-12 mx-auto mb-3 opacity-50" />
                         <p>No products yet</p>
                       </div>
@@ -544,12 +547,12 @@ export default function AdminDashboard() {
               </div>
 
               {/* Quick Actions */}
-              <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6">
-                <h3 className="text-lg font-semibold text-slate-900 mb-6">Quick Actions</h3>
+              <div className="bg-white rounded-2xl shadow-lg border border-primary-100 p-6">
+                <h3 className="text-lg font-semibold text-primary-800 mb-6">Quick Actions</h3>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                   <Link
                     href="/admin/products/new"
-                    className="flex flex-col items-center p-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl text-white hover:shadow-lg transition-all duration-200 hover:scale-105"
+                    className="flex flex-col items-center p-4 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl text-white hover:shadow-lg transition-all duration-200 hover:scale-105"
                   >
                     <FiPlus className="w-6 h-6 mb-2" />
                     <span className="text-sm font-medium">Add Product</span>
@@ -563,7 +566,7 @@ export default function AdminDashboard() {
                   </Link>
                   <Link
                     href="/admin/users"
-                    className="flex flex-col items-center p-4 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl text-white hover:shadow-lg transition-all duration-200 hover:scale-105"
+                    className="flex flex-col items-center p-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl text-white hover:shadow-lg transition-all duration-200 hover:scale-105"
                   >
                     <FiUsers className="w-6 h-6 mb-2" />
                     <span className="text-sm font-medium">View Users</span>
@@ -577,7 +580,7 @@ export default function AdminDashboard() {
                   </Link>
                   <button
                     onClick={fetchStats}
-                    className="flex flex-col items-center p-4 bg-gradient-to-r from-slate-500 to-slate-600 rounded-xl text-white hover:shadow-lg transition-all duration-200 hover:scale-105"
+                    className="flex flex-col items-center p-4 bg-gradient-to-r from-gray-500 to-gray-600 rounded-xl text-white hover:shadow-lg transition-all duration-200 hover:scale-105"
                   >
                     <FiRefreshCw className="w-6 h-6 mb-2" />
                     <span className="text-sm font-medium">Refresh Data</span>
@@ -591,22 +594,22 @@ export default function AdminDashboard() {
             <div className="space-y-6">
               {/* Orders Header */}
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                <h2 className="text-2xl font-bold text-slate-900">Orders Management</h2>
+                <h2 className="text-2xl font-bold text-primary-800">Orders Management</h2>
                 <div className="flex items-center space-x-3">
                   <div className="relative">
-                    <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
+                    <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                     <input
                       type="text"
                       placeholder="Search orders..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+                      className="pl-10 pr-4 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     />
                   </div>
                   <select
                     value={filterStatus}
                     onChange={(e) => setFilterStatus(e.target.value)}
-                    className="px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+                    className="px-4 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   >
                     <option value="all">All Status</option>
                     <option value="pending">Pending</option>
@@ -619,26 +622,26 @@ export default function AdminDashboard() {
               </div>
 
               {/* Orders Table */}
-              <div className="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+              <div className="bg-white rounded-2xl shadow-lg border border-primary-100 overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full">
-                    <thead className="bg-slate-50">
+                    <thead className="bg-primary-50">
                       <tr>
-                        <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Order ID</th>
-                        <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Customer</th>
-                        <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Status</th>
-                        <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Total</th>
-                        <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Date</th>
-                        <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Actions</th>
+                        <th className="px-6 py-4 text-left text-xs font-semibold text-primary-700 uppercase tracking-wider">Order ID</th>
+                        <th className="px-6 py-4 text-left text-xs font-semibold text-primary-700 uppercase tracking-wider">Customer</th>
+                        <th className="px-6 py-4 text-left text-xs font-semibold text-primary-700 uppercase tracking-wider">Status</th>
+                        <th className="px-6 py-4 text-left text-xs font-semibold text-primary-700 uppercase tracking-wider">Total</th>
+                        <th className="px-6 py-4 text-left text-xs font-semibold text-primary-700 uppercase tracking-wider">Date</th>
+                        <th className="px-6 py-4 text-left text-xs font-semibold text-primary-700 uppercase tracking-wider">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-slate-200">
+                    <tbody className="divide-y divide-primary-100">
                       {stats?.recentOrders?.map((order) => (
-                        <tr key={order._id} className="hover:bg-slate-50 transition-colors">
-                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">
+                        <tr key={order._id} className="hover:bg-primary-50 transition-colors">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-primary-800">
                             #{order._id.slice(-8)}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-900">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                             {order.customerName}
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
@@ -646,18 +649,18 @@ export default function AdminDashboard() {
                               {order.status}
                             </span>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-slate-900">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-primary-800">
                             {formatPrice(order.total)}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                             {new Date(order.createdAt).toLocaleDateString()}
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                             <div className="flex items-center space-x-2">
-                              <button className="text-slate-600 hover:text-slate-900 transition-colors">
+                              <button className="text-primary-600 hover:text-primary-800 transition-colors">
                                 <FiEye className="w-4 h-4" />
                               </button>
-                              <button className="text-slate-600 hover:text-slate-900 transition-colors">
+                              <button className="text-primary-600 hover:text-primary-800 transition-colors">
                                 <FiEdit className="w-4 h-4" />
                               </button>
                             </div>
@@ -665,7 +668,7 @@ export default function AdminDashboard() {
                         </tr>
                       )) || (
                         <tr>
-                          <td colSpan={6} className="px-6 py-12 text-center text-slate-500">
+                          <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
                             <FiShoppingBag className="w-12 h-12 mx-auto mb-3 opacity-50" />
                             <p>No orders found</p>
                           </td>
@@ -681,23 +684,23 @@ export default function AdminDashboard() {
           {activeTab === 'products' && (
             <div className="space-y-6">
               <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-slate-900">Products Management</h2>
+                <h2 className="text-2xl font-bold text-primary-800">Products Management</h2>
                 <Link
                   href="/admin/products/new"
-                  className="bg-gradient-to-r from-slate-800 to-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:scale-105 flex items-center space-x-2"
+                  className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:scale-105 flex items-center space-x-2"
                 >
                   <FiPlus className="w-5 h-5" />
                   <span>Add Product</span>
                 </Link>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 text-center">
-                <FiPackage className="w-16 h-16 mx-auto mb-4 text-slate-400" />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">Products Management</h3>
-                <p className="text-slate-600 mb-6">Manage your product catalog, inventory, and pricing</p>
+              <div className="bg-white rounded-2xl shadow-lg border border-primary-100 p-8 text-center">
+                <FiPackage className="w-16 h-16 mx-auto mb-4 text-primary-400" />
+                <h3 className="text-xl font-semibold text-primary-800 mb-2">Products Management</h3>
+                <p className="text-gray-600 mb-6">Manage your farm product catalog, inventory, and pricing</p>
                 <Link
                   href="/admin/products"
-                  className="bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 transition-colors"
+                  className="bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-colors"
                 >
                   Go to Products →
                 </Link>
@@ -708,20 +711,20 @@ export default function AdminDashboard() {
           {activeTab === 'users' && (
             <div className="space-y-6">
               <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-slate-900">Users Management</h2>
-                <button className="bg-gradient-to-r from-slate-800 to-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:scale-105 flex items-center space-x-2">
+                <h2 className="text-2xl font-bold text-primary-800">Users Management</h2>
+                <button className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:scale-105 flex items-center space-x-2">
                   <FiDownload className="w-5 h-5" />
                   <span>Export Users</span>
                 </button>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 text-center">
-                <FiUsers className="w-16 h-16 mx-auto mb-4 text-slate-400" />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">Users Management</h3>
-                <p className="text-slate-600 mb-6">Manage user accounts, roles, and permissions</p>
+              <div className="bg-white rounded-2xl shadow-lg border border-primary-100 p-8 text-center">
+                <FiUsers className="w-16 h-16 mx-auto mb-4 text-primary-400" />
+                <h3 className="text-xl font-semibold text-primary-800 mb-2">Users Management</h3>
+                <p className="text-gray-600 mb-6">Manage user accounts, roles, and permissions</p>
                 <Link
                   href="/admin/users"
-                  className="bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 transition-colors"
+                  className="bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-colors"
                 >
                   Go to Users →
                 </Link>
@@ -731,13 +734,13 @@ export default function AdminDashboard() {
 
           {activeTab === 'analytics' && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-slate-900">Analytics & Insights</h2>
+              <h2 className="text-2xl font-bold text-primary-800">Analytics & Insights</h2>
 
-              <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 text-center">
-                <FiBarChart className="w-16 h-16 mx-auto mb-4 text-slate-400" />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">Advanced Analytics</h3>
-                <p className="text-slate-600 mb-6">Detailed insights into sales, user behavior, and performance metrics</p>
-                <button className="bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 transition-colors">
+              <div className="bg-white rounded-2xl shadow-lg border border-primary-100 p-8 text-center">
+                <FiBarChart className="w-16 h-16 mx-auto mb-4 text-primary-400" />
+                <h3 className="text-xl font-semibold text-primary-800 mb-2">Advanced Analytics</h3>
+                <p className="text-gray-600 mb-6">Detailed insights into sales, user behavior, and performance metrics</p>
+                <button className="bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-colors">
                   View Analytics →
                 </button>
               </div>
@@ -748,8 +751,8 @@ export default function AdminDashboard() {
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="text-2xl font-bold text-slate-900">Reviews Management</h2>
-                  <p className="text-slate-600 mt-2">Create, edit, and manage product reviews</p>
+                  <h2 className="text-2xl font-bold text-primary-800">Reviews Management</h2>
+                  <p className="text-gray-600 mt-2">Create, edit, and manage product reviews</p>
                 </div>
                 <Link
                   href="/admin/reviews"
@@ -762,62 +765,62 @@ export default function AdminDashboard() {
 
               {/* Review Stats Overview */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <p className="text-sm font-medium text-slate-600">Total Reviews</p>
-                      <p className="text-2xl font-bold text-slate-900">-</p>
+                      <p className="text-sm font-medium text-gray-600">Total Reviews</p>
+                      <p className="text-2xl font-bold text-primary-800">-</p>
                     </div>
                     <FiStar className="w-8 h-8 text-amber-500" />
                   </div>
                   <div className="flex items-center text-sm">
-                    <span className="text-slate-500">All product reviews</span>
+                    <span className="text-gray-500">All product reviews</span>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <p className="text-sm font-medium text-slate-600">Average Rating</p>
-                      <p className="text-2xl font-bold text-slate-900">-</p>
+                      <p className="text-sm font-medium text-gray-600">Average Rating</p>
+                      <p className="text-2xl font-bold text-primary-800">-</p>
                     </div>
                     <FiCheckCircle className="w-8 h-8 text-green-500" />
                   </div>
                   <div className="flex items-center text-sm">
-                    <span className="text-slate-500">Across all products</span>
+                    <span className="text-gray-500">Across all products</span>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <p className="text-sm font-medium text-slate-600">Verified Reviews</p>
-                      <p className="text-2xl font-bold text-slate-900">-</p>
+                      <p className="text-sm font-medium text-gray-600">Verified Reviews</p>
+                      <p className="text-2xl font-bold text-primary-800">-</p>
                     </div>
                     <FiShield className="w-8 h-8 text-blue-500" />
                   </div>
                   <div className="flex items-center text-sm">
-                    <span className="text-slate-500">From verified buyers</span>
+                    <span className="text-gray-500">From verified buyers</span>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <p className="text-sm font-medium text-slate-600">This Month</p>
-                      <p className="text-2xl font-bold text-slate-900">-</p>
+                      <p className="text-sm font-medium text-gray-600">This Month</p>
+                      <p className="text-2xl font-bold text-primary-800">-</p>
                     </div>
-                    <FiActivity className="w-8 h-8 text-purple-500" />
+                    <FiActivity className="w-8 h-8 text-indigo-500" />
                   </div>
                   <div className="flex items-center text-sm">
-                    <span className="text-slate-500">New reviews</span>
+                    <span className="text-gray-500">New reviews</span>
                   </div>
                 </div>
               </div>
 
               {/* Quick Actions for Reviews */}
-              <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
-                <h3 className="text-lg font-semibold text-slate-900 mb-6">Quick Actions</h3>
+              <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
+                <h3 className="text-lg font-semibold text-primary-800 mb-6">Quick Actions</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <Link
                     href="/admin/reviews"
@@ -837,11 +840,11 @@ export default function AdminDashboard() {
                   </Link>
                   <Link
                     href="/admin/reviews"
-                    className="flex flex-col items-center p-6 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl text-white hover:shadow-lg transition-all duration-200 hover:scale-105"
+                    className="flex flex-col items-center p-6 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl text-white hover:shadow-lg transition-all duration-200 hover:scale-105"
                   >
                     <FiEye className="w-8 h-8 mb-3" />
                     <span className="font-semibold">View All Reviews</span>
-                    <span className="text-sm text-purple-100 mt-1">Browse all reviews</span>
+                    <span className="text-sm text-primary-100 mt-1">Browse all reviews</span>
                   </Link>
                 </div>
               </div>
@@ -853,7 +856,7 @@ export default function AdminDashboard() {
                   <div>
                     <h4 className="font-semibold text-amber-900 mb-2">Reviews Management</h4>
                     <p className="text-amber-800 text-sm">
-                      Use this section to manage product reviews, especially for migrated products from your manual order system. 
+                      Use this section to manage product reviews, especially for migrated products from your manual order system.
                       You can create new reviews, edit existing ones, and maintain customer feedback across all your products.
                     </p>
                   </div>
@@ -864,72 +867,72 @@ export default function AdminDashboard() {
 
           {activeTab === 'finance' && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-slate-900">Financial Management</h2>
+              <h2 className="text-2xl font-bold text-primary-800">Financial Management</h2>
 
               {/* Financial Overview Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <p className="text-sm font-medium text-slate-600">Monthly Revenue</p>
-                      <p className="text-2xl font-bold text-slate-900">{formatPrice(stats?.totalRevenue || 0)}</p>
+                      <p className="text-sm font-medium text-gray-600">Monthly Revenue</p>
+                      <p className="text-2xl font-bold text-primary-800">{formatPrice(stats?.totalRevenue || 0)}</p>
                     </div>
                     <FiDollarSign className="w-8 h-8 text-green-500" />
                   </div>
                   <div className="flex items-center text-sm">
                     <FiTrendingUp className="w-4 h-4 text-green-500 mr-1" />
                     <span className="text-green-600 font-medium">+12.5%</span>
-                    <span className="text-slate-500 ml-1">from last month</span>
+                    <span className="text-gray-500 ml-1">from last month</span>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <p className="text-sm font-medium text-slate-600">Pending Payments</p>
-                      <p className="text-2xl font-bold text-slate-900">{formatPrice(0)}</p>
+                      <p className="text-sm font-medium text-gray-600">Pending Payments</p>
+                      <p className="text-2xl font-bold text-primary-800">{formatPrice(0)}</p>
                     </div>
                     <FiClock className="w-8 h-8 text-yellow-500" />
                   </div>
                   <div className="flex items-center text-sm">
-                    <span className="text-slate-500">No pending payments</span>
+                    <span className="text-gray-500">No pending payments</span>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <p className="text-sm font-medium text-slate-600">Total Transactions</p>
-                      <p className="text-2xl font-bold text-slate-900">{stats?.totalOrders || 0}</p>
+                      <p className="text-sm font-medium text-gray-600">Total Transactions</p>
+                      <p className="text-2xl font-bold text-primary-800">{stats?.totalOrders || 0}</p>
                     </div>
                     <FiActivity className="w-8 h-8 text-blue-500" />
                   </div>
                   <div className="flex items-center text-sm">
-                    <span className="text-slate-500">All time transactions</span>
+                    <span className="text-gray-500">All time transactions</span>
                   </div>
                 </div>
               </div>
 
               {/* Financial Actions */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4">Revenue Reports</h3>
-                  <p className="text-slate-600 mb-4">Generate detailed financial reports and analytics</p>
-                  <button 
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
+                  <h3 className="text-lg font-semibold text-primary-800 mb-4">Revenue Reports</h3>
+                  <p className="text-gray-600 mb-4">Generate detailed financial reports and analytics</p>
+                  <button
                     onClick={generateFinancialReport}
                     disabled={generatingReport}
-                    className="w-full bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {generatingReport ? 'Generating...' : 'Generate Report'}
                   </button>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4">Payment Methods</h3>
-                  <p className="text-slate-600 mb-4">Configure and monitor payment gateways</p>
-                  <button 
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
+                  <h3 className="text-lg font-semibold text-primary-800 mb-4">Payment Methods</h3>
+                  <p className="text-gray-600 mb-4">Configure and monitor payment gateways</p>
+                  <button
                     onClick={managePaymentSettings}
-                    className="w-full bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-slate-800 transition-colors"
+                    className="w-full bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors"
                   >
                     Manage Payments
                   </button>
@@ -937,28 +940,28 @@ export default function AdminDashboard() {
               </div>
 
               {/* Recent Transactions */}
-              <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
-                <h3 className="text-lg font-semibold text-slate-900 mb-4">Recent Transactions</h3>
+              <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
+                <h3 className="text-lg font-semibold text-primary-800 mb-4">Recent Transactions</h3>
                 <div className="space-y-3">
                   {stats?.recentOrders?.slice(0, 5).map((order) => (
-                    <div key={order._id} className="flex items-center justify-between py-3 border-b border-slate-100 last:border-b-0">
+                    <div key={order._id} className="flex items-center justify-between py-3 border-b border-primary-100 last:border-b-0">
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center">
-                          <FiShoppingBag className="w-5 h-5 text-slate-600" />
+                        <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                          <FiShoppingBag className="w-5 h-5 text-primary-600" />
                         </div>
                         <div>
-                          <p className="font-medium text-slate-900">Order #{order._id.slice(-8)}</p>
-                          <p className="text-sm text-slate-500">{order.customerName}</p>
+                          <p className="font-medium text-gray-900">Order #{order._id.slice(-8)}</p>
+                          <p className="text-sm text-gray-500">{order.customerName}</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="font-semibold text-slate-900">{formatPrice(order.total)}</p>
-                        <p className="text-sm text-slate-500">{new Date(order.createdAt).toLocaleDateString()}</p>
+                        <p className="font-semibold text-primary-800">{formatPrice(order.total)}</p>
+                        <p className="text-sm text-gray-500">{new Date(order.createdAt).toLocaleDateString()}</p>
                       </div>
                     </div>
                   ))}
                   {(!stats?.recentOrders || stats.recentOrders.length === 0) && (
-                    <p className="text-slate-500 text-center py-4">No recent transactions</p>
+                    <p className="text-gray-500 text-center py-4">No recent transactions</p>
                   )}
                 </div>
               </div>
@@ -967,89 +970,89 @@ export default function AdminDashboard() {
 
           {activeTab === 'settings' && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-slate-900">System Settings</h2>
+              <h2 className="text-2xl font-bold text-primary-800">System Settings</h2>
 
               {/* Settings Categories */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center mb-4">
-                    <FiSettings className="w-8 h-8 text-slate-600 mr-3" />
-                    <h3 className="text-lg font-semibold text-slate-900">General Settings</h3>
+                    <FiSettings className="w-8 h-8 text-primary-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-primary-800">General Settings</h3>
                   </div>
-                  <p className="text-slate-600 mb-4">Site configuration, branding, and basic settings</p>
-                  <button 
+                  <p className="text-gray-600 mb-4">Site configuration, branding, and basic settings</p>
+                  <button
                     onClick={configureGeneralSettings}
-                    className="w-full bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-slate-800 transition-colors"
+                    className="w-full bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors"
                   >
                     Configure
                   </button>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center mb-4">
-                    <FiShield className="w-8 h-8 text-slate-600 mr-3" />
-                    <h3 className="text-lg font-semibold text-slate-900">Security</h3>
+                    <FiShield className="w-8 h-8 text-primary-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-primary-800">Security</h3>
                   </div>
-                  <p className="text-slate-600 mb-4">User permissions, authentication, and security policies</p>
-                  <button 
+                  <p className="text-gray-600 mb-4">User permissions, authentication, and security policies</p>
+                  <button
                     onClick={manageSecurity}
-                    className="w-full bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-slate-800 transition-colors"
+                    className="w-full bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors"
                   >
                     Manage Security
                   </button>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center mb-4">
-                    <FiMail className="w-8 h-8 text-slate-600 mr-3" />
-                    <h3 className="text-lg font-semibold text-slate-900">Email & Notifications</h3>
+                    <FiMail className="w-8 h-8 text-primary-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-primary-800">Email & Notifications</h3>
                   </div>
-                  <p className="text-slate-600 mb-4">Email templates, SMTP settings, and notification preferences</p>
-                  <button 
+                  <p className="text-gray-600 mb-4">Email templates, SMTP settings, and notification preferences</p>
+                  <button
                     onClick={manageEmailSettings}
-                    className="w-full bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-slate-800 transition-colors"
+                    className="w-full bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors"
                   >
                     Email Settings
                   </button>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center mb-4">
-                    <FiCreditCard className="w-8 h-8 text-slate-600 mr-3" />
-                    <h3 className="text-lg font-semibold text-slate-900">Payment Gateway</h3>
+                    <FiCreditCard className="w-8 h-8 text-primary-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-primary-800">Payment Gateway</h3>
                   </div>
-                  <p className="text-slate-600 mb-4">M-Pesa, PayPal, and other payment integrations</p>
-                  <button 
+                  <p className="text-gray-600 mb-4">M-Pesa, PayPal, and other payment integrations</p>
+                  <button
                     onClick={managePaymentGateway}
-                    className="w-full bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-slate-800 transition-colors"
+                    className="w-full bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors"
                   >
                     Payment Settings
                   </button>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center mb-4">
-                    <FiPackage className="w-8 h-8 text-slate-600 mr-3" />
-                    <h3 className="text-lg font-semibold text-slate-900">Shipping & Logistics</h3>
+                    <FiPackage className="w-8 h-8 text-primary-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-primary-800">Shipping & Logistics</h3>
                   </div>
-                  <p className="text-slate-600 mb-4">Shipping rates, zones, and delivery configurations</p>
-                  <button 
+                  <p className="text-gray-600 mb-4">Shipping rates, zones, and delivery configurations</p>
+                  <button
                     onClick={manageShipping}
-                    className="w-full bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-slate-800 transition-colors"
+                    className="w-full bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors"
                   >
                     Shipping Settings
                   </button>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+                <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
                   <div className="flex items-center mb-4">
-                    <FiTrendingUp className="w-8 h-8 text-slate-600 mr-3" />
-                    <h3 className="text-lg font-semibold text-slate-900">Analytics & SEO</h3>
+                    <FiTrendingUp className="w-8 h-8 text-primary-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-primary-800">Analytics & SEO</h3>
                   </div>
-                  <p className="text-slate-600 mb-4">Google Analytics, SEO settings, and performance monitoring</p>
-                  <button 
+                  <p className="text-gray-600 mb-4">Google Analytics, SEO settings, and performance monitoring</p>
+                  <button
                     onClick={manageAnalytics}
-                    className="w-full bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-slate-800 transition-colors"
+                    className="w-full bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors"
                   >
                     Analytics Settings
                   </button>
@@ -1057,55 +1060,55 @@ export default function AdminDashboard() {
               </div>
 
               {/* General Settings Form */}
-              <div id="general-settings" className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
-                <h3 className="text-lg font-semibold text-slate-900 mb-6">General Settings</h3>
+              <div id="general-settings" className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
+                <h3 className="text-lg font-semibold text-primary-800 mb-6">General Settings</h3>
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                         Site Name
                       </label>
                       <input
                         type="text"
                         value={systemSettings.siteName}
                         onChange={(e) => updateSystemSetting('siteName', e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+                        className="w-full px-3 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                         Site Description
                       </label>
                       <input
                         type="text"
                         value={systemSettings.siteDescription}
                         onChange={(e) => updateSystemSetting('siteDescription', e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+                        className="w-full px-3 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                         Contact Email
                       </label>
                       <input
                         type="email"
                         value={systemSettings.contactEmail}
                         onChange={(e) => updateSystemSetting('contactEmail', e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+                        className="w-full px-3 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                         Support Phone
                       </label>
                       <input
                         type="tel"
                         value={systemSettings.supportPhone}
                         onChange={(e) => updateSystemSetting('supportPhone', e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+                        className="w-full px-3 py-2 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                       />
                     </div>
                   </div>
@@ -1116,9 +1119,9 @@ export default function AdminDashboard() {
                       id="maintenanceMode"
                       checked={systemSettings.maintenanceMode}
                       onChange={(e) => updateSystemSetting('maintenanceMode', e.target.checked)}
-                      className="h-4 w-4 text-slate-600 focus:ring-slate-500 border-slate-300 rounded"
+                      className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-primary-200 rounded"
                     />
-                    <label htmlFor="maintenanceMode" className="ml-2 block text-sm text-slate-900">
+                    <label htmlFor="maintenanceMode" className="ml-2 block text-sm text-gray-900">
                       Enable Maintenance Mode
                     </label>
                   </div>
@@ -1129,9 +1132,9 @@ export default function AdminDashboard() {
                       id="allowRegistration"
                       checked={systemSettings.allowRegistration}
                       onChange={(e) => updateSystemSetting('allowRegistration', e.target.checked)}
-                      className="h-4 w-4 text-slate-600 focus:ring-slate-500 border-slate-300 rounded"
+                      className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-primary-200 rounded"
                     />
-                    <label htmlFor="allowRegistration" className="ml-2 block text-sm text-slate-900">
+                    <label htmlFor="allowRegistration" className="ml-2 block text-sm text-gray-900">
                       Allow New User Registration
                     </label>
                   </div>
@@ -1140,7 +1143,7 @@ export default function AdminDashboard() {
                     <button
                       onClick={saveSystemSettings}
                       disabled={savingSettings}
-                      className="bg-slate-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="bg-primary-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {savingSettings ? 'Saving...' : 'Save Settings'}
                     </button>
@@ -1149,8 +1152,8 @@ export default function AdminDashboard() {
               </div>
 
               {/* System Status */}
-              <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
-                <h3 className="text-lg font-semibold text-slate-900 mb-4">System Status</h3>
+              <div className="bg-white rounded-xl shadow-lg border border-primary-100 p-6">
+                <h3 className="text-lg font-semibold text-primary-800 mb-4">System Status</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="flex items-center p-4 bg-green-50 rounded-lg">
                     <FiCheckCircle className="w-6 h-6 text-green-600 mr-3" />
