@@ -36,7 +36,7 @@ import { formatPrice } from '@/lib/utils';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 interface AdminStats {
   totalUsers: number;
