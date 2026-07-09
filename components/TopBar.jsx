@@ -27,9 +27,7 @@ export default function TopBar() {
 
   const cartItemsCount = items.reduce((acc, item) => acc + item.quantity, 0);
 
-  const isAdminPage = pathname?.startsWith('/admin');
-  if (isAdminPage) return null;
-
+  // All hooks MUST be called before any conditional return
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -37,6 +35,10 @@ export default function TopBar() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Hide TopBar on admin pages - AFTER all hooks
+  const isAdminPage = pathname?.startsWith('/admin');
+  if (isAdminPage) return null;
 
   return (
     <>
